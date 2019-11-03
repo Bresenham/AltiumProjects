@@ -1,0 +1,4 @@
+Added Component: Designator=*(MT6305B)
+Add component. Clean all parameters for all variants
+Added Member To Class: ClassName=MT6205B Member=Component * MT6305B
+Added Room: Name=MT6205B

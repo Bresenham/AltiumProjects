@@ -1,0 +1,6 @@
+Change Component Designator: OldDesignator=J? NewDesignator=POWER_IN
+Added Pin To Net: NetName=+5V Pin=POWER_IN-1
+Added Net: Name=+5V
+Added Pin To Net: NetName=GND Pin=POWER_IN-5
+Added Net: Name=GND
+Added Room: Name=MT6205B

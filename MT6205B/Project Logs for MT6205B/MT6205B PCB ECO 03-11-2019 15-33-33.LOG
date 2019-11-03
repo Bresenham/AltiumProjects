@@ -1,0 +1,22 @@
+Change Component Footprint: Designator=J? Old Footprint=614105150621 New Footprint=629105136821
+Change Component Comment : Designator=J? Old Comment=Micro USB 2.0 Type AB Receptacle New Comment=Micro USB 2.0 Type B Receptacle
+Change component parameters: Designator = "J?"; Footprint = "629105136821"; UniqueID = "\GILYJUFV"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Application"; Value = "Micro USB 2.0"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.we-online.de"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "https://katalog.we-online.com/em/datasheet/629105136821.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Gender"; Value = "Receptacle"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Interface Type"; Value = "Type B"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Operating Temperature"; Value = "-40 to +105degC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "629105136821"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Number"; Value = "5"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published Date"; Value = "September 2019"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated Current"; Value = "1A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type"; Value = "Horizontal"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Working Voltage"; Value = "30VAC"; VariantName = "[No Variations]"
+Added Room: Name=MT6205B
