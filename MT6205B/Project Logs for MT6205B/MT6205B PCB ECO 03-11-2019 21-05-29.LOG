@@ -1,0 +1,10 @@
+Added Component: Designator=J?(SAMTEC-TST-110-01-X-D)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "DeviceName"; Value = "J"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DeviceSetName"; Value = "SAMTEC-TST-110-01-X-D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "GateName_1"; Value = "A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LibraryName"; Value = "SAMTEC-TST-110-01-X-D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "SAMTEC-TST-110-01-X-D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SymbolName_1"; Value = "SAMTEC-TST-110-01-X-DA"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=MT6205B Member=Component J? SAMTEC-TST-110-01-X-DJ
+Added Room: Name=MT6205B
