@@ -1,0 +1,13 @@
+Change Component Comment : Designator=Y? Old Comment=HC-49/U-S16000000ABJB New Comment=HC-49
+Change Component Designator: OldDesignator=Y? NewDesignator=XTAL
+Added Pin To Net: NetName=VA Pin=C10-2
+Added Pin To Net: NetName=VA Pin=C11-2
+Added Pin To Net: NetName=NetC10_1 Pin=C10-1
+Added Pin To Net: NetName=NetC10_1 Pin=CH340G-7
+Added Pin To Net: NetName=NetC10_1 Pin=XTAL-1
+Added Net: Name=NetC10_1
+Added Pin To Net: NetName=NetC11_1 Pin=C11-1
+Added Pin To Net: NetName=NetC11_1 Pin=CH340G-8
+Added Pin To Net: NetName=NetC11_1 Pin=XTAL-2
+Added Net: Name=NetC11_1
+Added Room: Name=MT6205B

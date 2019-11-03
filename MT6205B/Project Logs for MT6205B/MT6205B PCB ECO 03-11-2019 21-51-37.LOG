@@ -1,0 +1,5 @@
+Change Component Designator: OldDesignator=J? NewDesignator=JTAG Header
+Added Component: Designator=CH340G(CH340G)
+Add component. Clean all parameters for all variants
+Added Member To Class: ClassName=MT6205B Member=Component CH340G
+Added Room: Name=MT6205B

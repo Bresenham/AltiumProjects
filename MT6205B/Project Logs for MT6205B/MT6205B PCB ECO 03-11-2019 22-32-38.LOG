@@ -1,0 +1,12 @@
+Change Component Footprint: Designator=Y? Old Footprint=R38 New Footprint=*XTAL_HC49P488W43L1150T466H350
+Change Component Comment : Designator=Y? Old Comment=XTAL New Comment=HC-49/U-S16000000ABJB
+Change component parameters: Designator = "Y?"; Footprint = "*XTAL_HC49P488W43L1150T466H350"; UniqueID = "\XPXNVQXQ"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Digi-Key_Part_Number"; Value = "300-6034-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Digi-Key_Purchase_URL"; Value = "https://www.digikey.de/product-detail/en/citizen-finedevice-co-ltd/HC-49-U-S16000000ABJB/300-6034-ND/284222?utm_source=snapeda&utm_medium=aggregator&utm_campaign=symbol"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Citizen Finedevice"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "HC-49/U-S16000000ABJB"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "HC-49/US Citizen Finedevice"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/HC-49/U-S16000000ABJB/Citizen%20Finedevice%20Co%20Ltd/view-part/?ref=snap"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Room: Name=MT6205B

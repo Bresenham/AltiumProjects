@@ -1,0 +1,8 @@
+Added Pin To Net: NetName=VA Pin=CH340G-1
+Added Pin To Net: NetName=USBD+ Pin=CH340G-5
+Added Pin To Net: NetName=USBD+ Pin=POWER_IN-3
+Added Net: Name=USBD+
+Added Pin To Net: NetName=USBD- Pin=CH340G-6
+Added Pin To Net: NetName=USBD- Pin=POWER_IN-2
+Added Net: Name=USBD-
+Added Room: Name=MT6205B
