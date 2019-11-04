@@ -1,0 +1,21 @@
+Removed Pin From Net: NetName=VA Pin=*-3
+Removed Pin From Net: NetName=VA Pin=*-45
+Change Component Description : Designator=XTAL Old Description=HC49US Series 16 MHz ±30 ppm 18 pF -20 to +70 °C Through Hole AT-CUT Crystal New Description=
+HC49US Series 16 MHz ±30 ppm 18 pF -20 to +70 °C Through Hole AT-CUT Crystal
+
+Change Net Name : Old Net Name=Net*_8 New Net Name=VSIM
+Change Net Name : Old Net Name=Net*_18 New Net Name=VM
+Change Net Name : Old Net Name=Net*_22 New Net Name=VRTC
+Change Net Name : Old Net Name=Net*_25 New Net Name=VTCXO
+Change Net Name : Old Net Name=Net*_27 New Net Name=VA
+Change Net Name : Old Net Name=Net*_29 New Net Name=VREF
+Change Net Name : Old Net Name=Net*_48 New Net Name=VCORE
+Change Net Name : Old Net Name=VA New Net Name=GND
+Added Pin To Net: NetName=VDD Pin=*-3
+Added Pin To Net: NetName=VDD Pin=*-20
+Added Pin To Net: NetName=VDD Pin=*-45
+Added Pin To Net: NetName=VDD Pin=C4-1
+Added Pin To Net: NetName=VDD Pin=CH340G-4
+Added Pin To Net: NetName=VDD Pin=CH340G-16
+Added Net: Name=VDD
+Added Room: Name=MT6205B

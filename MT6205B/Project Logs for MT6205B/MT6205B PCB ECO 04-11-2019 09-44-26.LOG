@@ -1,0 +1,17 @@
+Added Component: Designator=Y?(TCXO_Oscillator_2.5mmx2mm)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "ECS Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "ECS-TXO-2520-33-400-AN-TR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "SMD-4 ECS International"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/ECS-TXO-2520-33-400-AN-TR/ECS%20Inc./view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=UART1RX Pin=CH340G-2
+Added Pin To Net: NetName=UART1RX Pin=MT6205B-G10
+Added Net: Name=UART1RX
+Added Pin To Net: NetName=UART1TX Pin=CH340G-3
+Added Pin To Net: NetName=UART1TX Pin=MT6205B-F11
+Added Net: Name=UART1TX
+Added Member To Class: ClassName=MT6205B Member=Component Y? ECS-TXO-2520-33-400-AN-TR
+Added Room: Name=MT6205B
