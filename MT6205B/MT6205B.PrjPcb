@@ -140,7 +140,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document7]
-DocumentPath=..\..\Library\Custom Library.PcbLib
+DocumentPath=..\..\Library\CH340G.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -154,10 +154,10 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=JEUUXHNK
+DocumentUniqueId=
 
 [Document8]
-DocumentPath=..\..\Library\Custom Library.SchLib
+DocumentPath=..\..\Library\CH340G.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -171,7 +171,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=XXPQIBPM
+DocumentUniqueId=
 
 [Configuration1]
 Name=Sources
