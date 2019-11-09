@@ -1,0 +1,26 @@
+Change Component Comment : Designator=XTAL Old Comment=HC-49 New Comment=HC-49_12M
+Change Component Description : Designator=XTAL Old Description=HC49US Series 16 MHz ±30 ppm 18 pF -20 to +70 °C Through Hole AT-CUT Crystal New Description=
+HC49US Series 16 MHz ±30 ppm 18 pF -20 to +70 °C Through Hole AT-CUT Crystal
+
+Added Component: Designator=Display(68715014022)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.we-online.de"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://katalog.we-online.de/em/datasheet/68715014022.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Design"; Value = "Top Contact"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Resistance"; Value = "20 mOhm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-25 to 85 degC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation"; Value = "Horizontal"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "68715014022"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Number"; Value = "50"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "0.5 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published Date"; Value = "August 2018"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated Current"; Value = "0.5 A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Withstanding Voltage"; Value = "250 VAC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Working Voltage"; Value = "50 VAC"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=MT6205B Member=Component Display ER_TFT040-1
+Added Room: Name=MT6205B
