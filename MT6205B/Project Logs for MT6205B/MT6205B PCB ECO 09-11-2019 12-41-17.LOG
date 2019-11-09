@@ -1,0 +1,28 @@
+Removed Pin From Net: NetName=SYSCLK Pin=C13-2
+Removed Pin From Net: NetName=SYSCLK Pin=C14-2
+Removed Pin From Net: NetName=SYSCLK Pin=MT6205B-C4
+Removed Pin From Net: NetName=SYSCLK Pin=R1-2
+Change Component Comment : Designator=S? Old Comment=430152050826 New Comment=RESET
+Change Component Designator: OldDesignator=S? NewDesignator=S1
+Added Component: Designator=R6(6-0805_M)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Axial Device, Thru-Hole; 2 Leads; 0.4 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "AXIAL-0.4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=SYSCLK Pin=R6-1
+Added Pin To Net: NetName=SYSRST Pin=S1-2
+Added Pin To Net: NetName=VDD Pin=S1-3
+Change Net Name : Old Net Name=SYSCLK New Net Name=GND
+Added Pin To Net: NetName=NetR6_2 Pin=R6-2
+Added Pin To Net: NetName=NetR6_2 Pin=S1-4
+Added Net: Name=NetR6_2
+Added Pin To Net: NetName=SYSCLK Pin=C13-2
+Added Pin To Net: NetName=SYSCLK Pin=C14-2
+Added Pin To Net: NetName=SYSCLK Pin=MT6205B-C4
+Added Pin To Net: NetName=SYSCLK Pin=R1-2
+Added Net: Name=SYSCLK
+Added Member To Class: ClassName=MT6205B Member=Component R6 10kO
+Added Room: Name=MT6205B
