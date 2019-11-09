@@ -1,0 +1,4 @@
+Added Component: Designator=FlashMemory(SST39VF801C-70-4I-B3KE)
+Add component. Clean all parameters for all variants
+Added Member To Class: ClassName=MT6205B Member=Component FlashMemory SST39VF801C-70-4I-B3KE
+Added Room: Name=MT6205B
