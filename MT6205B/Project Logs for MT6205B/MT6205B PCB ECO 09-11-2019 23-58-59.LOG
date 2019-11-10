@@ -1,0 +1,5 @@
+Removed Member From Class: ClassName=MT6205B Member=Display
+Added Component: Designator=ER_TFT040_1(68715014022)
+Add component. Clean all parameters for all variants
+Added Member To Class: ClassName=MT6205B Member=Component ER_TFT040_1 TFT_LCD
+Added Room: Name=MT6205B

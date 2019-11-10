@@ -1,0 +1,7 @@
+Added Component: Designator=FlashMemory(SST39VF801C-70-4I-B3KE)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=VDD Pin=ER_TFT040_1-43
+Added Pin To Net: NetName=VDD Pin=ER_TFT040_1-44
+Added Pin To Net: NetName=GND Pin=ER_TFT040_1-45
+Added Pin To Net: NetName=GND Pin=ER_TFT040_1-50
+Added Room: Name=MT6205B

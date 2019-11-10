@@ -1,0 +1,38 @@
+Added Pin To Net: NetName=GND Pin=ER_TFT040_1-12
+Added Pin To Net: NetName=NetGPIO_1 Pin=GPIO-1
+Added Pin To Net: NetName=NetGPIO_1 Pin=MT6205B-F3
+Added Net: Name=NetGPIO_1
+Added Pin To Net: NetName=NetGPIO_2 Pin=GPIO-2
+Added Pin To Net: NetName=NetGPIO_2 Pin=MT6205B-K3
+Added Net: Name=NetGPIO_2
+Added Pin To Net: NetName=NetGPIO_3 Pin=GPIO-3
+Added Pin To Net: NetName=NetGPIO_3 Pin=MT6205B-F4
+Added Net: Name=NetGPIO_3
+Added Pin To Net: NetName=NetGPIO_4 Pin=GPIO-4
+Added Pin To Net: NetName=NetGPIO_4 Pin=MT6205B-K4
+Added Net: Name=NetGPIO_4
+Added Pin To Net: NetName=NetGPIO_5 Pin=GPIO-5
+Added Pin To Net: NetName=NetGPIO_5 Pin=MT6205B-E1
+Added Net: Name=NetGPIO_5
+Added Pin To Net: NetName=NetGPIO_6 Pin=GPIO-6
+Added Pin To Net: NetName=NetGPIO_6 Pin=MT6205B-J5
+Added Net: Name=NetGPIO_6
+Added Pin To Net: NetName=NetGPIO_7 Pin=GPIO-7
+Added Pin To Net: NetName=NetGPIO_7 Pin=MT6205B-E3
+Added Net: Name=NetGPIO_7
+Added Pin To Net: NetName=NetGPIO_8 Pin=GPIO-8
+Added Pin To Net: NetName=NetGPIO_8 Pin=MT6205B-G2
+Added Net: Name=NetGPIO_8
+Added Pin To Net: NetName=NetGPIO_9 Pin=GPIO-9
+Added Pin To Net: NetName=NetGPIO_9 Pin=MT6205B-B14
+Added Net: Name=NetGPIO_9
+Added Pin To Net: NetName=NetGPIO_10 Pin=GPIO-10
+Added Pin To Net: NetName=NetGPIO_10 Pin=MT6205B-E14
+Added Net: Name=NetGPIO_10
+Added Pin To Net: NetName=NetGPIO_11 Pin=GPIO-11
+Added Pin To Net: NetName=NetGPIO_11 Pin=MT6205B-C13
+Added Net: Name=NetGPIO_11
+Added Pin To Net: NetName=NetGPIO_12 Pin=GPIO-12
+Added Pin To Net: NetName=NetGPIO_12 Pin=MT6205B-E13
+Added Net: Name=NetGPIO_12
+Added Room: Name=MT6205B

@@ -207,6 +207,27 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=XXBAXDDN
 
+[Document11]
+DocumentPath=..\..\Library\ER_TFT040_1.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=EHJPBRXA
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for MT6205B\Design Rule Check - MT6205B.html
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
