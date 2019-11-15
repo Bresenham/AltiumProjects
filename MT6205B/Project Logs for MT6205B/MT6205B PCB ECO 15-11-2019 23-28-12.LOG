@@ -1,0 +1,76 @@
+Added Pin To Net: NetName=AB0 Pin=FlashMemory-E1
+Added Pin To Net: NetName=AB0 Pin=MT6205B-P14
+Added Pin To Net: NetName=AB0 Pin=SRAM-1
+Added Net: Name=AB0
+Added Pin To Net: NetName=AB1 Pin=FlashMemory-D1
+Added Pin To Net: NetName=AB1 Pin=MT6205B-M13
+Added Pin To Net: NetName=AB1 Pin=SRAM-2
+Added Net: Name=AB1
+Added Pin To Net: NetName=AB2 Pin=FlashMemory-C1
+Added Pin To Net: NetName=AB2 Pin=MT6205B-M12
+Added Pin To Net: NetName=AB2 Pin=SRAM-3
+Added Net: Name=AB2
+Added Pin To Net: NetName=AB3 Pin=FlashMemory-A1
+Added Pin To Net: NetName=AB3 Pin=MT6205B-M14
+Added Pin To Net: NetName=AB3 Pin=SRAM-4
+Added Net: Name=AB3
+Added Pin To Net: NetName=AB4 Pin=FlashMemory-B1
+Added Pin To Net: NetName=AB4 Pin=MT6205B-L12
+Added Pin To Net: NetName=AB4 Pin=SRAM-5
+Added Net: Name=AB4
+Added Pin To Net: NetName=AB5 Pin=FlashMemory-D2
+Added Pin To Net: NetName=AB5 Pin=MT6205B-L13
+Added Pin To Net: NetName=AB5 Pin=SRAM-18
+Added Net: Name=AB5
+Added Pin To Net: NetName=AB6 Pin=FlashMemory-C2
+Added Pin To Net: NetName=AB6 Pin=MT6205B-L14
+Added Pin To Net: NetName=AB6 Pin=SRAM-19
+Added Net: Name=AB6
+Added Pin To Net: NetName=AB7 Pin=FlashMemory-A2
+Added Pin To Net: NetName=AB7 Pin=MT6205B-J10
+Added Pin To Net: NetName=AB7 Pin=SRAM-20
+Added Net: Name=AB7
+Added Pin To Net: NetName=AB8 Pin=FlashMemory-B5
+Added Pin To Net: NetName=AB8 Pin=MT6205B-K11
+Added Pin To Net: NetName=AB8 Pin=SRAM-21
+Added Net: Name=AB8
+Added Pin To Net: NetName=AB9 Pin=FlashMemory-A5
+Added Pin To Net: NetName=AB9 Pin=MT6205B-K12
+Added Pin To Net: NetName=AB9 Pin=SRAM-22
+Added Net: Name=AB9
+Added Pin To Net: NetName=AB10 Pin=FlashMemory-C5
+Added Pin To Net: NetName=AB10 Pin=MT6205B-K14
+Added Pin To Net: NetName=AB10 Pin=SRAM-23
+Added Net: Name=AB10
+Added Pin To Net: NetName=AB11 Pin=FlashMemory-D5
+Added Pin To Net: NetName=AB11 Pin=MT6205B-J11
+Added Pin To Net: NetName=AB11 Pin=SRAM-24
+Added Net: Name=AB11
+Added Pin To Net: NetName=AB12 Pin=FlashMemory-B6
+Added Pin To Net: NetName=AB12 Pin=MT6205B-J12
+Added Pin To Net: NetName=AB12 Pin=SRAM-25
+Added Net: Name=AB12
+Added Pin To Net: NetName=AB13 Pin=FlashMemory-A6
+Added Pin To Net: NetName=AB13 Pin=MT6205B-J13
+Added Pin To Net: NetName=AB13 Pin=SRAM-26
+Added Net: Name=AB13
+Added Pin To Net: NetName=AB14 Pin=FlashMemory-C6
+Added Pin To Net: NetName=AB14 Pin=MT6205B-H10
+Added Pin To Net: NetName=AB14 Pin=SRAM-27
+Added Net: Name=AB14
+Added Pin To Net: NetName=AB15 Pin=FlashMemory-D6
+Added Pin To Net: NetName=AB15 Pin=MT6205B-H11
+Added Pin To Net: NetName=AB15 Pin=SRAM-42
+Added Net: Name=AB15
+Added Pin To Net: NetName=AB16 Pin=FlashMemory-E6
+Added Pin To Net: NetName=AB16 Pin=MT6205B-H13
+Added Pin To Net: NetName=AB16 Pin=SRAM-43
+Added Net: Name=AB16
+Added Pin To Net: NetName=AB17 Pin=FlashMemory-B2
+Added Pin To Net: NetName=AB17 Pin=MT6205B-H12
+Added Pin To Net: NetName=AB17 Pin=SRAM-44
+Added Net: Name=AB17
+Added Pin To Net: NetName=AB18 Pin=FlashMemory-C3
+Added Pin To Net: NetName=AB18 Pin=MT6205B-H14
+Added Net: Name=AB18
+Added Room: Name=MT6205B

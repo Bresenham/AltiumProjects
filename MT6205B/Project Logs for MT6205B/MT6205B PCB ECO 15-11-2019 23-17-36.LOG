@@ -1,0 +1,17 @@
+Added Pin To Net: NetName=DB0 Pin=ER_TFT040_1-13
+Added Pin To Net: NetName=DB1 Pin=ER_TFT040_1-14
+Added Pin To Net: NetName=DB2 Pin=ER_TFT040_1-15
+Added Pin To Net: NetName=DB3 Pin=ER_TFT040_1-16
+Added Pin To Net: NetName=DB4 Pin=ER_TFT040_1-17
+Added Pin To Net: NetName=DB5 Pin=ER_TFT040_1-18
+Added Pin To Net: NetName=DB6 Pin=ER_TFT040_1-19
+Added Pin To Net: NetName=DB7 Pin=ER_TFT040_1-20
+Added Pin To Net: NetName=DB8 Pin=ER_TFT040_1-21
+Added Pin To Net: NetName=DB9 Pin=ER_TFT040_1-22
+Added Pin To Net: NetName=DB10 Pin=ER_TFT040_1-23
+Added Pin To Net: NetName=DB11 Pin=ER_TFT040_1-24
+Added Pin To Net: NetName=DB12 Pin=ER_TFT040_1-25
+Added Pin To Net: NetName=DB13 Pin=ER_TFT040_1-26
+Added Pin To Net: NetName=DB14 Pin=ER_TFT040_1-27
+Added Pin To Net: NetName=DB15 Pin=ER_TFT040_1-28
+Added Room: Name=MT6205B

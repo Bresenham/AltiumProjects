@@ -1,0 +1,49 @@
+Added Pin To Net: NetName=DB0 Pin=MT6205B-L6
+Added Pin To Net: NetName=DB0 Pin=SRAM-7
+Added Net: Name=DB0
+Added Pin To Net: NetName=DB1 Pin=MT6205B-K7
+Added Pin To Net: NetName=DB1 Pin=SRAM-8
+Added Net: Name=DB1
+Added Pin To Net: NetName=DB2 Pin=MT6205B-L7
+Added Pin To Net: NetName=DB2 Pin=SRAM-9
+Added Net: Name=DB2
+Added Pin To Net: NetName=DB3 Pin=MT6205B-P7
+Added Pin To Net: NetName=DB3 Pin=SRAM-10
+Added Net: Name=DB3
+Added Pin To Net: NetName=DB4 Pin=MT6205B-N7
+Added Pin To Net: NetName=DB4 Pin=SRAM-13
+Added Net: Name=DB4
+Added Pin To Net: NetName=DB5 Pin=MT6205B-M7
+Added Pin To Net: NetName=DB5 Pin=SRAM-14
+Added Net: Name=DB5
+Added Pin To Net: NetName=DB6 Pin=MT6205B-M8
+Added Pin To Net: NetName=DB6 Pin=SRAM-15
+Added Net: Name=DB6
+Added Pin To Net: NetName=DB7 Pin=MT6205B-N8
+Added Pin To Net: NetName=DB7 Pin=SRAM-16
+Added Net: Name=DB7
+Added Pin To Net: NetName=DB8 Pin=MT6205B-L8
+Added Pin To Net: NetName=DB8 Pin=SRAM-29
+Added Net: Name=DB8
+Added Pin To Net: NetName=DB9 Pin=MT6205B-K8
+Added Pin To Net: NetName=DB9 Pin=SRAM-30
+Added Net: Name=DB9
+Added Pin To Net: NetName=DB10 Pin=MT6205B-L9
+Added Pin To Net: NetName=DB10 Pin=SRAM-31
+Added Net: Name=DB10
+Added Pin To Net: NetName=DB11 Pin=MT6205B-P9
+Added Pin To Net: NetName=DB11 Pin=SRAM-32
+Added Net: Name=DB11
+Added Pin To Net: NetName=DB12 Pin=MT6205B-M9
+Added Pin To Net: NetName=DB12 Pin=SRAM-35
+Added Net: Name=DB12
+Added Pin To Net: NetName=DB13 Pin=MT6205B-K9
+Added Pin To Net: NetName=DB13 Pin=SRAM-36
+Added Net: Name=DB13
+Added Pin To Net: NetName=DB14 Pin=MT6205B-M10
+Added Pin To Net: NetName=DB14 Pin=SRAM-37
+Added Net: Name=DB14
+Added Pin To Net: NetName=DB15 Pin=MT6205B-N10
+Added Pin To Net: NetName=DB15 Pin=SRAM-38
+Added Net: Name=DB15
+Added Room: Name=MT6205B
