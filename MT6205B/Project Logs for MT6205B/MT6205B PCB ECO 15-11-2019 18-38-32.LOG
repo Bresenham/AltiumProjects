@@ -1,0 +1,19 @@
+Removed Member From Class: ClassName=MT6205B Member=C?
+Change Component Footprint: Designator=C2 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Change Component Footprint: Designator=C3 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Change Component Footprint: Designator=C4 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Change Component Footprint: Designator=C5 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Change Component Footprint: Designator=C6 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Change Component Footprint: Designator=C7 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Change Component Footprint: Designator=C8 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Change Component Footprint: Designator=C9 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Change Component Footprint: Designator=C10 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Change Component Footprint: Designator=C11 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Change Component Footprint: Designator=C12 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Change Component Footprint: Designator=C13 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Change Component Footprint: Designator=C14 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Change Component Footprint: Designator=C15 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Change Component Footprint: Designator=C16 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Change Component Footprint: Designator=C19 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Change Component Footprint: Designator=C20 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Added Room: Name=MT6205B

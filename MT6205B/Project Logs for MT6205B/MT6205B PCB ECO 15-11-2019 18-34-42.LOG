@@ -1,0 +1,44 @@
+Removed Pin From Net: NetName=GND Pin=C17-1
+Removed Pin From Net: NetName=+3.3V Pin=C17-2
+Removed Pin From Net: NetName=GND Pin=C18-1
+Removed Pin From Net: NetName=+5V Pin=C18-2
+Removed Pin From Net: NetName=+3.3V Pin=C19-2
+Removed Pin From Net: NetName=+3.3V Pin=C20-1
+Removed Pin From Net: NetName=+3.3V Pin=ER_TFT040_1-1
+Removed Pin From Net: NetName=+3.3V Pin=ER_TFT040_1-43
+Removed Pin From Net: NetName=+3.3V Pin=ER_TFT040_1-44
+Removed Pin From Net: NetName=GND Pin=HT7333-GND
+Removed Pin From Net: NetName=+5V Pin=HT7333-VIN
+Removed Pin From Net: NetName=+3.3V Pin=HT7333-VOUT
+Removed Member From Class: ClassName=MT6205B Member=C17
+Removed Member From Class: ClassName=MT6205B Member=C18
+Removed Member From Class: ClassName=MT6205B Member=HT7333
+Change Component Footprint: Designator=C1 Old Footprint=6-0805_M New Footprint=WCAP-CSGP_0805_H=0.8mm_Reflow
+Added Component: Designator=C?(WCAP-CSGP_0805_H=0.8mm_Reflow)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Capacitance"; Value = "1nF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Capacitance Tolerance"; Value = "+/-5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ceramic Type"; Value = "NP0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.we-online.de"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://katalog.we-online.com/pbs/datasheet/885012007021.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dissipation Factor"; Value = "Q>=1000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.8mm +/-0.10mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Isolation Resistance"; Value = ">=10GOhm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "SMD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-55 to +125degC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "885012007021"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published Date"; Value = "August 2019"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated Voltage"; Value = "16VDC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Size"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Technical Reference"; Value = "NP00805102J016DFCT10000"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VDD Pin=C19-2
+Added Pin To Net: NetName=VDD Pin=C20-1
+Added Pin To Net: NetName=+5V Pin=ER_TFT040_1-1
+Added Pin To Net: NetName=VDD Pin=ER_TFT040_1-43
+Added Pin To Net: NetName=VDD Pin=ER_TFT040_1-44
+Added Member To Class: ClassName=MT6205B Member=Component C? 1nF, 16V
+Added Room: Name=MT6205B
