@@ -1,0 +1,8 @@
+Change Component Comment : Designator=R7 Old Comment=1kO New Comment=120O
+Change Component Comment : Designator=R11 Old Comment=1kO New Comment=120O
+Change Component Comment : Designator=R8 Old Comment=480O New Comment=33O
+Change Component Comment : Designator=R9 Old Comment=480O New Comment=33O
+Added Pin To Net: NetName=CPU_RESET Pin=*-24
+Added Pin To Net: NetName=GND Pin=U2-C14
+Change Net Name : Old Net Name=CPU_RESET New Net Name=#SYS_RESET
+Added Room: Name=MT6205B

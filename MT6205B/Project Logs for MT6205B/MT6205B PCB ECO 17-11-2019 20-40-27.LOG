@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=VDD Pin=*-31
+Removed Pin From Net: NetName=VDD Pin=*-33
+Removed Member From Class: ClassName=MT6205B Member=C14
+Removed Member From Class: ClassName=MT6205B Member=R1
+Added Pin To Net: NetName=GND Pin=C12-1
+Added Pin To Net: NetName=VTCXO Pin=C12-2
+Added Pin To Net: NetName=SRCLKENA Pin=*-31
+Added Pin To Net: NetName=SRCLKENA Pin=*-33
+Added Pin To Net: NetName=SRCLKENA Pin=TCXO 2.8V 13M-1
+Added Pin To Net: NetName=SRCLKENA Pin=U2-N1
+Added Net: Name=SRCLKENA
+Added Room: Name=MT6205B

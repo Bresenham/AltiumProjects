@@ -1,0 +1,24 @@
+Removed Pin From Net: NetName=NetC10_1 Pin=XTAL-1
+Removed Pin From Net: NetName=NetC11_1 Pin=XTAL-2
+Removed Member From Class: ClassName=MT6205B Member=XTAL
+Added Component: Designator=HC-49_12M(WE-XTAL_HC49/4H)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.we-online.de"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://katalog.we-online.com/pbs/datasheet/830003215B.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Frequency"; Value = "12MHz"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Frequency Stability"; Value = "50ppm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Frequency Tolerance"; Value = "+/-30ppm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Load Capacitance"; Value = "30pF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "THT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-20 up to +70degC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "830003215B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published Date"; Value = "March 2019"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Size"; Value = "HC49-4H"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC10_1 Pin=HC-49_12M-1
+Added Pin To Net: NetName=NetC11_1 Pin=HC-49_12M-2
+Added Member To Class: ClassName=MT6205B Member=Component HC-49_12M 12MHz, +/-30ppm, 30pF
+Added Room: Name=MT6205B

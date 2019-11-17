@@ -1,0 +1,33 @@
+Removed Pin From Net: NetName=VTCXO Pin=C12-1
+Removed Pin From Net: NetName=GND Pin=C12-2
+Removed Pin From Net: NetName=SYSCLK Pin=C13-2
+Removed Pin From Net: NetName=GND Pin=C14-1
+Removed Pin From Net: NetName=SYSCLK Pin=C14-2
+Removed Pin From Net: NetName=GND Pin=R1-1
+Removed Pin From Net: NetName=SYSCLK Pin=R1-2
+Removed Pin From Net: NetName=VTCXO Pin=TCXO-1
+Removed Pin From Net: NetName=GND Pin=TCXO-2
+Removed Pin From Net: NetName=VTCXO Pin=TCXO-4
+Removed Member From Class: ClassName=MT6205B Member=C13
+Removed Member From Class: ClassName=MT6205B Member=TCXO
+Added Component: Designator=TCXO 2.8V 13M(WE-SPXO_CFPS-39)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.we-online.de"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://katalog.we-online.com/pbs/datasheet/831025492.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Frequency"; Value = "12MHz"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Frequency Stability"; Value = "50ppm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "-40 up to +85degC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "831025492"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published Date"; Value = "March 2019"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Size"; Value = "CFPS-39"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supply Voltage"; Value = "3.3V"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=TCXO 2.8V 13M-2
+Added Pin To Net: NetName=SYSCLK Pin=TCXO 2.8V 13M-3
+Added Pin To Net: NetName=VTCXO Pin=TCXO 2.8V 13M-4
+Added Member To Class: ClassName=MT6205B Member=Component TCXO 2.8V 13M 12MHz, +/-50ppm, 3.3V
+Added Room: Name=MT6205B
