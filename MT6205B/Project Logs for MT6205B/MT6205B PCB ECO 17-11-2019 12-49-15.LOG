@@ -1,0 +1,85 @@
+Removed Pin From Net: NetName=VDD Pin=MT6305B-3
+Removed Pin From Net: NetName=+5V Pin=MT6305B-7
+Removed Pin From Net: NetName=VSIM Pin=MT6305B-8
+Removed Pin From Net: NetName=GND Pin=MT6305B-12
+Removed Pin From Net: NetName=GND Pin=MT6305B-13
+Removed Pin From Net: NetName=GND Pin=MT6305B-17
+Removed Pin From Net: NetName=VM Pin=MT6305B-18
+Removed Pin From Net: NetName=+5V Pin=MT6305B-19
+Removed Pin From Net: NetName=VDD Pin=MT6305B-20
+Removed Pin From Net: NetName=GND Pin=MT6305B-21
+Removed Pin From Net: NetName=VRTC Pin=MT6305B-22
+Removed Pin From Net: NetName=VTCXO Pin=MT6305B-25
+Removed Pin From Net: NetName=+5V Pin=MT6305B-26
+Removed Pin From Net: NetName=VA Pin=MT6305B-27
+Removed Pin From Net: NetName=GND Pin=MT6305B-28
+Removed Pin From Net: NetName=VREF Pin=MT6305B-29
+Removed Pin From Net: NetName=GND Pin=MT6305B-37
+Removed Pin From Net: NetName=GND Pin=MT6305B-40
+Removed Pin From Net: NetName=GND Pin=MT6305B-44
+Removed Pin From Net: NetName=VDD Pin=MT6305B-45
+Removed Pin From Net: NetName=GND Pin=MT6305B-46
+Removed Pin From Net: NetName=+5V Pin=MT6305B-47
+Removed Pin From Net: NetName=VCORE Pin=MT6305B-48
+Removed Pin From Net: NetName=GND Pin=MT6305B-49
+Removed Member From Class: ClassName=MT6205B Member=MT6305B
+Change Component Comment : Designator=C4 Old Comment=4.7µF New Comment=2.2µF
+Change Component Comment : Designator=C9 Old Comment=4.7µF New Comment=2.2µF
+Change Component Comment : Designator=C5 Old Comment=100nF New Comment=2.2µF
+Change Component Designator: OldDesignator=CH340G NewDesignator=U7
+Change Component Designator: OldDesignator=ER_TFT040_1 NewDesignator=U5
+Change Component Designator: OldDesignator=FlashMemory NewDesignator=U4
+Change Component Designator: OldDesignator=MT6205B NewDesignator=U2
+Change Component Designator: OldDesignator=SRAM NewDesignator=U3
+Added Component: Designator=*(MT6305B)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R8(WRIS-PSMB_0805_H=0.22mm)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Axial Device, Thru-Hole; 2 Leads; 0.4 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "AXIAL-0.4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+5V Pin=*-1
+Added Pin To Net: NetName=VDD Pin=*-3
+Added Pin To Net: NetName=+5V Pin=*-7
+Added Pin To Net: NetName=VSIM Pin=*-8
+Added Pin To Net: NetName=VDD Pin=*-12
+Added Pin To Net: NetName=VDD Pin=*-13
+Added Pin To Net: NetName=GND Pin=*-17
+Added Pin To Net: NetName=VM Pin=*-18
+Added Pin To Net: NetName=+5V Pin=*-19
+Added Pin To Net: NetName=VDD Pin=*-20
+Added Pin To Net: NetName=GND Pin=*-21
+Added Pin To Net: NetName=VRTC Pin=*-22
+Added Pin To Net: NetName=VTCXO Pin=*-25
+Added Pin To Net: NetName=+5V Pin=*-26
+Added Pin To Net: NetName=VA Pin=*-27
+Added Pin To Net: NetName=GND Pin=*-28
+Added Pin To Net: NetName=VREF Pin=*-29
+Added Pin To Net: NetName=VDD Pin=*-31
+Added Pin To Net: NetName=GND Pin=*-32
+Added Pin To Net: NetName=VDD Pin=*-33
+Added Pin To Net: NetName=GND Pin=*-37
+Added Pin To Net: NetName=GND Pin=*-40
+Added Pin To Net: NetName=GND Pin=*-42
+Added Pin To Net: NetName=VDD Pin=*-43
+Added Pin To Net: NetName=GND Pin=*-44
+Added Pin To Net: NetName=VDD Pin=*-45
+Added Pin To Net: NetName=GND Pin=*-46
+Added Pin To Net: NetName=+5V Pin=*-47
+Added Pin To Net: NetName=VCORE Pin=*-48
+Added Pin To Net: NetName=GND Pin=*-49
+Added Pin To Net: NetName=+5V Pin=R8-1
+Change Net Name : Old Net Name=NetER_TFT040_1_2 New Net Name=NetR9_1
+Change Net Name : Old Net Name=NetER_TFT040_1_3 New Net Name=NetR8_1
+Added Pin To Net: NetName=Net*_4 Pin=*-4
+Added Pin To Net: NetName=Net*_4 Pin=R8-2
+Added Net: Name=Net*_4
+Added Pin To Net: NetName=Net*_23 Pin=*-23
+Added Pin To Net: NetName=Net*_23 Pin=C1-1
+Added Net: Name=Net*_23
+Added Member To Class: ClassName=MT6205B Member=Component * MT6305B
+Added Member To Class: ClassName=MT6205B Member=Component R8 480O
+Added Room: Name=MT6205B

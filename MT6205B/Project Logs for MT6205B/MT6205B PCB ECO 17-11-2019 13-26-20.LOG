@@ -1,0 +1,8 @@
+Change Component Comment : Designator=S? Old Comment=450404015514 New Comment=BOOT_MODE
+Change Component Designator: OldDesignator=S? NewDesignator=S2
+Added Pin To Net: NetName=VDD Pin=S2-1
+Added Pin To Net: NetName=GND Pin=S2-3
+Added Pin To Net: NetName=BOOT_SELECT Pin=S2-2
+Added Pin To Net: NetName=BOOT_SELECT Pin=U2-D11
+Added Net: Name=BOOT_SELECT
+Added Room: Name=MT6205B
