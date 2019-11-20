@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=SRCLKENA Pin=*-33
+Added Pin To Net: NetName=BBWAKEUP Pin=*-33
+Added Pin To Net: NetName=BBWAKEUP Pin=U2-B2
+Added Net: Name=BBWAKEUP
+Added Room: Name=MT6205B

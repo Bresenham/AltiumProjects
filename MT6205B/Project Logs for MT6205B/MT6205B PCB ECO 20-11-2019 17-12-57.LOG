@@ -1,0 +1,8 @@
+Added Pin To Net: NetName=#SYS_RESET Pin=U4-B4
+Added Pin To Net: NetName=NetC23_1 Pin=U4-H1
+Added Net: Name=NetC23_1
+Added Pin To Net: NetName=NetC23_2 Pin=U4-G4
+Added Net: Name=NetC23_2
+Added Pin To Net: NetName=NetC24_1 Pin=U4-H6
+Added Net: Name=NetC24_1
+Added Room: Name=MT6205B
