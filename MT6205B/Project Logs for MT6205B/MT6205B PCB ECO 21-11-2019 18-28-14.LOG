@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=VDD Pin=C23-2
+Removed Pin From Net: NetName=VDD Pin=C24-2
+Removed Pin From Net: NetName=VDD Pin=U4-G4
+Added Pin To Net: NetName=VM Pin=C23-2
+Added Pin To Net: NetName=VM Pin=C24-2
+Added Pin To Net: NetName=WR_ENABLE Pin=U4-A4
+Added Pin To Net: NetName=VM Pin=U4-B3
+Added Pin To Net: NetName=CS_FLASH Pin=U4-F1
+Added Pin To Net: NetName=RD_ENABLE Pin=U4-G1
+Added Pin To Net: NetName=VM Pin=U4-G4
+Added Room: Name=MT6205B
