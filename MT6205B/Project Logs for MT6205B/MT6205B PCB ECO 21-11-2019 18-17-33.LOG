@@ -1,0 +1,22 @@
+Added Pin To Net: NetName=GND Pin=C23-1
+Added Pin To Net: NetName=GND Pin=C24-1
+Added Pin To Net: NetName=GND Pin=U4-H1
+Added Pin To Net: NetName=GND Pin=U4-H6
+Added Pin To Net: NetName=CS_FLASH Pin=U2-L11
+Added Net: Name=CS_FLASH
+Added Pin To Net: NetName=CS_SRAM Pin=U2-M11
+Added Pin To Net: NetName=CS_SRAM Pin=U3-6
+Added Net: Name=CS_SRAM
+Added Pin To Net: NetName=LB_ENABLE Pin=U2-P13
+Added Pin To Net: NetName=LB_ENABLE Pin=U3-39
+Added Net: Name=LB_ENABLE
+Added Pin To Net: NetName=RD_ENABLE Pin=U2-L10
+Added Pin To Net: NetName=RD_ENABLE Pin=U3-41
+Added Net: Name=RD_ENABLE
+Added Pin To Net: NetName=UB_ENABLE Pin=U2-N13
+Added Pin To Net: NetName=UB_ENABLE Pin=U3-40
+Added Net: Name=UB_ENABLE
+Added Pin To Net: NetName=WR_ENABLE Pin=U2-K10
+Added Pin To Net: NetName=WR_ENABLE Pin=U3-17
+Added Net: Name=WR_ENABLE
+Added Room: Name=MT6205B
