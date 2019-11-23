@@ -1,0 +1,47 @@
+Added Component: Designator=FlashMemory(SST39VF801C-70-4I-B3KE)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=AB3 Pin=FlashMemory-A1
+Added Pin To Net: NetName=AB7 Pin=FlashMemory-A2
+Added Pin To Net: NetName=WR_ENABLE Pin=FlashMemory-A4
+Added Pin To Net: NetName=AB9 Pin=FlashMemory-A5
+Added Pin To Net: NetName=AB13 Pin=FlashMemory-A6
+Added Pin To Net: NetName=AB4 Pin=FlashMemory-B1
+Added Pin To Net: NetName=AB17 Pin=FlashMemory-B2
+Added Pin To Net: NetName=VM Pin=FlashMemory-B3
+Added Pin To Net: NetName=#SYS_RESET Pin=FlashMemory-B4
+Added Pin To Net: NetName=AB8 Pin=FlashMemory-B5
+Added Pin To Net: NetName=AB12 Pin=FlashMemory-B6
+Added Pin To Net: NetName=AB2 Pin=FlashMemory-C1
+Added Pin To Net: NetName=AB6 Pin=FlashMemory-C2
+Added Pin To Net: NetName=AB18 Pin=FlashMemory-C3
+Added Pin To Net: NetName=AB10 Pin=FlashMemory-C5
+Added Pin To Net: NetName=AB14 Pin=FlashMemory-C6
+Added Pin To Net: NetName=AB1 Pin=FlashMemory-D1
+Added Pin To Net: NetName=AB5 Pin=FlashMemory-D2
+Added Pin To Net: NetName=AB11 Pin=FlashMemory-D5
+Added Pin To Net: NetName=AB15 Pin=FlashMemory-D6
+Added Pin To Net: NetName=AB0 Pin=FlashMemory-E1
+Added Pin To Net: NetName=DB0 Pin=FlashMemory-E2
+Added Pin To Net: NetName=DB2 Pin=FlashMemory-E3
+Added Pin To Net: NetName=DB5 Pin=FlashMemory-E4
+Added Pin To Net: NetName=DB7 Pin=FlashMemory-E5
+Added Pin To Net: NetName=AB16 Pin=FlashMemory-E6
+Added Pin To Net: NetName=CS_FLASH Pin=FlashMemory-F1
+Added Pin To Net: NetName=DB8 Pin=FlashMemory-F2
+Added Pin To Net: NetName=DB10 Pin=FlashMemory-F3
+Added Pin To Net: NetName=DB12 Pin=FlashMemory-F4
+Added Pin To Net: NetName=DB14 Pin=FlashMemory-F5
+Added Pin To Net: NetName=RD_ENABLE Pin=FlashMemory-G1
+Added Pin To Net: NetName=DB9 Pin=FlashMemory-G2
+Added Pin To Net: NetName=DB11 Pin=FlashMemory-G3
+Added Pin To Net: NetName=VM Pin=FlashMemory-G4
+Added Pin To Net: NetName=DB13 Pin=FlashMemory-G5
+Added Pin To Net: NetName=DB15 Pin=FlashMemory-G6
+Added Pin To Net: NetName=GND Pin=FlashMemory-H1
+Added Pin To Net: NetName=DB1 Pin=FlashMemory-H2
+Added Pin To Net: NetName=DB3 Pin=FlashMemory-H3
+Added Pin To Net: NetName=DB4 Pin=FlashMemory-H4
+Added Pin To Net: NetName=DB6 Pin=FlashMemory-H5
+Added Pin To Net: NetName=GND Pin=FlashMemory-H6
+Added Member To Class: ClassName=MT6205B Member=Component FlashMemory SST39VF801C-70-4I-B3KE
+Added Room: Name=MT6205B

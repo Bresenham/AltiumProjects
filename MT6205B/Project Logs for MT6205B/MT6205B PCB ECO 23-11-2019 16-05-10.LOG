@@ -1,0 +1,47 @@
+Added Component: Designator=IS61LV25616AL(IS61LV25616AL)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=AB0 Pin=IS61LV25616AL-1
+Added Pin To Net: NetName=AB1 Pin=IS61LV25616AL-2
+Added Pin To Net: NetName=AB2 Pin=IS61LV25616AL-3
+Added Pin To Net: NetName=AB3 Pin=IS61LV25616AL-4
+Added Pin To Net: NetName=AB4 Pin=IS61LV25616AL-5
+Added Pin To Net: NetName=CS_SRAM Pin=IS61LV25616AL-6
+Added Pin To Net: NetName=DB0 Pin=IS61LV25616AL-7
+Added Pin To Net: NetName=DB1 Pin=IS61LV25616AL-8
+Added Pin To Net: NetName=DB2 Pin=IS61LV25616AL-9
+Added Pin To Net: NetName=DB3 Pin=IS61LV25616AL-10
+Added Pin To Net: NetName=VM Pin=IS61LV25616AL-11
+Added Pin To Net: NetName=GND Pin=IS61LV25616AL-12
+Added Pin To Net: NetName=DB4 Pin=IS61LV25616AL-13
+Added Pin To Net: NetName=DB5 Pin=IS61LV25616AL-14
+Added Pin To Net: NetName=DB6 Pin=IS61LV25616AL-15
+Added Pin To Net: NetName=DB7 Pin=IS61LV25616AL-16
+Added Pin To Net: NetName=WR_ENABLE Pin=IS61LV25616AL-17
+Added Pin To Net: NetName=AB5 Pin=IS61LV25616AL-18
+Added Pin To Net: NetName=AB6 Pin=IS61LV25616AL-19
+Added Pin To Net: NetName=AB7 Pin=IS61LV25616AL-20
+Added Pin To Net: NetName=AB8 Pin=IS61LV25616AL-21
+Added Pin To Net: NetName=AB9 Pin=IS61LV25616AL-22
+Added Pin To Net: NetName=AB10 Pin=IS61LV25616AL-23
+Added Pin To Net: NetName=AB11 Pin=IS61LV25616AL-24
+Added Pin To Net: NetName=AB12 Pin=IS61LV25616AL-25
+Added Pin To Net: NetName=AB13 Pin=IS61LV25616AL-26
+Added Pin To Net: NetName=AB14 Pin=IS61LV25616AL-27
+Added Pin To Net: NetName=DB8 Pin=IS61LV25616AL-29
+Added Pin To Net: NetName=DB9 Pin=IS61LV25616AL-30
+Added Pin To Net: NetName=DB10 Pin=IS61LV25616AL-31
+Added Pin To Net: NetName=DB11 Pin=IS61LV25616AL-32
+Added Pin To Net: NetName=VM Pin=IS61LV25616AL-33
+Added Pin To Net: NetName=GND Pin=IS61LV25616AL-34
+Added Pin To Net: NetName=DB12 Pin=IS61LV25616AL-35
+Added Pin To Net: NetName=DB13 Pin=IS61LV25616AL-36
+Added Pin To Net: NetName=DB14 Pin=IS61LV25616AL-37
+Added Pin To Net: NetName=DB15 Pin=IS61LV25616AL-38
+Added Pin To Net: NetName=LB_ENABLE Pin=IS61LV25616AL-39
+Added Pin To Net: NetName=UB_ENABLE Pin=IS61LV25616AL-40
+Added Pin To Net: NetName=RD_ENABLE Pin=IS61LV25616AL-41
+Added Pin To Net: NetName=AB15 Pin=IS61LV25616AL-42
+Added Pin To Net: NetName=AB16 Pin=IS61LV25616AL-43
+Added Pin To Net: NetName=AB17 Pin=IS61LV25616AL-44
+Added Member To Class: ClassName=MT6205B Member=Component IS61LV25616AL
+Added Room: Name=MT6205B

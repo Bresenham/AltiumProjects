@@ -1,0 +1,13 @@
+Added Component: Designator=U?(CH340G)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND Pin=U?-1
+Added Pin To Net: NetName=UART1RX Pin=U?-2
+Added Pin To Net: NetName=UART1TX Pin=U?-3
+Added Pin To Net: NetName=VDD Pin=U?-4
+Added Pin To Net: NetName=USBD+ Pin=U?-5
+Added Pin To Net: NetName=USBD- Pin=U?-6
+Added Pin To Net: NetName=NetC10_1 Pin=U?-7
+Added Pin To Net: NetName=NetC11_1 Pin=U?-8
+Added Pin To Net: NetName=VDD Pin=U?-16
+Added Member To Class: ClassName=MT6205B Member=Component U? CH340G
+Added Room: Name=MT6205B
