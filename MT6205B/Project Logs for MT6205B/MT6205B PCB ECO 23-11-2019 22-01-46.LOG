@@ -1,0 +1,15 @@
+Change Component Comment : Designator=T* Old Comment=Testpoint New Comment=
+Change Component Designator: OldDesignator=T* NewDesignator=T1
+Added Component: Designator=T2(Testpoint)
+Add component. Clean all parameters for all variants
+Added Component: Designator=T3(Testpoint)
+Add component. Clean all parameters for all variants
+Added Component: Designator=T4(Testpoint)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=VCORE Pin=T2-1
+Added Pin To Net: NetName=VDD Pin=T3-1
+Added Pin To Net: NetName=VM Pin=T4-1
+Added Member To Class: ClassName=MT6205B Member=Component T2 
+Added Member To Class: ClassName=MT6205B Member=Component T3 
+Added Member To Class: ClassName=MT6205B Member=Component T4 
+Added Room: Name=MT6205B

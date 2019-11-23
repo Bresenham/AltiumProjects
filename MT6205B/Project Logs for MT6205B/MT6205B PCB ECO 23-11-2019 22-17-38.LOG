@@ -1,0 +1,9 @@
+Added Component: Designator=T5(Testpoint)
+Add component. Clean all parameters for all variants
+Added Component: Designator=T?(Testpoint)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=BOOT_SELECT Pin=T5-1
+Added Pin To Net: NetName=#SYS_RESET Pin=T?-1
+Added Member To Class: ClassName=MT6205B Member=Component T5 
+Added Member To Class: ClassName=MT6205B Member=Component T? 
+Added Room: Name=MT6205B

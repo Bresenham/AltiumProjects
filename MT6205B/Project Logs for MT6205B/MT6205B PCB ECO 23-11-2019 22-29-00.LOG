@@ -1,0 +1,42 @@
+Change Component Designator: OldDesignator=T5 NewDesignator=T10
+Change Component Designator: OldDesignator=T6 NewDesignator=T11
+Change Component Designator: OldDesignator=T7 NewDesignator=T5
+Change Component Designator: OldDesignator=T8 NewDesignator=T6
+Change Component Designator: OldDesignator=T9 NewDesignator=T7
+Change Component Designator: OldDesignator=T10 NewDesignator=T8
+Change Component Designator: OldDesignator=T11 NewDesignator=T9
+Added Component: Designator=T13(Testpoint)
+Add component. Clean all parameters for all variants
+Added Component: Designator=T14(Testpoint)
+Add component. Clean all parameters for all variants
+Added Component: Designator=T15(Testpoint)
+Add component. Clean all parameters for all variants
+Added Component: Designator=T16(Testpoint)
+Add component. Clean all parameters for all variants
+Added Component: Designator=T17(Testpoint)
+Add component. Clean all parameters for all variants
+Added Component: Designator=T18(Testpoint)
+Add component. Clean all parameters for all variants
+Added Component: Designator=T19(Testpoint)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=SRCLKENA Pin=T13-1
+Added Pin To Net: NetName=BBWAKEUP Pin=T14-1
+Added Pin To Net: NetName=RD_ENABLE Pin=T15-1
+Added Pin To Net: NetName=WR_ENABLE Pin=T16-1
+Added Pin To Net: NetName=SYSCLK Pin=T18-1
+Added Pin To Net: NetName=LB_SELECT Pin=T19-1
+Added Pin To Net: NetName=LB_SELECT Pin=U1-P13
+Added Pin To Net: NetName=LB_SELECT Pin=U3-39
+Added Net: Name=LB_SELECT
+Added Pin To Net: NetName=UB_SELECT Pin=T17-1
+Added Pin To Net: NetName=UB_SELECT Pin=U1-N13
+Added Pin To Net: NetName=UB_SELECT Pin=U3-40
+Added Net: Name=UB_SELECT
+Added Member To Class: ClassName=MT6205B Member=Component T13 
+Added Member To Class: ClassName=MT6205B Member=Component T14 
+Added Member To Class: ClassName=MT6205B Member=Component T15 
+Added Member To Class: ClassName=MT6205B Member=Component T16 
+Added Member To Class: ClassName=MT6205B Member=Component T17 
+Added Member To Class: ClassName=MT6205B Member=Component T18 
+Added Member To Class: ClassName=MT6205B Member=Component T19 
+Added Room: Name=MT6205B

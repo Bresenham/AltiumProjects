@@ -1,0 +1,17 @@
+Added Component: Designator=T20(Testpoint)
+Add component. Clean all parameters for all variants
+Added Component: Designator=T21(Testpoint)
+Add component. Clean all parameters for all variants
+Added Component: Designator=T22(Testpoint)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=READ_SIG_DISPLAY Pin=T20-1
+Added Pin To Net: NetName=WRITE_SIG_DISPLAY Pin=T21-1
+Added Pin To Net: NetName=DATA_CMD_SEL_DISPLAY Pin=T22-1
+Added Member To Class: ClassName=MT6205B Member=Component T5 
+Added Member To Class: ClassName=MT6205B Member=Component T6 
+Added Member To Class: ClassName=MT6205B Member=Component T8 
+Added Member To Class: ClassName=MT6205B Member=Component T9 
+Added Member To Class: ClassName=MT6205B Member=Component T20 
+Added Member To Class: ClassName=MT6205B Member=Component T21 
+Added Member To Class: ClassName=MT6205B Member=Component T22 
+Added Room: Name=MT6205B

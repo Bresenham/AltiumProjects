@@ -1,0 +1,26 @@
+Change Component Designator: OldDesignator=T? NewDesignator=T6
+Added Component: Designator=T7(Testpoint)
+Add component. Clean all parameters for all variants
+Added Component: Designator=T8(Testpoint)
+Add component. Clean all parameters for all variants
+Added Component: Designator=T9(Testpoint)
+Add component. Clean all parameters for all variants
+Added Component: Designator=T10(Testpoint)
+Add component. Clean all parameters for all variants
+Added Component: Designator=T11(Testpoint)
+Add component. Clean all parameters for all variants
+Added Component: Designator=T12(Testpoint)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=VRTC Pin=T7-1
+Added Pin To Net: NetName=VA Pin=T8-1
+Added Pin To Net: NetName=VSIM Pin=T9-1
+Added Pin To Net: NetName=CS_FLASH Pin=T10-1
+Added Pin To Net: NetName=CS_SRAM Pin=T11-1
+Added Pin To Net: NetName=CS_DISPLAY Pin=T12-1
+Added Member To Class: ClassName=MT6205B Member=Component T7 
+Added Member To Class: ClassName=MT6205B Member=Component T8 
+Added Member To Class: ClassName=MT6205B Member=Component T9 
+Added Member To Class: ClassName=MT6205B Member=Component T10 
+Added Member To Class: ClassName=MT6205B Member=Component T11 
+Added Member To Class: ClassName=MT6205B Member=Component T12 
+Added Room: Name=MT6205B
