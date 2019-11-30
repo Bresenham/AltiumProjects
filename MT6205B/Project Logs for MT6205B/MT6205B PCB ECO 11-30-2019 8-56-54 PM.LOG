@@ -1,0 +1,11 @@
+Change Component Comment : Designator=C15 Old Comment=100nF New Comment=1µF
+Change Component Comment : Designator=C24 Old Comment=100nF New Comment=1µF
+Change Component Comment : Designator=C27 Old Comment=100nF New Comment=1µF
+Change Component Comment : Designator=C31 Old Comment=100nF New Comment=1µF
+Change Component Comment : Designator=C35 Old Comment=100nF New Comment=1µF
+Change Component Comment : Designator=C39 Old Comment=100nF New Comment=1µF
+Change Component Comment : Designator=C26 Old Comment=100nF New Comment=10nF
+Change Component Comment : Designator=C30 Old Comment=100nF New Comment=10nF
+Change Component Comment : Designator=C34 Old Comment=100nF New Comment=10nF
+Change Component Comment : Designator=C38 Old Comment=100nF New Comment=10nF
+Added Room: Name=MT6205B
