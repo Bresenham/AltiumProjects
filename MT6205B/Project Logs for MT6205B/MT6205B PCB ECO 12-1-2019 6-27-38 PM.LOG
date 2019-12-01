@@ -1,0 +1,9 @@
+Added Pin To Net: NetName=+5V Pin=C41-1
+Added Pin To Net: NetName=GND Pin=C41-2
+Added Pin To Net: NetName=VDD Pin=C42-1
+Added Pin To Net: NetName=GND Pin=C42-2
+Added Pin To Net: NetName=GND Pin=C43-2
+Added Member To Class: ClassName=MT6205B Member=Component C41 100nF
+Added Member To Class: ClassName=MT6205B Member=Component C42 100nF
+Added Member To Class: ClassName=MT6205B Member=Component C43 100nF
+Added Room: Name=MT6205B
