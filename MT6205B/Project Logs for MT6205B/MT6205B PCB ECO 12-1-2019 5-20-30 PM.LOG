@@ -1,0 +1,22 @@
+Removed Pin From Net: NetName=+5V Pin=C41-1
+Removed Pin From Net: NetName=+5V Pin=POWER_IN-1
+Removed Pin From Net: NetName=UART1RX Pin=UART1-1
+Change Component Comment : Designator=C41 Old Comment=10µF New Comment=100nF
+Change Component Comment : Designator=C42 Old Comment=100nF New Comment=10nF
+Added Component: Designator=R12(WRIS-PSMB_0805_H=0.22mm)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Axial Device, Thru-Hole; 2 Leads; 0.4 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "AXIAL-0.4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=UART1RX Pin=R12-2
+Added Pin To Net: NetName=NetC41_1 Pin=C41-1
+Added Pin To Net: NetName=NetC41_1 Pin=POWER_IN-1
+Added Net: Name=NetC41_1
+Added Pin To Net: NetName=NetR12_1 Pin=R12-1
+Added Pin To Net: NetName=NetR12_1 Pin=UART1-1
+Added Net: Name=NetR12_1
+Added Member To Class: ClassName=MT6205B Member=Component R12 25O
+Added Room: Name=MT6205B
