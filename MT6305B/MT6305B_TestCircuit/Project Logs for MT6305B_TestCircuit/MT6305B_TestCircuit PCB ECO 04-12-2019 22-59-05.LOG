@@ -1,0 +1,59 @@
+Added Component: Designator=T1(Testpoint)
+Added Component: Designator=T2(Testpoint)
+Added Component: Designator=T3(Testpoint)
+Added Component: Designator=T4(Testpoint)
+Added Component: Designator=T5(Testpoint)
+Added Component: Designator=T6(Testpoint)
+Added Component: Designator=T7(Testpoint)
+Added Component: Designator=U?(MT6305)
+Added Pin To Net: NetName=+5V Pin=T1-1
+Added Pin To Net: NetName=VCORE Pin=T2-1
+Added Pin To Net: NetName=VDD Pin=T3-1
+Added Pin To Net: NetName=VM Pin=T4-1
+Added Pin To Net: NetName=VRTC Pin=T5-1
+Added Pin To Net: NetName=VA Pin=T6-1
+Added Pin To Net: NetName=VSIM Pin=T7-1
+Added Pin To Net: NetName=+5V Pin=U?-1
+Added Pin To Net: NetName=VDD Pin=U?-3
+Added Pin To Net: NetName=NetR2_2 Pin=U?-4
+Added Pin To Net: NetName=+5V Pin=U?-7
+Added Pin To Net: NetName=VSIM Pin=U?-8
+Added Pin To Net: NetName=VDD Pin=U?-12
+Added Pin To Net: NetName=VDD Pin=U?-13
+Added Pin To Net: NetName=GND Pin=U?-17
+Added Pin To Net: NetName=VM Pin=U?-18
+Added Pin To Net: NetName=+5V Pin=U?-19
+Added Pin To Net: NetName=VDD Pin=U?-20
+Added Pin To Net: NetName=GND Pin=U?-21
+Added Pin To Net: NetName=VRTC Pin=U?-22
+Added Pin To Net: NetName=NetC1_1 Pin=U?-23
+Added Pin To Net: NetName=#SYS_RESET Pin=U?-24
+Added Pin To Net: NetName=VTCXO Pin=U?-25
+Added Pin To Net: NetName=+5V Pin=U?-26
+Added Pin To Net: NetName=VA Pin=U?-27
+Added Pin To Net: NetName=GND Pin=U?-28
+Added Pin To Net: NetName=NetC5_1 Pin=U?-29
+Added Pin To Net: NetName=SRCLKENA Pin=U?-31
+Added Pin To Net: NetName=GND Pin=U?-32
+Added Pin To Net: NetName=BBWAKEUP Pin=U?-33
+Added Pin To Net: NetName=VDD Pin=U?-36
+Added Pin To Net: NetName=GND Pin=U?-37
+Added Pin To Net: NetName=GND Pin=U?-40
+Added Pin To Net: NetName=NetD1_1 Pin=U?-41
+Added Pin To Net: NetName=GND Pin=U?-42
+Added Pin To Net: NetName=VDD Pin=U?-43
+Added Pin To Net: NetName=GND Pin=U?-44
+Added Pin To Net: NetName=VDD Pin=U?-45
+Added Pin To Net: NetName=GND Pin=U?-46
+Added Pin To Net: NetName=+5V Pin=U?-47
+Added Pin To Net: NetName=VCORE Pin=U?-48
+Added Pin To Net: NetName=GND Pin=U?-49
+Added Member To Class: ClassName=MT6305B_TestCircuit Member=Component T1
+Added Member To Class: ClassName=MT6305B_TestCircuit Member=Component T2
+Added Member To Class: ClassName=MT6305B_TestCircuit Member=Component T3
+Added Member To Class: ClassName=MT6305B_TestCircuit Member=Component T4
+Added Member To Class: ClassName=MT6305B_TestCircuit Member=Component T5
+Added Member To Class: ClassName=MT6305B_TestCircuit Member=Component T6
+Added Member To Class: ClassName=MT6305B_TestCircuit Member=Component T7
+Added Member To Class: ClassName=MT6305B_TestCircuit Member=Component U? MT6305B
+Added Room: Name=MT6305B_TestCircuit

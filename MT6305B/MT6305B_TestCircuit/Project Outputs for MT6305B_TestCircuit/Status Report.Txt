@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [MT6305B_TestCircuit.PrjPcb]
+   Generated File[MT6305B_TestCircuit.TXT]
+   Generated File[MT6305B_TestCircuit.LDP]
+   Generated File[MT6305B_TestCircuit.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 23:09:34 On 04/12/2019
