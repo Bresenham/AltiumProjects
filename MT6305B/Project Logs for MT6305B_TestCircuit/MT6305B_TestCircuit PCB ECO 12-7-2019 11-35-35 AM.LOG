@@ -1,0 +1,13 @@
+Change Component Designator: OldDesignator=+5V NewDesignator=T2
+Change Component Designator: OldDesignator= NewDesignator=T1
+Change Component Designator: OldDesignator=BATDET NewDesignator=J1
+Change Component Designator: OldDesignator=VA NewDesignator=T7
+Change Component Designator: OldDesignator=VCORE NewDesignator=T3
+Change Component Designator: OldDesignator=VDD NewDesignator=T4
+Change Component Designator: OldDesignator=VM NewDesignator=T5
+Change Component Designator: OldDesignator=VRTC NewDesignator=T6
+Change Component Designator: OldDesignator=VSIM NewDesignator=T8
+Added Component: Designator=T0(Testpoint)
+Added Pin To Net: NetName=GND Pin=T0-1
+Added Member To Class: ClassName=MT6305B_TestCircuit Member=Component T0
+Added Room: Name=MT6305B_TestCircuit
