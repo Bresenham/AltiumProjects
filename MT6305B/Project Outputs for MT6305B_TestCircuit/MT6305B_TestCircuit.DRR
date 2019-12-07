@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: MT6305B_TestCircuit.PcbDoc   04/12/2019  23:09:34
+NCDrill File Report For: MT6305B_TestCircuit.PcbDoc   12/7/2019  3:11:48 PM
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -8,9 +8,11 @@ ASCII RoundHoles File : MT6305B_TestCircuit.TXT
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
 T1      8mil (0.2mm)                                              Round             25        PTH        0.00inch (0.00mm)
-T2      118mil (3mm)                                              Round             4         PTH        0.00inch (0.00mm)
-T3      28mil (0.7mm)                                             Round             2         NPTH       0.00inch (0.00mm)
+T2      12mil (0.3mm)                                             Round             36        PTH        0.00inch (0.00mm)
+T3      43mil (1.1mm)                                             Round             10        PTH        0.00inch (0.00mm)
+T4      118mil (3mm)                                              Round             4         PTH        0.00inch (0.00mm)
+T5      28mil (0.7mm)                                             Round             2         NPTH       0.00inch (0.00mm)
 ----------------------------------------------------------------------------------------------------------------------------------
-Totals                                                                              31
+Totals                                                                              77
 
 Total Processing Time (hh:mm:ss) : 00:00:00

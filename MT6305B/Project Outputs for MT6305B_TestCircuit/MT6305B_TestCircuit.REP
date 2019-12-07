@@ -2,40 +2,6 @@
 FileName = MT6305B_TestCircuit.GBR
 AutoAperture = True
 *************************************************************
-Generating : Dielectric 1
-      File : MT6305B_TestCircuit.1
-
-    Adding Layer      : Dielectric 1
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Top Pad Master
-      File : MT6305B_TestCircuit.GPT
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D15
-    D16
-    D17
-    D18
-    D19
-    D20
-    D21
-    D22
-    D23
-    D24
-    D39
-    D40
-*************************************************************
-
-*************************************************************
 Generating : Top Overlay
       File : MT6305B_TestCircuit.GTO
 
@@ -48,28 +14,32 @@ Used DCodes :
     D12
     D13
     D14
+    D15
 *************************************************************
 
 *************************************************************
-Generating : Mechanical 15
-      File : MT6305B_TestCircuit.GM15
+Generating : Top Paste
+      File : MT6305B_TestCircuit.GTP
 
-    Adding Layer      : Mechanical 15
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D44
-    D46
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 1
-      File : MT6305B_TestCircuit.GM1
-
-    Adding Layer      : Mechanical 1
-
-
-Used DCodes :
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
 *************************************************************
 
 *************************************************************
@@ -81,16 +51,6 @@ Generating : Keep-Out Layer
 
 Used DCodes :
     D12
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : MT6305B_TestCircuit.GBO
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
 *************************************************************
 
 *************************************************************
@@ -108,57 +68,6 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Bottom Pad Master
-      File : MT6305B_TestCircuit.GPB
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D40
-*************************************************************
-
-*************************************************************
-Generating : Bottom Layer
-      File : MT6305B_TestCircuit.GBL
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D40
-    D41
-    D42
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 13
-      File : MT6305B_TestCircuit.GM13
-
-    Adding Layer      : Mechanical 13
-
-
-Used DCodes :
-    D44
-*************************************************************
-
-*************************************************************
-Generating : Multi-Layer
-      File : MT6305B_TestCircuit.GML
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D39
-    D40
-*************************************************************
-
-*************************************************************
 Generating : Top Layer
       File : MT6305B_TestCircuit.GTL
 
@@ -168,6 +77,7 @@ Generating : Top Layer
 
 
 Used DCodes :
+    D12
     D15
     D16
     D17
@@ -178,74 +88,15 @@ Used DCodes :
     D22
     D23
     D24
-    D39
-    D40
-    D41
-    D42
-*************************************************************
-
-*************************************************************
-Generating : Top Paste
-      File : MT6305B_TestCircuit.GTP
-
-    Adding Layer      : Top Paste
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D15
-    D16
-    D17
-    D18
-    D19
-    D20
-    D21
-    D22
-    D23
-    D24
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 2
-      File : MT6305B_TestCircuit.GM2
-
-    Adding Layer      : Mechanical 2
-
-
-Used DCodes :
-    D44
-    D45
-*************************************************************
-
-*************************************************************
-Generating : Top Solder
-      File : MT6305B_TestCircuit.GTS
-
-    Adding Layer      : Top Solder
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
     D25
     D26
-    D27
-    D28
-    D29
-    D30
-    D31
-    D32
-    D33
-    D34
-    D35
-    D36
-    D37
-    D38
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
 *************************************************************
 
 *************************************************************
@@ -260,9 +111,71 @@ Generating : Bottom Solder
 
 
 Used DCodes :
+    D38
+    D39
+    D40
+    D43
+    D49
+    D51
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : MT6305B_TestCircuit.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : MT6305B_TestCircuit.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D44
+    D45
+    D46
+    D48
+    D49
+    D50
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : MT6305B_TestCircuit.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
     D36
     D37
     D38
+    D39
+    D40
+    D41
+    D42
     D43
 *************************************************************
 

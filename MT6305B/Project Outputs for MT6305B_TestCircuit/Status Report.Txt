@@ -1,12 +1,21 @@
-Output: NC Drill Files
-Type  : NC Drill
-From  : Project [MT6305B_TestCircuit.PrjPcb]
-   Generated File[MT6305B_TestCircuit.TXT]
-   Generated File[MT6305B_TestCircuit.LDP]
-   Generated File[MT6305B_TestCircuit.DRR]
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [MT6305B_TestCircuit.PrjPcb]
+   Generated File[MT6305B_TestCircuit.GTO]
+   Generated File[MT6305B_TestCircuit.GTP]
+   Generated File[MT6305B_TestCircuit.GTS]
+   Generated File[MT6305B_TestCircuit.GTL]
+   Generated File[MT6305B_TestCircuit.GBL]
+   Generated File[MT6305B_TestCircuit.GBS]
+   Generated File[MT6305B_TestCircuit.GBP]
+   Generated File[MT6305B_TestCircuit.GBO]
+   Generated File[MT6305B_TestCircuit.GKO]
+   Generated File[MT6305B_TestCircuit.RUL]
+   Generated File[MT6305B_TestCircuit.EXTREP]
+   Generated File[MT6305B_TestCircuit.REP]
 
 
-Files Generated   : 3
+Files Generated   : 12
 Documents Printed : 0
 
-Finished Output Generation At 23:09:34 On 04/12/2019
+Finished Output Generation At 3:17:32 PM On 12/7/2019

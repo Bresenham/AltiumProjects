@@ -1,5 +1,5 @@
-DRC Rules Export File for PCB: C:\Users\test\Documents\Altium\AltiumProjects\MT6205B\MT6305B_TestCircuit.PcbDoc
+DRC Rules Export File for PCB: \\vmware-host\Shared Folders\P\AltiumProjects\MT6305B\MT6305B_TestCircuit.PcbDoc
 RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
-RuleKind=Width|RuleName=Width|Scope=Board|Minimum=10.00
-RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=10.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=5.00
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=5.00
 RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
