@@ -1,0 +1,6 @@
+Added Pin To Net: NetName=GND Pin=R3-1
+Added Pin To Net: NetName=BBWAKEUP Pin=R3-2
+Added Pin To Net: NetName=GND Pin=R4-2
+Added Member To Class: ClassName=MT6305B_TestCircuit Member=Component R3 100KO
+Added Member To Class: ClassName=MT6305B_TestCircuit Member=Component R4 10KO
+Added Room: Name=MT6305B_TestCircuit

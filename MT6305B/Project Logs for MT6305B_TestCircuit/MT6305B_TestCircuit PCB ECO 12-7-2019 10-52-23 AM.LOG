@@ -1,0 +1,3 @@
+Added Component: Designator=T8(Testpoint)
+Added Pin To Net: NetName=BATDET Pin=T8-1
+Added Member To Class: ClassName=MT6305B_TestCircuit Member=Component T8
