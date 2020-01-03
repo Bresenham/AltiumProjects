@@ -1,0 +1,3 @@
+Added Component: Designator=IC*(GD25Q32BxIGx)
+Added Member To Class: ClassName=ESP8266_Impedance Member=Component IC* GD25Q32BxIGx
+Added Room: Name=ESP8266_Impedance
