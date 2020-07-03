@@ -1,0 +1,4 @@
+Change Component Comment : Designator=U2 Old Comment=ME6209 New Comment=ME6209A28M3G
+Added Component: Designator=U4(DS18B20)
+Added Member To Class: ClassName=CH340G_Test Member=Component U4 DS18B20
+Added Room: Name=CH340G_Test

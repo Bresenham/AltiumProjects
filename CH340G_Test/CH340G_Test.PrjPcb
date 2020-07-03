@@ -72,7 +72,7 @@ GenerateClassCluster=0
 DocumentUniqueId=TNPEIKKH
 
 [Document3]
-DocumentPath=..\..\..\..\..\test\Documents\Altium\Library\ME6209.SchLib
+DocumentPath=..\..\Library\ME6209.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -89,7 +89,7 @@ GenerateClassCluster=0
 DocumentUniqueId=KRCUKSLA
 
 [Document4]
-DocumentPath=..\..\..\..\..\test\Documents\Altium\Library\ME6209.PcbLib
+DocumentPath=..\..\Library\ME6209.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -106,7 +106,7 @@ GenerateClassCluster=0
 DocumentUniqueId=OMKXCTSD
 
 [Document5]
-DocumentPath=..\..\..\..\..\test\Documents\Altium\Library\STM8L051F3.SchLib
+DocumentPath=..\..\Library\STM8L051F3.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -123,7 +123,7 @@ GenerateClassCluster=0
 DocumentUniqueId=SMPBFASG
 
 [Document6]
-DocumentPath=..\..\..\..\..\test\Documents\Altium\Library\STM8L051F3.PcbLib
+DocumentPath=..\..\Library\STM8L051F3.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -138,6 +138,23 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=UNJNWTEI
+
+[Document7]
+DocumentPath=..\..\Library\DS18B20.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=HMTRDMDA
 
 [Configuration1]
 Name=Sources
