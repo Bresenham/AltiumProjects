@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=NRST Pin=C8-2
+Removed Pin From Net: NetName=NetC8_1 Pin=S1-1
+Removed Pin From Net: NetName=GND Pin=S1-3
+Added Pin To Net: NetName=GND Pin=C8-2
+Added Pin To Net: NetName=NRST Pin=S1-1
+Added Pin To Net: NetName=NetC8_1 Pin=S1-3
+Added Member To Class: ClassName=CH340G_Test Member=Component R2 1k?
+Added Room: Name=CH340G_Test
