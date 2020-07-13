@@ -72,7 +72,7 @@ GenerateClassCluster=0
 DocumentUniqueId=XLQFKHAJ
 
 [Document3]
-DocumentPath=MachXO2_1200HC_6SG32C.SchLib
+DocumentPath=..\..\Library\JW5033S.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -86,10 +86,10 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=QTLVKUWL
+DocumentUniqueId=YXUZTUYI
 
 [Document4]
-DocumentPath=MachXO2_1200HC_6SG32C.PcbLib
+DocumentPath=..\..\Library\JW5033S.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -103,7 +103,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=FOXUGPMM
+DocumentUniqueId=TCUDLSDH
 
 [Configuration1]
 Name=Sources
