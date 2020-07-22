@@ -190,10 +190,6 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=CCPRIHIE
 
-[GeneratedDocument1]
-DocumentPath=Project Outputs for MachXO2FPGA\Design Rule Check - MachXO2FPGA.html
-DItemRevisionGUID=
-
 [Configuration1]
 Name=Sources
 ParameterCount=0
