@@ -191,78 +191,82 @@ GenerateClassCluster=0
 DocumentUniqueId=CCPRIHIE
 
 [GeneratedDocument1]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.DRR
+DocumentPath=Project Outputs for MachXO2FPGA\Design Rule Check - MachXO2FPGA.html
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.EXTREP
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.G1
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.G2
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.G1
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GBL
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.G2
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GBO
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GBP
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GBS
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GKO
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GPB
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GKO
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GPT
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GPB
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GTL
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GPT
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GTO
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GTP
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GTS
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.LDP
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.REP
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.RUL
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.REP
 DItemRevisionGUID=
 
 [GeneratedDocument19]
+DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument20]
 DocumentPath=Project Outputs for MachXO2FPGA\MachXO2FPGA.TXT
 DItemRevisionGUID=
 
