@@ -59,7 +59,6 @@ void led_off() {
 
 void TIM2_IRQHandler() {
 	TIM2->SR &= ~TIM_SR_UIF;
-//	GPIOC->ODR ^= GPIO_ODR_ODR13;
 }
 
 int main(void) {
