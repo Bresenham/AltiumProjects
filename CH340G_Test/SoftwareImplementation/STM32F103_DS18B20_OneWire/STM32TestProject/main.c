@@ -71,6 +71,8 @@ int main(void) {
 	
 	initDS18B20(&ds18b20);
 	
+	const uint64_t ds18b20_device_id = ds18b20.readDeviceID();
+		
 	while(true) {
 		wait(60);
 		GPIOC->ODR ^= GPIO_ODR_ODR13;
