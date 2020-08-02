@@ -6,4 +6,9 @@ MachXO2FPGA/__Previews/*
 MachXO2FPGA/Project Outputs for MachXO2FPGA/
 CH340G_Test/Project Logs for CH340G_Test/
 CH340G_Test/History/
-
+CH340G_Test/SoftwareImplementation/STM32F103_DS18B20_OneWire/STM32TestProject/RTE/
+CH340G_Test/SoftwareImplementation/STM32F103_DS18B20_OneWire/STM32TestProject/Objects/
+CH340G_Test/SoftwareImplementation/STM32F103_DS18B20_OneWire/STM32TestProject/DebugConfig/
+CH340G_Test/SoftwareImplementation/STM32F103_DS18B20_OneWire/STM32TestProject/outfile.lst
+CH340G_Test/SoftwareImplementation/STM32F103_DS18B20_OneWire/STM32TestProject/Listings/
+CH340G_Test/SoftwareImplementation/STM32F103_DS18B20_OneWire/STM32TestProject/ProjectFile_Sequences*
