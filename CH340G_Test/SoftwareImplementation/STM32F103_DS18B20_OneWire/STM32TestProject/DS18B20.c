@@ -6,15 +6,21 @@
 #define MATCH_ROM_CMD	0x55
 
 void setReadMode() {
-	/* Set Input with Pull-Up/Pull-Down */
-	GPIOC->CRH |= GPIO_CRH_CNF14_1;
-	GPIOC->CRH &= ~GPIO_CRH_CNF14_0;
+	/* Set Input Mode */
+	GPIOC->CRH &= ~( GPIO_CRH_MODE14_0 | GPIO_CRH_MODE14_1 );
 	
 	/* Set Pull-Up According to Table 20 */
 	GPIOC->ODR |= GPIO_ODR_ODR14;
+	
+	/* Set Input with Pull-Up/Pull-Down */
+	GPIOC->CRH |= GPIO_CRH_CNF14_1;
+	GPIOC->CRH &= ~GPIO_CRH_CNF14_0;
 }
 
 void setWriteMode() {
+	/* Set Pin High */
+	GPIOC->ODR |= GPIO_ODR_ODR14;
+	
 	/* Set Open-Drain Output */
 	GPIOC->CRH |= GPIO_CRH_CNF14_0;
 	GPIOC->CRH &= ~GPIO_CRH_CNF14_1;
@@ -99,7 +105,7 @@ bool startCommunication() {
 	wait(60);
 	
 	/* 1-Wire Should Definitely Be Low Now */
-	return GPIOC->IDR & GPIO_IDR_IDR14;
+	return !( GPIOC->IDR & GPIO_IDR_IDR14 );
 }
 
 void sendByte(const uint8_t byte) {
