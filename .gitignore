@@ -12,3 +12,9 @@ CH340G_Test/SoftwareImplementation/STM32F103_DS18B20_OneWire/STM32TestProject/De
 CH340G_Test/SoftwareImplementation/STM32F103_DS18B20_OneWire/STM32TestProject/outfile.lst
 CH340G_Test/SoftwareImplementation/STM32F103_DS18B20_OneWire/STM32TestProject/Listings/
 CH340G_Test/SoftwareImplementation/STM32F103_DS18B20_OneWire/STM32TestProject/ProjectFile_Sequences*
+Spartan3_TestBoard/EFM8BB10F2G/main.OBJ
+Spartan3_TestBoard/EFM8BB10F2G/main.#1
+Spartan3_TestBoard/EFM8BB10F2G/main.LST
+Spartan3_TestBoard/EFM8BB10F2G/tmp.out
+**/History/
+**/__Previews/

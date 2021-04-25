@@ -1,0 +1,1 @@
+"D:\Programs\Altium\AltiumProjects\Spartan3_TestBoard\EFM8BB10F2G\main.obj"  TO "D:\Programs\Altium\AltiumProjects\Spartan3_TestBoard\EFM8BB10F2G\Project" RS(256) PL(68) PW(78) 
