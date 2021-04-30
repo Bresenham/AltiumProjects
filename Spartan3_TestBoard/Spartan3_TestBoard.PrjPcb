@@ -109,7 +109,7 @@ GenerateClassCluster=0
 DocumentUniqueId=DSATARKY
 
 [Document5]
-DocumentPath=..\..\Library\Spartan 3AN FTG256 Fine-Pitch Thin BGA Package.PcbLib
+DocumentPath=Spartan3_TestBoard_2.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -123,24 +123,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=TJGGBIQC
-
-[Document6]
-DocumentPath=..\..\Library\XC3S200AN-FTG256.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=AJNCYKIA
+DocumentUniqueId=UICMDJQS
 
 [Configuration1]
 Name=Sources
@@ -261,7 +244,7 @@ OutputDefault20=0
 [OutputGroup2]
 Name=Simulator Outputs
 Description=
-TargetPrinter=Brother MFC-9332CDW Printer
+TargetPrinter=Brother MFC-9332CDW Printer (Copy 1)
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 
 [OutputGroup3]
