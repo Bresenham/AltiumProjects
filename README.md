@@ -1,5 +1,18 @@
 # AltiumProjects
 
+## Spartan3_TestBoard
+
+### Purpose
+- Validate functionality of flashing FPGA via Xilinx programming tool and software environment (ISE Design Suite)
+- Validate functionality of CH340G USB/Serial converter
+- Validate functionality of SPI 32Mbyte flash IC
+- Validate 1.2V switching regulator circuit
+
+### Status
+- 1.2V switching regulator works
+- FPGA successfully works with simple blinking demo code
+- CH340G crystal is not powering up correctly, USB connection not working
+
 ## CH340G_Test
 
 ### Purpose
