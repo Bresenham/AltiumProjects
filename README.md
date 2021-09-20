@@ -11,7 +11,7 @@
 ### Status
 - 1.2V switching regulator works
 - FPGA successfully works with simple blinking demo code
-- CH340G crystal is not powering up correctly, USB connection not working
+- <s>CH340G crystal is not powering up correctly, USB connection not working</s> => accidentally mixed up USB A Female & USB A Male pinout
 
 ## CH340G_Test
 
