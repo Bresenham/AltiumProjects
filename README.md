@@ -2,6 +2,8 @@
 
 ## Spartan3_TestBoard
 
+<img src="Spartan3_TestBoard/pcb_with_led_counter_demo.jpg" width="640">
+
 ### Purpose
 - Validate functionality of flashing FPGA via Xilinx programming tool and software environment (ISE Design Suite)
 - Validate functionality of CH340G USB/Serial converter
