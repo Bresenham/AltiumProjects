@@ -4,6 +4,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+uint8_t scaler = 0;
+
 void SiLabs_Startup (void) {
   WDTCN = 0xDE;
   WDTCN = 0xAD;
@@ -14,7 +16,11 @@ volatile bool timer0_irq = false;
 
 SI_INTERRUPT (TIMER0_ISR, TIMER0_IRQn) {
 
-  timer0_irq = true;
+  scaler += 1;
+  if( scaler == 8 ) {
+      timer0_irq = true;
+      scaler = 0;
+  }
 
 }
 
@@ -32,7 +38,7 @@ int main (void) {
   P1 = P1_B1__LOW;
 
   // Configure Timer 0 to toggle P1.1 every second
-  CKCON0 = CKCON0_T0M__SYSCLK | CKCON0_SCA__SYSCLK_DIV_48;
+  CKCON0 = CKCON0_T0M__PRESCALE | CKCON0_SCA__SYSCLK_DIV_48;
   TMOD = TMOD_GATE0__DISABLED | TMOD_CT0__TIMER | TMOD_T0M__MODE1;
   TL0 = 0;
   TH0 = 0;
