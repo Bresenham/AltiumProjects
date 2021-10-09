@@ -4,16 +4,19 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-uint8_t scaler = 0;
+#define SYSCLK                  24500000UL
+#define SPI0CLK                 1000000UL
+#define UART_BAUD_RATE          19200UL
+
+#define SPI0CKR_VAL             ( ( SYSCLK / (2 * SPI0CLK) ) - 0.5 )
+#define UART_TIMER1_RELOAD_VAL  ( 0xFF - ( SYSCLK / (2 * 48 * UART_BAUD_RATE) ) )
 
 void SiLabs_Startup (void) {
   WDTCN = 0xDE;
   WDTCN = 0xAD;
 }
 
-uint8_t uart_msg_idx = 0;
-const uint8_t uart_msg[] = "HELLO WORLD\r\n";
-
+volatile uint8_t scaler = 0;
 volatile bool timer0_irq = false;
 
 SI_INTERRUPT (TIMER0_ISR, TIMER0_IRQn) {
@@ -27,11 +30,24 @@ SI_INTERRUPT (TIMER0_ISR, TIMER0_IRQn) {
 }
 
 int main (void) {
+
+  uint8_t device_id = 0x00;
+  volatile uint8_t tim = UART_TIMER1_RELOAD_VAL;
+
   // Clock configuration
   CLKSEL = CLKSEL_CLKDIV__SYSCLK_DIV_1 | CLKSEL_CLKSL__HFOSC;
 
   // Enable UART pins TX=0.4, RX=0.5
   XBR0 = XBR0_URT0E__ENABLED;
+
+  // Enable SPI0
+  XBR0 |= XBR0_SPI0E__ENABLED;
+
+  // Configure SPI0
+  SPI0CFG = SPI0CFG_MSTEN__MASTER_ENABLED | SPI0CFG_CKPHA__DATA_CENTERED_FIRST | SPI0CFG_CKPOL__IDLE_LOW;
+  SPI0CN0 = SPI0CN0_NSSMD__4_WIRE_MASTER_NSS_HIGH;
+  SPI0CKR = SPI0CKR_VAL;
+  SPI0CN0 |= SPI0CN0_SPIEN__ENABLED;
 
   // Enable Crossbar 2
   XBR2 = XBR2_XBARE__ENABLED;
@@ -54,7 +70,7 @@ int main (void) {
   TH0 = 0;
 
   TL1 = 0;
-  TH1 = 255 - 27; // (24.5MHz / 48) / 27 ~ 19200
+  TH1 = UART_TIMER1_RELOAD_VAL;
 
   // Enable interrupt
   IE = IE_ET0__ENABLED | IE_EA__ENABLED;
@@ -62,11 +78,37 @@ int main (void) {
   // Start Timer0 & Timer 1
   TCON = TCON_TR0__RUN | TCON_TR1__RUN;
 
+
+  SPI0DAT = 0xAB;
+  while( (SPI0CN0 & SPI0CN0_SPIF__BMASK) == 0 ) { ; }
+  SPI0CN0 &= ~(SPI0CN0_SPIF__BMASK);
+  device_id = SPI0DAT;
+
+  SPI0DAT = 0x00;
+  while( (SPI0CN0 & SPI0CN0_SPIF__BMASK) == 0 ) { ; }
+  SPI0CN0 &= ~(SPI0CN0_SPIF__BMASK);
+  device_id = SPI0DAT;
+
+  SPI0DAT = 0x00;
+  while( (SPI0CN0 & SPI0CN0_SPIF__BMASK) == 0 ) { ; }
+  SPI0CN0 &= ~(SPI0CN0_SPIF__BMASK);
+  device_id = SPI0DAT;
+
+  SPI0DAT = 0x00;
+  while( (SPI0CN0 & SPI0CN0_SPIF__BMASK) == 0 ) { ; }
+  SPI0CN0 &= ~(SPI0CN0_SPIF__BMASK);
+  device_id = SPI0DAT;
+
+  SPI0DAT = 0x00;
+  while( (SPI0CN0 & SPI0CN0_SPIF__BMASK) == 0 ) { ; }
+  SPI0CN0 &= ~(SPI0CN0_SPIF__BMASK);
+  device_id = SPI0DAT;
+
+
   while (1) {
       if( timer0_irq ) {
           P1_B1 ^= 1;
-          SBUF0 = uart_msg[uart_msg_idx % sizeof(uart_msg)];
-          uart_msg_idx = ( uart_msg_idx + 1 ) % ( sizeof(uart_msg) - 1 );
+          SBUF0 = device_id;
           timer0_irq = false;
       }
   }
