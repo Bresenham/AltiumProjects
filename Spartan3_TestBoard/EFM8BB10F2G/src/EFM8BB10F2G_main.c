@@ -11,7 +11,7 @@
 #define SPI0CKR_VAL             ( ( SYSCLK / (2 * SPI0CLK) ) - 0.5 )
 #define UART_TIMER1_RELOAD_VAL  ( 0xFF - ( SYSCLK / (2 * 48 * UART_BAUD_RATE) ) )
 
-const uint8_t CMD_RELEASE_PW_DOWN_ID[] = { 0xAB, 0xCD, 0xE0, 0x00, 0x00 };
+const uint8_t CMD_RELEASE_PW_DOWN_ID[] = { 0xAB, 0x90, 0x92, 0x94, 0x00 };
 
 void SiLabs_Startup (void) {
   WDTCN = 0xDE;
@@ -60,19 +60,16 @@ SI_INTERRUPT (SPI_ISR, SPI0_IRQn) {
 
   if( SPI0CN0 & SPI0CN0_SPIF__BMASK ) {
 
-      SPI0CN0 &= ~SPI0CN0_NSSMD__FMASK;
-      SPI0CN0 |= SPI0CN0_NSSMD__4_WIRE_MASTER_NSS_HIGH;
-
       spi_transfer.data_recv[spi_transfer.data_idx] = SPI0DAT;
 
       SPI0CN0 &= ~SPI0CN0_SPIF__BMASK;
 
       spi_transfer.data_idx += 1;
       if(spi_transfer.data_idx < spi_transfer.data_len) {
-          SPI0CN0 &= ~SPI0CN0_NSSMD__FMASK;
-          SPI0CN0 |= SPI0CN0_NSSMD__4_WIRE_MASTER_NSS_LOW;
           SPI0DAT = spi_transfer.data_transmit[spi_transfer.data_idx];
       } else {
+          SPI0CN0 &= ~SPI0CN0_NSSMD__FMASK;
+          SPI0CN0 |= SPI0CN0_NSSMD__4_WIRE_MASTER_NSS_HIGH;
           spi_transfer.on_transfer_completed(&spi_transfer);
       }
   }
