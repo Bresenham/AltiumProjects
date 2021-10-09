@@ -2,7 +2,12 @@
 
 ## Spartan3_TestBoard
 
-<img src="Spartan3_TestBoard/pcb_with_led_counter_demo.jpg" width="640">
+**PCB v1.0**</br>
+<img src="Spartan3_TestBoard/Images/pcb_with_led_counter_demo.jpg" width="640">
+
+**EFM8BB1 SPI Transmit Recording**</br>
+<img src="Spartan3_TestBoard/Images/efm8bb1_spi_transmit_waveform.jpg" width="640">
+
 
 ### Purpose
 - Validate functionality of flashing FPGA via Xilinx programming tool and software environment (ISE Design Suite)
