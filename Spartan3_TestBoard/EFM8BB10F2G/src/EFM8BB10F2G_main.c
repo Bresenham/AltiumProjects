@@ -11,14 +11,28 @@
 #define SPI0CKR_VAL             ( ( SYSCLK / (2 * SPI0CLK) ) - 0.5 )
 #define UART_TIMER1_RELOAD_VAL  ( 0xFF - ( SYSCLK / (2 * 48 * UART_BAUD_RATE) ) )
 
+const uint8_t CMD_RELEASE_PW_DOWN_ID[] = { 0xAB, 0xCD, 0xE0, 0x00, 0x00 };
+
 void SiLabs_Startup (void) {
   WDTCN = 0xDE;
   WDTCN = 0xAD;
 }
 
+struct TRANSFER {
+  uint8_t *data_transmit;
+  uint8_t *data_recv;
+  uint8_t data_len;
+  uint8_t data_idx;
+
+  void (*on_transfer_completed)(struct TRANSFER *this);
+};
+
+volatile struct TRANSFER uart_transfer;
+volatile struct TRANSFER spi_transfer;
+
+
 volatile uint8_t scaler = 0;
 volatile bool timer0_irq = false;
-
 SI_INTERRUPT (TIMER0_ISR, TIMER0_IRQn) {
 
   scaler += 1;
@@ -26,36 +40,98 @@ SI_INTERRUPT (TIMER0_ISR, TIMER0_IRQn) {
       timer0_irq = true;
       scaler = 0;
   }
+}
 
+SI_INTERRUPT (UART_ISR, UART0_IRQn) {
+
+  /* Transmit completed interrupt */
+  if( SCON0 & SCON0_TI__BMASK ) {
+
+      SCON0 &= ~SCON0_TI__BMASK;
+
+      uart_transfer.data_idx += 1;
+      if(uart_transfer.data_idx < uart_transfer.data_len) {
+          SBUF0 = uart_transfer.data_transmit[uart_transfer.data_idx];
+      }
+  }
+}
+
+SI_INTERRUPT (SPI_ISR, SPI0_IRQn) {
+
+  if( SPI0CN0 & SPI0CN0_SPIF__BMASK ) {
+
+      SPI0CN0 &= ~SPI0CN0_NSSMD__FMASK;
+      SPI0CN0 |= SPI0CN0_NSSMD__4_WIRE_MASTER_NSS_HIGH;
+
+      spi_transfer.data_recv[spi_transfer.data_idx] = SPI0DAT;
+
+      SPI0CN0 &= ~SPI0CN0_SPIF__BMASK;
+
+      spi_transfer.data_idx += 1;
+      if(spi_transfer.data_idx < spi_transfer.data_len) {
+          SPI0CN0 &= ~SPI0CN0_NSSMD__FMASK;
+          SPI0CN0 |= SPI0CN0_NSSMD__4_WIRE_MASTER_NSS_LOW;
+          SPI0DAT = spi_transfer.data_transmit[spi_transfer.data_idx];
+      } else {
+          spi_transfer.on_transfer_completed(&spi_transfer);
+      }
+  }
+}
+
+void start_spi_transfer(uint8_t *dat, uint8_t len, uint8_t *received) {
+
+  spi_transfer.data_transmit = dat;
+  spi_transfer.data_recv = received;
+  spi_transfer.data_len = len;
+  spi_transfer.data_idx = 0;
+
+  SPI0CN0 &= ~SPI0CN0_NSSMD__FMASK;
+  SPI0CN0 |= SPI0CN0_NSSMD__4_WIRE_MASTER_NSS_LOW;
+  SPI0DAT = dat[0];
+}
+
+void start_uart_transfer(uint8_t *dat, uint8_t len) {
+
+  uart_transfer.data_transmit = dat;
+  uart_transfer.data_len = len;
+  uart_transfer.data_idx = 0;
+
+  SBUF0 = dat[0];
+}
+
+void on_spi_transfer_completed(struct TRANSFER *spi_transfer) {
+  start_uart_transfer(spi_transfer->data_recv, spi_transfer->data_len);
 }
 
 int main (void) {
 
-  uint8_t device_id = 0x00;
-  volatile uint8_t tim = UART_TIMER1_RELOAD_VAL;
+  uint8_t recv[10];
+  spi_transfer.on_transfer_completed = on_spi_transfer_completed;
 
   // Clock configuration
   CLKSEL = CLKSEL_CLKDIV__SYSCLK_DIV_1 | CLKSEL_CLKSL__HFOSC;
 
-  // Enable UART pins TX=0.4, RX=0.5
-  XBR0 = XBR0_URT0E__ENABLED;
-
-  // Enable SPI0
-  XBR0 |= XBR0_SPI0E__ENABLED;
-
-  // Configure SPI0
-  SPI0CFG = SPI0CFG_MSTEN__MASTER_ENABLED | SPI0CFG_CKPHA__DATA_CENTERED_FIRST | SPI0CFG_CKPOL__IDLE_LOW;
-  SPI0CN0 = SPI0CN0_NSSMD__4_WIRE_MASTER_NSS_HIGH;
-  SPI0CKR = SPI0CKR_VAL;
-  SPI0CN0 |= SPI0CN0_SPIEN__ENABLED;
+  // Crossbar peripheral configuration
+  XBR0 = XBR0_URT0E__ENABLED | XBR0_SPI0E__ENABLED | XBR0_SMB0E__DISABLED
+      | XBR0_CP0E__DISABLED | XBR0_CP0AE__DISABLED | XBR0_CP1E__DISABLED
+      | XBR0_CP1AE__DISABLED | XBR0_SYSCKE__DISABLED;
 
   // Enable Crossbar 2
   XBR2 = XBR2_XBARE__ENABLED;
 
-  // Configure UART pins
+  // Configure SPI0 pins
   PRTDRV = PRTDRV_P0DRV__HIGH_DRIVE | PRTDRV_P1DRV__HIGH_DRIVE;
-  P0MDIN = P0MDIN_B4__DIGITAL | P0MDIN_B5__DIGITAL;
-  P0MDOUT = P0MDOUT_B4__PUSH_PULL | P0MDOUT_B5__PUSH_PULL;
+  P0MDIN = P0MDIN_B0__DIGITAL | P0MDIN_B1__DIGITAL | P0MDIN_B2__DIGITAL | P0MDIN_B3__DIGITAL;
+  P0MDOUT = P0MDOUT_B0__PUSH_PULL | P0MDOUT_B1__OPEN_DRAIN | P0MDOUT_B2__PUSH_PULL | P0MDOUT_B3__PUSH_PULL;
+
+  // Configure SPI0
+  SPI0CFG |= SPI0CFG_MSTEN__MASTER_ENABLED;
+  SPI0CKR = SPI0CKR_VAL;
+  SPI0CN0 |= SPI0CN0_SPIEN__ENABLED | SPI0CN0_NSSMD__4_WIRE_MASTER_NSS_HIGH;
+
+  // Configure UART pins
+  P0MDIN |= P0MDIN_B4__DIGITAL | P0MDIN_B5__DIGITAL;
+  P0MDOUT |= P0MDOUT_B4__PUSH_PULL | P0MDOUT_B5__PUSH_PULL;
 
   // Configure P1.1 as digital push-pull output
   P1MDIN = P1MDIN_B1__DIGITAL;
@@ -69,46 +145,23 @@ int main (void) {
   TL0 = 0;
   TH0 = 0;
 
+  // UART Timer
   TL1 = 0;
   TH1 = UART_TIMER1_RELOAD_VAL;
 
-  // Enable interrupt
-  IE = IE_ET0__ENABLED | IE_EA__ENABLED;
+  // Enable Timer 0, UART and SPI0 interrupt
+  IE = IE_ESPI0__ENABLED | IE_ET0__ENABLED | IE_ES0__ENABLED;
+
+  // Enable all interrupts
+  IE |= IE_EA__ENABLED;
 
   // Start Timer0 & Timer 1
   TCON = TCON_TR0__RUN | TCON_TR1__RUN;
 
-
-  SPI0DAT = 0xAB;
-  while( (SPI0CN0 & SPI0CN0_SPIF__BMASK) == 0 ) { ; }
-  SPI0CN0 &= ~(SPI0CN0_SPIF__BMASK);
-  device_id = SPI0DAT;
-
-  SPI0DAT = 0x00;
-  while( (SPI0CN0 & SPI0CN0_SPIF__BMASK) == 0 ) { ; }
-  SPI0CN0 &= ~(SPI0CN0_SPIF__BMASK);
-  device_id = SPI0DAT;
-
-  SPI0DAT = 0x00;
-  while( (SPI0CN0 & SPI0CN0_SPIF__BMASK) == 0 ) { ; }
-  SPI0CN0 &= ~(SPI0CN0_SPIF__BMASK);
-  device_id = SPI0DAT;
-
-  SPI0DAT = 0x00;
-  while( (SPI0CN0 & SPI0CN0_SPIF__BMASK) == 0 ) { ; }
-  SPI0CN0 &= ~(SPI0CN0_SPIF__BMASK);
-  device_id = SPI0DAT;
-
-  SPI0DAT = 0x00;
-  while( (SPI0CN0 & SPI0CN0_SPIF__BMASK) == 0 ) { ; }
-  SPI0CN0 &= ~(SPI0CN0_SPIF__BMASK);
-  device_id = SPI0DAT;
-
-
   while (1) {
       if( timer0_irq ) {
           P1_B1 ^= 1;
-          SBUF0 = device_id;
+          start_spi_transfer(CMD_RELEASE_PW_DOWN_ID, sizeof(CMD_RELEASE_PW_DOWN_ID), recv);
           timer0_irq = false;
       }
   }
