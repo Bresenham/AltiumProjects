@@ -16,6 +16,7 @@
 - <s>CH340G crystal is not powering up correctly, USB connection not working</s> => accidentally mixed up USB A Female & USB A Male pinout
 - EFM8BB1 programming via C2 interface and Simplicity Studio successfull
 - EFM8BB1 UART transmission via CH340G works
+- EFM8BB1 SPI transmission to Winbond Flash IC works
 
 ## CH340G_Test
 
