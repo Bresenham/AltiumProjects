@@ -45,9 +45,7 @@ void spi_transmit_receive_handle_irq(){
 
           trans_recv->data_recv[trans_recv->data_idx] = SPI0DAT;
 
-          trans_recv->data_idx++;
-
-          SPI0CN0 &= ~SPI0CN0_SPIF__BMASK;
+          trans_recv->data_idx += 1;
 
           SPI0DAT = trans_recv->data_transmit[trans_recv->data_idx];
 

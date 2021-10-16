@@ -16,6 +16,7 @@ volatile struct TRANSFER *receive;
 volatile struct TRANSFER *transmit;
 
 void uart_transmit_start(struct TRANSFER *trans) {
+
   transmit = trans;
   SBUF0 = transmit->data_transmit[transmit->data_idx++];
 }

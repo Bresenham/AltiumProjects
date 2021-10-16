@@ -6,6 +6,7 @@
 
 #include "SPI/SPI.h"
 #include "UART/UART.h"
+#include "W25Q32JV/W25Q32JV.h"
 
 #define SYSCLK                  24500000UL
 #define SPI0CLK                 1000000UL
@@ -15,17 +16,12 @@
 #define UART_TIMER1_RELOAD_VAL  ( 0xFF - ( SYSCLK / (2 * SYSCLK_DIV * UART_BAUD_RATE) ) )
 #define SPI0CKR_VAL             ( ( SYSCLK / (2 * SPI0CLK) ) - 0.5 )
 
-
-const uint8_t CMD_RELEASE_PW_DOWN_ID[] = { 0x9F, 0x00, 0x00, 0x00 };
+volatile struct TRANSFER transfer;
 
 void SiLabs_Startup (void) {
   WDTCN = 0xDE;
   WDTCN = 0xAD;
 }
-
-
-volatile struct TRANSFER spi_transfer;
-
 
 volatile uint8_t scaler = 0;
 volatile bool timer0_irq = false;
@@ -60,15 +56,19 @@ void uart_on_receive_finished_callback(struct TRANSFER *recv) {
 SI_INTERRUPT (SPI_ISR, SPI0_IRQn) {
 
   if( SPI0CN0 & SPI0CN0_SPIF__BMASK ) {
+
+      SPI0CN0 &= ~SPI0CN0_SPIF__BMASK;
+
       spi_transmit_receive_handle_irq();
+
   }
 }
 
-void spi_on_transmit_receive_finished_callback(struct TRANSFER *transfer) {
+void spi_on_transmit_receive_finished_callback(struct TRANSFER *trans) {
 
-  transfer->data_transmit = transfer->data_recv;
-  transfer->data_idx = 0;
-  uart_transmit_start(transfer);
+  trans->data_transmit = trans->data_recv;
+  trans->data_idx = 0;
+  uart_transmit_start(trans);
 }
 
 
@@ -76,10 +76,7 @@ int main (void) {
 
   uint8_t recv[10];
 
-  spi_transfer.data_idx = 0;
-  spi_transfer.data_len = sizeof(CMD_RELEASE_PW_DOWN_ID);
-  spi_transfer.data_recv = recv;
-  spi_transfer.data_transmit = CMD_RELEASE_PW_DOWN_ID;
+  transfer.data_recv = recv;
 
   // Clock configuration
   CLKSEL = CLKSEL_CLKDIV__SYSCLK_DIV_1 | CLKSEL_CLKSL__HFOSC;
@@ -134,7 +131,9 @@ int main (void) {
   while (1) {
       if( timer0_irq ) {
           P1_B1 ^= 1;
-          spi_transmit_receive_start(&spi_transfer);
+
+          w25q32jv_get_device_id(&transfer);
+
           timer0_irq = false;
       }
   }
