@@ -4,30 +4,25 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#include "UART/UART.h"
+
 #define SYSCLK                  24500000UL
 #define SPI0CLK                 1000000UL
 #define UART_BAUD_RATE          19200UL
+#define SYSCLK_DIV              48UL
 
+#define UART_TIMER1_RELOAD_VAL  ( 0xFF - ( SYSCLK / (2 * SYSCLK_DIV * UART_BAUD_RATE) ) )
 #define SPI0CKR_VAL             ( ( SYSCLK / (2 * SPI0CLK) ) - 0.5 )
-#define UART_TIMER1_RELOAD_VAL  ( 0xFF - ( SYSCLK / (2 * 48 * UART_BAUD_RATE) ) )
 
-const uint8_t CMD_RELEASE_PW_DOWN_ID[] = { 0xAB, 0x90, 0x92, 0x94, 0x00 };
+
+const uint8_t CMD_RELEASE_PW_DOWN_ID[] = { 0x9F, 0x00, 0x00, 0x00 };
 
 void SiLabs_Startup (void) {
   WDTCN = 0xDE;
   WDTCN = 0xAD;
 }
 
-struct TRANSFER {
-  uint8_t *data_transmit;
-  uint8_t *data_recv;
-  uint8_t data_len;
-  uint8_t data_idx;
 
-  void (*on_transfer_completed)(struct TRANSFER *this);
-};
-
-volatile struct TRANSFER uart_transfer;
 volatile struct TRANSFER spi_transfer;
 
 
@@ -49,11 +44,16 @@ SI_INTERRUPT (UART_ISR, UART0_IRQn) {
 
       SCON0 &= ~SCON0_TI__BMASK;
 
-      uart_transfer.data_idx += 1;
-      if(uart_transfer.data_idx < uart_transfer.data_len) {
-          SBUF0 = uart_transfer.data_transmit[uart_transfer.data_idx];
-      }
+      uart_transmit_handle_irq();
   }
+}
+
+void uart_on_transmit_finished_callback(struct TRANSFER *trans) {
+  return;
+}
+
+void uart_on_receive_finished_callback(struct TRANSFER *recv) {
+  return;
 }
 
 SI_INTERRUPT (SPI_ISR, SPI0_IRQn) {
@@ -70,7 +70,10 @@ SI_INTERRUPT (SPI_ISR, SPI0_IRQn) {
       } else {
           SPI0CN0 &= ~SPI0CN0_NSSMD__FMASK;
           SPI0CN0 |= SPI0CN0_NSSMD__4_WIRE_MASTER_NSS_HIGH;
-          spi_transfer.on_transfer_completed(&spi_transfer);
+
+          spi_transfer.data_transmit = spi_transfer.data_recv;
+          spi_transfer.data_idx = 0;
+          uart_transmit_start(&spi_transfer);
       }
   }
 }
@@ -87,23 +90,10 @@ void start_spi_transfer(uint8_t *dat, uint8_t len, uint8_t *received) {
   SPI0DAT = dat[0];
 }
 
-void start_uart_transfer(uint8_t *dat, uint8_t len) {
-
-  uart_transfer.data_transmit = dat;
-  uart_transfer.data_len = len;
-  uart_transfer.data_idx = 0;
-
-  SBUF0 = dat[0];
-}
-
-void on_spi_transfer_completed(struct TRANSFER *spi_transfer) {
-  start_uart_transfer(spi_transfer->data_recv, spi_transfer->data_len);
-}
 
 int main (void) {
 
   uint8_t recv[10];
-  spi_transfer.on_transfer_completed = on_spi_transfer_completed;
 
   // Clock configuration
   CLKSEL = CLKSEL_CLKDIV__SYSCLK_DIV_1 | CLKSEL_CLKSL__HFOSC;
