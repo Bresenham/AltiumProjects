@@ -10,9 +10,6 @@
 
 #include <stdint.h>
 
-#include <SI_EFM8BB1_Defs.h>
-#include <SI_EFM8BB1_Register_Enums.h>
-
 #include "../Transfer.h"
 
 void uart_transmit_start(struct TRANSFER *trans);

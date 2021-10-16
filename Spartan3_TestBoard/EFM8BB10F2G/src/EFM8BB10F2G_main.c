@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#include "SPI/SPI.h"
 #include "UART/UART.h"
 
 #define SYSCLK                  24500000UL
@@ -59,41 +60,26 @@ void uart_on_receive_finished_callback(struct TRANSFER *recv) {
 SI_INTERRUPT (SPI_ISR, SPI0_IRQn) {
 
   if( SPI0CN0 & SPI0CN0_SPIF__BMASK ) {
-
-      spi_transfer.data_recv[spi_transfer.data_idx] = SPI0DAT;
-
-      SPI0CN0 &= ~SPI0CN0_SPIF__BMASK;
-
-      spi_transfer.data_idx += 1;
-      if(spi_transfer.data_idx < spi_transfer.data_len) {
-          SPI0DAT = spi_transfer.data_transmit[spi_transfer.data_idx];
-      } else {
-          SPI0CN0 &= ~SPI0CN0_NSSMD__FMASK;
-          SPI0CN0 |= SPI0CN0_NSSMD__4_WIRE_MASTER_NSS_HIGH;
-
-          spi_transfer.data_transmit = spi_transfer.data_recv;
-          spi_transfer.data_idx = 0;
-          uart_transmit_start(&spi_transfer);
-      }
+      spi_transmit_receive_handle_irq();
   }
 }
 
-void start_spi_transfer(uint8_t *dat, uint8_t len, uint8_t *received) {
+void spi_on_transmit_receive_finished_callback(struct TRANSFER *transfer) {
 
-  spi_transfer.data_transmit = dat;
-  spi_transfer.data_recv = received;
-  spi_transfer.data_len = len;
-  spi_transfer.data_idx = 0;
-
-  SPI0CN0 &= ~SPI0CN0_NSSMD__FMASK;
-  SPI0CN0 |= SPI0CN0_NSSMD__4_WIRE_MASTER_NSS_LOW;
-  SPI0DAT = dat[0];
+  transfer->data_transmit = transfer->data_recv;
+  transfer->data_idx = 0;
+  uart_transmit_start(transfer);
 }
 
 
 int main (void) {
 
   uint8_t recv[10];
+
+  spi_transfer.data_idx = 0;
+  spi_transfer.data_len = sizeof(CMD_RELEASE_PW_DOWN_ID);
+  spi_transfer.data_recv = recv;
+  spi_transfer.data_transmit = CMD_RELEASE_PW_DOWN_ID;
 
   // Clock configuration
   CLKSEL = CLKSEL_CLKDIV__SYSCLK_DIV_1 | CLKSEL_CLKSL__HFOSC;
@@ -148,7 +134,7 @@ int main (void) {
   while (1) {
       if( timer0_irq ) {
           P1_B1 ^= 1;
-          start_spi_transfer(CMD_RELEASE_PW_DOWN_ID, sizeof(CMD_RELEASE_PW_DOWN_ID), recv);
+          spi_transmit_receive_start(&spi_transfer);
           timer0_irq = false;
       }
   }
