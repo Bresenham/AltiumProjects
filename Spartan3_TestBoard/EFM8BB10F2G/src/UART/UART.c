@@ -29,7 +29,7 @@ SI_INTERRUPT (UART_ISR, UART0_IRQn) {
 void uart_transmit_start(struct TRANSFER *trans) {
 
   transmit = trans;
-  SBUF0 = transmit->data_transmit[transmit->data_idx++];
+  SBUF0 = transmit->data_trans[transmit->data_idx++];
 }
 
 void uart_transmit_handle_irq() {
@@ -37,7 +37,7 @@ void uart_transmit_handle_irq() {
   if( transmit != NULL ) {
 
       if( transmit->data_idx < transmit->data_len ) {
-          SBUF0 = transmit->data_transmit[transmit->data_idx++];
+          SBUF0 = transmit->data_trans[transmit->data_idx++];
       } else {
           uart_on_transmit_finished_callback(transmit);
       }

@@ -16,7 +16,12 @@
 #define UART_TIMER1_RELOAD_VAL  ( 0xFF - ( SYSCLK / (2 * SYSCLK_DIV * UART_BAUD_RATE) ) )
 #define SPI0CKR_VAL             ( ( SYSCLK / (2 * SPI0CLK) ) - 0.5 )
 
-volatile struct TRANSFER transfer;
+#define AMOUNT_OF_TRANSFERS     5
+
+volatile uint8_t transfer_idx = 0;
+uint8_t idata trans_mem[AMOUNT_OF_TRANSFERS * TRANSFER_MAX_LEN];
+uint8_t idata recv_mem[AMOUNT_OF_TRANSFERS * TRANSFER_MAX_LEN];
+struct TRANSFER transfers[AMOUNT_OF_TRANSFERS];
 
 void SiLabs_Startup (void) {
   WDTCN = 0xDE;
@@ -45,20 +50,21 @@ void uart_on_receive_finished_callback(struct TRANSFER *recv) {
 void w25q32jv_request_finished(struct TRANSFER *trans) {
 
   if( trans->type == W25Q32JV_READ_FROM_ADDR ) {
-      trans->data_transmit = trans->data_recv;
+      trans->data_trans = trans->data_recv;
       trans->data_idx = 0;
       uart_transmit_start(trans);
+  } else if( transfer_idx < 4 ) {
+      w25q32jv_execute_transfer(&transfers[transfer_idx++]);
   }
 }
 
 int main (void) {
 
-  uint8_t recv[10];
-  uint8_t trans[10];
-  uint32_t read_addr = 0;
-
-  transfer.data_recv = recv;
-  transfer.data_transmit = trans;
+  uint8_t i;
+  for(i = 0; i < AMOUNT_OF_TRANSFERS; ++i) {
+      transfers[i].data_recv = &recv_mem[i * TRANSFER_MAX_LEN];
+      transfers[i].data_trans = &trans_mem[i * TRANSFER_MAX_LEN];
+  }
 
   // Clock configuration
   CLKSEL = CLKSEL_CLKDIV__SYSCLK_DIV_1 | CLKSEL_CLKSL__HFOSC;
@@ -110,13 +116,18 @@ int main (void) {
   // Start Timer0 & Timer 1
   TCON = TCON_TR0__RUN | TCON_TR1__RUN;
 
-  w25q32jv_sector_erase(0x00000000, &transfer);
+  w25q32jv_write_enable(&transfers[0]);
+  w25q32jv_sector_erase(0x00000000, &transfers[1]);
+  w25q32jv_write_enable(&transfers[2]);
+  w25q32jv_write_byte_to_addr(0x00000000, 0x5A, &transfers[3]);
+  w25q32jv_read_byte_from_addr(0x00000000, &transfers[4]);
+
+  w25q32jv_execute_transfer(&transfers[transfer_idx++]);
 
   while (1) {
       if( timer0_irq ) {
           P1_B1 ^= 1;
-          w25q32jv_read_byte_from_addr(read_addr, &transfer);
-          read_addr += 1;
+          w25q32jv_execute_transfer(&transfers[4]);
           timer0_irq = false;
       }
   }

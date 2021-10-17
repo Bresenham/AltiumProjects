@@ -44,7 +44,7 @@ void spi_transmit_receive_start(struct TRANSFER *t_r) {
 
   spi_cs_down();
   trans_recv = t_r;
-  SPI0DAT = trans_recv->data_transmit[trans_recv->data_idx];
+  SPI0DAT = trans_recv->data_trans[trans_recv->data_idx];
 
 }
 
@@ -57,7 +57,7 @@ void spi_transmit_receive_handle_irq(){
 
         trans_recv->data_idx += 1;
 
-        SPI0DAT = trans_recv->data_transmit[trans_recv->data_idx];
+        SPI0DAT = trans_recv->data_trans[trans_recv->data_idx];
 
     } else {
 

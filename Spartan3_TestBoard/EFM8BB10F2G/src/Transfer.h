@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#define TRANSFER_MAX_LEN  5
+
 enum TRANSFER_TYPE {
   W25Q32JV_SECTOR_ERASE,
   W25Q32JV_DEVICE_ID,
@@ -18,10 +20,11 @@ enum TRANSFER_TYPE {
 };
 
 struct TRANSFER {
-  uint8_t *data_transmit;
+  uint8_t *data_trans;
   uint8_t *data_recv;
   uint8_t data_len;
   uint8_t data_idx;
+
   enum TRANSFER_TYPE type;
 };
 
