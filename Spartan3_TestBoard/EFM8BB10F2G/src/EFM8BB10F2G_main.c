@@ -34,17 +34,6 @@ SI_INTERRUPT (TIMER0_ISR, TIMER0_IRQn) {
   }
 }
 
-SI_INTERRUPT (UART_ISR, UART0_IRQn) {
-
-  /* Transmit completed interrupt */
-  if( SCON0 & SCON0_TI__BMASK ) {
-
-      SCON0 &= ~SCON0_TI__BMASK;
-
-      uart_transmit_handle_irq();
-  }
-}
-
 void uart_on_transmit_finished_callback(struct TRANSFER *trans) {
   return;
 }
@@ -53,30 +42,23 @@ void uart_on_receive_finished_callback(struct TRANSFER *recv) {
   return;
 }
 
-SI_INTERRUPT (SPI_ISR, SPI0_IRQn) {
+void w25q32jv_request_finished(struct TRANSFER *trans) {
 
-  if( SPI0CN0 & SPI0CN0_SPIF__BMASK ) {
-
-      SPI0CN0 &= ~SPI0CN0_SPIF__BMASK;
-
-      spi_transmit_receive_handle_irq();
-
+  if( trans->type == W25Q32JV_READ_FROM_ADDR ) {
+      trans->data_transmit = trans->data_recv;
+      trans->data_idx = 0;
+      uart_transmit_start(trans);
   }
 }
-
-void spi_on_transmit_receive_finished_callback(struct TRANSFER *trans) {
-
-  trans->data_transmit = trans->data_recv;
-  trans->data_idx = 0;
-  uart_transmit_start(trans);
-}
-
 
 int main (void) {
 
   uint8_t recv[10];
+  uint8_t trans[10];
+  uint32_t read_addr = 0;
 
   transfer.data_recv = recv;
+  transfer.data_transmit = trans;
 
   // Clock configuration
   CLKSEL = CLKSEL_CLKDIV__SYSCLK_DIV_1 | CLKSEL_CLKSL__HFOSC;
@@ -128,12 +110,13 @@ int main (void) {
   // Start Timer0 & Timer 1
   TCON = TCON_TR0__RUN | TCON_TR1__RUN;
 
+  w25q32jv_sector_erase(0x00000000, &transfer);
+
   while (1) {
       if( timer0_irq ) {
           P1_B1 ^= 1;
-
-          w25q32jv_get_device_id(&transfer);
-
+          w25q32jv_read_byte_from_addr(read_addr, &transfer);
+          read_addr += 1;
           timer0_irq = false;
       }
   }

@@ -12,7 +12,18 @@
 
 #include "SPI.h"
 
-volatile struct TRANSFER *trans_recv;
+volatile struct TRANSFER *trans_recv = NULL;
+
+SI_INTERRUPT (SPI_ISR, SPI0_IRQn) {
+
+  if( SPI0CN0 & SPI0CN0_SPIF__BMASK ) {
+
+      SPI0CN0 &= ~SPI0CN0_SPIF__BMASK;
+
+      spi_transmit_receive_handle_irq();
+
+  }
+}
 
 void spi_cs_down() {
 
@@ -40,22 +51,20 @@ void spi_transmit_receive_start(struct TRANSFER *t_r) {
 void spi_transmit_receive_handle_irq(){
 
   if( trans_recv != NULL ) {
+    if( trans_recv->data_idx < trans_recv->data_len ) {
 
-      if( trans_recv->data_idx < trans_recv->data_len ) {
+        trans_recv->data_recv[trans_recv->data_idx] = SPI0DAT;
 
-          trans_recv->data_recv[trans_recv->data_idx] = SPI0DAT;
+        trans_recv->data_idx += 1;
 
-          trans_recv->data_idx += 1;
+        SPI0DAT = trans_recv->data_transmit[trans_recv->data_idx];
 
-          SPI0DAT = trans_recv->data_transmit[trans_recv->data_idx];
+    } else {
 
-      } else {
+        spi_cs_up();
+        spi_on_transmit_receive_finished_callback(trans_recv);
 
-          spi_cs_up();
-          spi_on_transmit_receive_finished_callback(trans_recv);
-          trans_recv = NULL;
-
-      }
+    }
   }
 
 }

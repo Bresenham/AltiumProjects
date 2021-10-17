@@ -10,6 +10,6 @@
 
 void spi_transmit_receive_start(struct TRANSFER *t_r);
 void spi_transmit_receive_handle_irq();
-void spi_on_transmit_receive_finished_callback(struct TRANSFER *transfer);
+extern void spi_on_transmit_receive_finished_callback(struct TRANSFER *transfer);
 
 #endif /* SPI_SPI_H_ */

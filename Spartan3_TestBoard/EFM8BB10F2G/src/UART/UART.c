@@ -12,8 +12,19 @@
 
 #include "UART.h"
 
-volatile struct TRANSFER *receive;
-volatile struct TRANSFER *transmit;
+volatile struct TRANSFER *receive = NULL;
+volatile struct TRANSFER *transmit = NULL;
+
+SI_INTERRUPT (UART_ISR, UART0_IRQn) {
+
+  /* Transmit completed interrupt */
+  if( SCON0 & SCON0_TI__BMASK ) {
+
+      SCON0 &= ~SCON0_TI__BMASK;
+
+      uart_transmit_handle_irq();
+  }
+}
 
 void uart_transmit_start(struct TRANSFER *trans) {
 
@@ -29,7 +40,6 @@ void uart_transmit_handle_irq() {
           SBUF0 = transmit->data_transmit[transmit->data_idx++];
       } else {
           uart_on_transmit_finished_callback(transmit);
-          transmit = NULL;
       }
 
   }

@@ -14,11 +14,11 @@
 
 void uart_transmit_start(struct TRANSFER *trans);
 void uart_transmit_handle_irq();
-void uart_on_transmit_finished_callback(struct TRANSFER *trans);
+extern void uart_on_transmit_finished_callback(struct TRANSFER *trans);
 
 void uart_receive_start(struct TRANSFER *recv);
 void uart_receive_handle_irq(uint8_t dat);
-void uart_on_receive_finished_callback(struct TRANSFER *recv);
+extern void uart_on_receive_finished_callback(struct TRANSFER *recv);
 
 
 #endif /* UART_H_ */
