@@ -1,0 +1,74 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc
+Date     : 06/01/2026
+Time     : 17:28:19
+
+WARNING: Multilayer Pads with 0 size Hole found
+   Pad OUT2-1(2185mil,1370mil) on Multi-Layer
+   Pad OUT1-1(1525mil,1360mil) on Multi-Layer
+
+Processing Rule : Clearance Constraint (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Net 5V Between Pad USBC-A9(1454.764mil,2852.756mil) on Top Layer And Pad C2-1(3645.236mil,1300mil) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad USBC-S4(1565mil,2700mil) on Multi-Layer And Pad C2-2(3424.764mil,1300mil) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad USBC-B12(1286.654mil,2852.756mil) on Top Layer And Pad USBC-A12(1503.189mil,2852.756mil) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad USBC-A12(1503.189mil,2852.756mil) on Top Layer And Pad USBC-S2(1565mil,2849.606mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net 5V Between Pad USBC-B9(1335.079mil,2852.756mil) on Top Layer And Pad USBC-A9(1454.764mil,2852.756mil) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad USBC-S1(1224.843mil,2849.606mil) on Multi-Layer And Pad USBC-B12(1286.654mil,2852.756mil) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad USBC-S3(1224.843mil,2700mil) on Multi-Layer And Pad USBC-S1(1224.843mil,2849.606mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad USBC-S4(1565mil,2700mil) on Multi-Layer And Pad USBC-S2(1565mil,2849.606mil) on Multi-Layer 
+Rule Violations :8
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=10mil) (Max=10mil) (Preferred=10mil) (All)
+Rule Violations :0
+
+Processing Rule : Routing Topology Rule(Topology=Shortest) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=100mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=10mil) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (9.717mil < 10mil) Between Pad USBC-A12(1503.189mil,2852.756mil) on Top Layer And Pad USBC-A9(1454.764mil,2852.756mil) on Top Layer [Top Solder] Mask Sliver [9.717mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (3.811mil < 10mil) Between Pad USBC-A5(1375.236mil,2852.756mil) on Top Layer And Pad USBC-B5(1414.606mil,2852.756mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (3.417mil < 10mil) Between Pad USBC-A5(1375.236mil,2852.756mil) on Top Layer And Pad USBC-B9(1335.079mil,2852.756mil) on Top Layer [Top Solder] Mask Sliver [3.417mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (3.417mil < 10mil) Between Pad USBC-A9(1454.764mil,2852.756mil) on Top Layer And Pad USBC-B5(1414.606mil,2852.756mil) on Top Layer [Top Solder] Mask Sliver [3.417mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (9.717mil < 10mil) Between Pad USBC-B12(1286.654mil,2852.756mil) on Top Layer And Pad USBC-B9(1335.079mil,2852.756mil) on Top Layer [Top Solder] Mask Sliver [9.717mil]
+Rule Violations :5
+
+Processing Rule : Silk To Solder Mask (Clearance=10mil) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (8.811mil < 10mil) Between Pad C2-1(3645.236mil,1300mil) on Top Layer And Text "+" (3725.945mil,1280.315mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.811mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (7.874mil < 10mil) Between Pad C2-1(3645.236mil,1300mil) on Top Layer And Track (3668.858mil,1227.165mil)(3668.858mil,1256.693mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (7.874mil < 10mil) Between Pad C2-1(3645.236mil,1300mil) on Top Layer And Track (3668.858mil,1343.307mil)(3668.858mil,1372.835mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (7.874mil < 10mil) Between Pad C2-2(3424.764mil,1300mil) on Top Layer And Track (3401.142mil,1166.142mil)(3401.142mil,1256.693mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (7.874mil < 10mil) Between Pad C2-2(3424.764mil,1300mil) on Top Layer And Track (3401.142mil,1343.307mil)(3401.142mil,1433.858mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]
+Rule Violations :5
+
+Processing Rule : Silk to Silk (Clearance=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+   Violation between Height Constraint: Component Potentiometer-RV09AF-40-20K-A10K (4020mil,1740mil) on Top Layer Actual Height = 1003.937mil
+Rule Violations :1
+
+
+Violations Detected : 19
+Waived Violations : 0
+Time Elapsed        : 00:00:00

@@ -1,0 +1,415 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD26\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">06/01/2026</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">17:28:19</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc" class="file"><acronym title="C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc">C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">2</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">19</td></tr>
+</table>
+</td>
+</table><a name="IDRBJ5RHFP5OZOHJFHUBMWNFXLIHJDVZWSKMLAKAEJ35IWTJ55OBJI"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOGMBRDV2MWPRHUZ13N5EPNWXBIVRWI5IPM2CQ0DDZOSIO1A5J2AB">Multilayer Pads with 0 size Hole found</a></td>
+<td class="column2">2</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">2</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHNM45WP50355BF5ZVOWYDZZ1QPXISUB0WHGIFJIPX5LYMAKAIGEJ">Clearance Constraint (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0HTGWXORKBBPHGJ1PDA0OFNMXEAG1A3KJ0R0FPT2WTKPTEL3ASB">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDFQCQWCH03MYKD4KF5E2FDNOMEPEEQV20VOPH1NLMPDIOOMKB4M1P">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">8</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYKZIDOODNVZ4EF13QFLV2GEDCNODECHLGOZIFZEDTYHGBBFUEZ4J">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDFDPDT4UEQG3OP5Z4BVXNK1NBHMBMF1LJBPEL2CFMSIPCYPZWYGFL">Width Constraint (Min=10mil) (Max=10mil) (Preferred=10mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDS0YD24CWRRL3AUZHFKF3AVPVFISKXK4JFSWCWHAUKUEFPXNXOPD">Routing Topology Rule(Topology=Shortest) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNUGQKSF53VB1DNYVVAW4U4C1QK5CF5LYZB4Y1BG5SL3GUU0PD4HE">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPYABMDULSPULBJUPZFENALVHXNLFDCC0I2M3NXFBLN1HQ2E02QID">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDFLRCV5ARZSUTO1ZBW1ZBA0V0UPLO2WRLL1YPVXB0QHIEZUDOJMFM">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYQAOUFF3AYJXGBDRZD02PHKI5HQQZM3SNUMJEZLVF23QCAUGIQZB">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">5</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5ALUN0C1SAHFNFRCXJSUECBSYGQQE1X0PUOUXSISQ1R2J4YKCRUP">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">5</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVFV4E0VGMKWWKMK0GPEKIEKAXOZZ42YXW5TH13IMSMP421NFFZR">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGCZKTYOHOJXKNLBWU4E5ZEYA3HMJKLYDITU51DCMONT1111RJHUB">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAPSS5MFVIVJAMCTVBYAQPVX5HOYTQCK14DO5DWNW0OI3OSOCVA5C">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">19</td>
+</tr>
+</table><br><a name="IDGFPJVJZAINYZKOJHVUTVQUJHZDOSB23T20BN0RHA4G5BGF2E4XUM"><h2>Warnings</h2></a><a name="IDOGMBRDV2MWPRHUZ13N5EPNWXBIVRWI5IPM2CQ0DDZOSIO1A5J2AB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">Multilayer Pads with 0 size Hole found</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2121.945mil|Location2.X=2248.055mil|Location1.Y=1306.945mil|Location2.Y=1433.055mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2121.945mil|Location2.X=2248.055mil|Location1.Y=1306.945mil|Location2.Y=1433.055mil|Absolute=True">Pad OUT2-1(2185mil,1370mil) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1461.945mil|Location2.X=1588.055mil|Location1.Y=1296.945mil|Location2.Y=1423.055mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1461.945mil|Location2.X=1588.055mil|Location1.Y=1296.945mil|Location2.Y=1423.055mil|Absolute=True">Pad OUT1-1(1525mil,1360mil) on Multi-Layer</acronym></a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDFQCQWCH03MYKD4KF5E2FDNOMEPEEQV20VOPH1NLMPDIOOMKB4M1P"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1435.803mil|Location2.X=3718.134mil|Location1.Y=1264.504mil|Location2.Y=2880.378mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1435.803mil|Location2.X=3718.134mil|Location1.Y=1264.504mil|Location2.Y=2880.378mil|Absolute=True">Un-Routed Net Constraint: Net 5V Between Pad USBC-A9(1454.764mil,2852.756mil) on Top Layer And Pad C2-1(3645.236mil,1300mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1549.252mil|Location2.X=3497.661mil|Location1.Y=1264.504mil|Location2.Y=2731.496mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1549.252mil|Location2.X=3497.661mil|Location1.Y=1264.504mil|Location2.Y=2731.496mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad USBC-S4(1565mil,2700mil) on Multi-Layer And Pad C2-2(3424.764mil,1300mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1266.906mil|Location2.X=1522.937mil|Location1.Y=2825.134mil|Location2.Y=2880.378mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1266.906mil|Location2.X=1522.937mil|Location1.Y=2825.134mil|Location2.Y=2880.378mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad USBC-B12(1286.654mil,2852.756mil) on Top Layer And Pad USBC-A12(1503.189mil,2852.756mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1483.441mil|Location2.X=1580.748mil|Location1.Y=2818.11mil|Location2.Y=2881.102mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1483.441mil|Location2.X=1580.748mil|Location1.Y=2818.11mil|Location2.Y=2881.102mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad USBC-A12(1503.189mil,2852.756mil) on Top Layer And Pad USBC-S2(1565mil,2849.606mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1316.118mil|Location2.X=1473.724mil|Location1.Y=2825.134mil|Location2.Y=2880.378mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1316.118mil|Location2.X=1473.724mil|Location1.Y=2825.134mil|Location2.Y=2880.378mil|Absolute=True">Un-Routed Net Constraint: Net 5V Between Pad USBC-B9(1335.079mil,2852.756mil) on Top Layer And Pad USBC-A9(1454.764mil,2852.756mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1209.095mil|Location2.X=1306.402mil|Location1.Y=2818.11mil|Location2.Y=2881.102mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1209.095mil|Location2.X=1306.402mil|Location1.Y=2818.11mil|Location2.Y=2881.102mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad USBC-S1(1224.843mil,2849.606mil) on Multi-Layer And Pad USBC-B12(1286.654mil,2852.756mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1209.095mil|Location2.X=1240.591mil|Location1.Y=2668.504mil|Location2.Y=2881.102mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1209.095mil|Location2.X=1240.591mil|Location1.Y=2668.504mil|Location2.Y=2881.102mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad USBC-S3(1224.843mil,2700mil) on Multi-Layer And Pad USBC-S1(1224.843mil,2849.606mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1549.252mil|Location2.X=1580.748mil|Location1.Y=2668.504mil|Location2.Y=2881.102mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1549.252mil|Location2.X=1580.748mil|Location1.Y=2668.504mil|Location2.Y=2881.102mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad USBC-S4(1565mil,2700mil) on Multi-Layer And Pad USBC-S2(1565mil,2849.606mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDYQAOUFF3AYJXGBDRZD02PHKI5HQQZM3SNUMJEZLVF23QCAUGIQZB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1472.958mil|Location2.X=1484.208mil|Location1.Y=2874.753mil|Location2.Y=2886.003mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1472.958mil|Location2.X=1484.208mil|Location1.Y=2874.753mil|Location2.Y=2886.003mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.717mil &lt; 10mil) Between Pad USBC-A12(1503.189mil,2852.756mil) on Top Layer And Pad USBC-A9(1454.764mil,2852.756mil) on Top Layer [Top Solder] Mask Sliver [9.717mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1389.296mil|Location2.X=1400.546mil|Location1.Y=2819.509mil|Location2.Y=2830.759mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1389.296mil|Location2.X=1400.546mil|Location1.Y=2819.509mil|Location2.Y=2830.759mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad USBC-A5(1375.236mil,2852.756mil) on Top Layer And Pad USBC-B5(1414.606mil,2852.756mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1350.123mil|Location2.X=1361.373mil|Location1.Y=2819.509mil|Location2.Y=2830.759mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1350.123mil|Location2.X=1361.373mil|Location1.Y=2819.509mil|Location2.Y=2830.759mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.417mil &lt; 10mil) Between Pad USBC-A5(1375.236mil,2852.756mil) on Top Layer And Pad USBC-B9(1335.079mil,2852.756mil) on Top Layer [Top Solder] Mask Sliver [3.417mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1428.469mil|Location2.X=1439.719mil|Location1.Y=2874.753mil|Location2.Y=2886.003mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1428.469mil|Location2.X=1439.719mil|Location1.Y=2874.753mil|Location2.Y=2886.003mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.417mil &lt; 10mil) Between Pad USBC-A9(1454.764mil,2852.756mil) on Top Layer And Pad USBC-B5(1414.606mil,2852.756mil) on Top Layer [Top Solder] Mask Sliver [3.417mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1305.635mil|Location2.X=1316.885mil|Location1.Y=2819.509mil|Location2.Y=2830.759mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1305.635mil|Location2.X=1316.885mil|Location1.Y=2819.509mil|Location2.Y=2830.759mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.717mil &lt; 10mil) Between Pad USBC-B12(1286.654mil,2852.756mil) on Top Layer And Pad USBC-B9(1335.079mil,2852.756mil) on Top Layer [Top Solder] Mask Sliver [9.717mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID5ALUN0C1SAHFNFRCXJSUECBSYGQQE1X0PUOUXSISQ1R2J4YKCRUP"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3712.914mil|Location2.X=3724.164mil|Location1.Y=1295.257mil|Location2.Y=1306.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3712.914mil|Location2.X=3724.164mil|Location1.Y=1295.257mil|Location2.Y=1306.507mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.811mil &lt; 10mil) Between Pad C2-1(3645.236mil,1300mil) on Top Layer And Text "+" (3725.945mil,1280.315mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3663.233mil|Location2.X=3674.483mil|Location1.Y=1258.942mil|Location2.Y=1270.192mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3663.233mil|Location2.X=3674.483mil|Location1.Y=1258.942mil|Location2.Y=1270.192mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.874mil &lt; 10mil) Between Pad C2-1(3645.236mil,1300mil) on Top Layer And Track (3668.858mil,1227.165mil)(3668.858mil,1256.693mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3663.233mil|Location2.X=3674.483mil|Location1.Y=1329.808mil|Location2.Y=1341.058mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3663.233mil|Location2.X=3674.483mil|Location1.Y=1329.808mil|Location2.Y=1341.058mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.874mil &lt; 10mil) Between Pad C2-1(3645.236mil,1300mil) on Top Layer And Track (3668.858mil,1343.307mil)(3668.858mil,1372.835mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3395.517mil|Location2.X=3406.767mil|Location1.Y=1258.942mil|Location2.Y=1270.192mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3395.517mil|Location2.X=3406.767mil|Location1.Y=1258.942mil|Location2.Y=1270.192mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.874mil &lt; 10mil) Between Pad C2-2(3424.764mil,1300mil) on Top Layer And Track (3401.142mil,1166.142mil)(3401.142mil,1256.693mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3395.517mil|Location2.X=3406.767mil|Location1.Y=1329.808mil|Location2.Y=1341.058mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3395.517mil|Location2.X=3406.767mil|Location1.Y=1329.808mil|Location2.Y=1341.058mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.874mil &lt; 10mil) Between Pad C2-2(3424.764mil,1300mil) on Top Layer And Track (3401.142mil,1343.307mil)(3401.142mil,1433.858mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDAPSS5MFVIVJAMCTVBYAQPVX5HOYTQCK14DO5DWNW0OI3OSOCVA5C"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4019mil|Location2.X=4021mil|Location1.Y=1739mil|Location2.Y=1741mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\PadaukAudioBoard\PadaukAudioBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4019mil|Location2.X=4021mil|Location1.Y=1739mil|Location2.Y=1741mil|Absolute=True">Height Constraint: Component Potentiometer-RV09AF-40-20K-A10K (4020mil,1740mil) on Top Layer Actual Height = 1003.937mil</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
