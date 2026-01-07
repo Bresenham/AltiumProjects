@@ -1,0 +1,70 @@
+*PADS-PCB*
+*NET*
+*SIGNAL* WS
+ PMS171B.3 TM8211.2
+*SIGNAL* NetR2_2
+ R2.2 USBC.B5
+*SIGNAL* NetR1_1
+ R1.1 USBC.A5
+*SIGNAL* NetPMS171B_4
+ PMS171B.4 R11.1
+*SIGNAL* NetNS8002 Low_8
+ NS8002 Low.8 OUT-BASE-MIN.1
+*SIGNAL* NetNS8002 Low_5
+ NS8002 Low.5 OUT-BASE-PLUS.1 R8.2
+*SIGNAL* NetNS8002 Low_4
+ NS8002 Low.4 R7.2 R8.1
+*SIGNAL* NetNS8002 High_8
+ NS8002 High.8 OUT-TREBLE-MIN.1
+*SIGNAL* NetNS8002 High_5
+ NS8002 High.5 OUT-TREBLE-PLUS.1 R10.2
+*SIGNAL* NetNS8002 High_4
+ NS8002 High.4 R9.2 R10.1
+*SIGNAL* NetCrossover Potentiometer_2
+ Crossover Potentiometer.2 PMS171B.6
+*SIGNAL* NetC13_2
+ C13.2 R9.1
+*SIGNAL* NetC12_2
+ C12.2 R7.1
+*SIGNAL* NetC9_1
+ C9.1 NS8002 High.2 NS8002 High.3
+*SIGNAL* NetC8_1
+ C8.1 NS8002 Low.2 NS8002 Low.3
+*SIGNAL* NetC7_2
+ C7.2 TM8211.6
+*SIGNAL* NetC6_2
+ C6.2 TM8211.8
+*SIGNAL* NetC3_2
+ C3.2 R5.2 R6.2
+*SIGNAL* NetAudio_3
+ Audio.3 R6.1
+*SIGNAL* NetAudio_2
+ Audio.2 R5.1
+*SIGNAL* GND
+ 3V3 Regulator.1 Audio.1 C1.1 C2.1 C4.1 C5.1 C8.2 C9.2 C10.2 C11.2
+ Crossover Potentiometer.3 Crossover Potentiometer.S1
+ Crossover Potentiometer.S2 NS8002 High.1 NS8002 High.7 NS8002 Low.1
+ NS8002 Low.7 PMS171B.8 R1.2 R2.1 R4.1 TM8211.4 USBC.A12 USBC.B12 USBC.S1
+ USBC.S2 USBC.S3 USBC.S4 Volume Potentiometer Base.1
+ Volume Potentiometer Treble.1
+*SIGNAL* DIN
+ PMS171B.5 TM8211.3
+*SIGNAL* DAC_RCH
+ C6.1 Volume Potentiometer Base.3
+*SIGNAL* DAC_LCH
+ C7.1 Volume Potentiometer Treble.3
+*SIGNAL* BCK
+ PMS171B.2 TM8211.1
+*SIGNAL* AUDIO_IN
+ C3.1 PMS171B.7 R3.1 R4.2
+*SIGNAL* AMP_RCH
+ C12.1 Volume Potentiometer Base.2
+*SIGNAL* AMP_LCH
+ C13.1 Volume Potentiometer Treble.2
+*SIGNAL* 5V
+ 3V3 Regulator.3 C1.2 C10.1 C11.1 NS8002 High.6 NS8002 Low.6 USBC.A9
+ USBC.B9
+*SIGNAL* 3V3
+ 3V3 Regulator.2 C2.2 C4.2 C5.2 Crossover Potentiometer.1 PMS171B.1 R3.2
+ R11.2 TM8211.5
+*END*

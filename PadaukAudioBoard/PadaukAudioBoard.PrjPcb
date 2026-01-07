@@ -322,40 +322,6 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document17]
-DocumentPath=Libraries\AMS1117-3.3.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document18]
-DocumentPath=Libraries\AMS1117-3.3.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document19]
 DocumentPath=Libraries\PTV09A-Potentiometer.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -372,7 +338,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document20]
+[Document18]
 DocumentPath=Libraries\PTV09A-Potentiometer.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -389,8 +355,50 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=SBNKRPQS
 
+[Document19]
+DocumentPath=Libraries\ME6209.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document20]
+DocumentPath=Libraries\ME6209.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [GeneratedDocument1]
 DocumentPath=Project Outputs for PadaukAudioBoard\Design Rule Check - PadaukAudioBoard.html
+DItemRevisionGUID=
+
+[GeneratedDocument2]
+DocumentPath=Project Outputs for PadaukAudioBoard\PadaukAudioBoard.NET
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for PadaukAudioBoard\PadaukAudioBoard.PRT
 DItemRevisionGUID=
 
 [Configuration1]
@@ -453,6 +461,10 @@ OutputName9=PADS ASCII Netlist
 OutputDocumentPath9=
 OutputVariantName9=
 OutputDefault9=0
+Configuration9_Name1=ForceUpdateSettings
+Configuration9_Item1=False
+Configuration9_Name2=OutputConfigurationParameter1
+Configuration9_Item2=tlistView|DocumentPath=[Project]
 OutputType10=Pcad
 OutputName10=Pcad for PCB
 OutputDocumentPath10=
@@ -473,11 +485,19 @@ OutputName13=Protel2 Netlist
 OutputDocumentPath13=
 OutputVariantName13=
 OutputDefault13=0
+Configuration13_Name1=ForceUpdateSettings
+Configuration13_Item1=False
+Configuration13_Name2=OutputConfigurationParameter1
+Configuration13_Item2=ord=ProtelNetlistView|DocumentPath=[Project]
 OutputType14=ProtelNetlist
 OutputName14=Protel
 OutputDocumentPath14=
 OutputVariantName14=
 OutputDefault14=0
+Configuration14_Name1=ForceUpdateSettings
+Configuration14_Item1=False
+Configuration14_Name2=OutputConfigurationParameter1
+Configuration14_Item2=NetlistVersion=0|Record=ProtelNetlistView|DocumentPath=[Project]
 OutputType15=RacalNetlist
 OutputName15=Racal Netlist
 OutputDocumentPath15=
