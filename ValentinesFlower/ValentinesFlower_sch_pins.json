@@ -1,0 +1,642 @@
+{
+  "projectFile": "C:\\Users\\maxim\\Documents\\Projects\\AltiumProjects\\ValentinesFlower\\ValentinesFlower.PrjPcb",
+  "components": [
+    {
+      "sheet": "C:\\Users\\maxim\\Documents\\Projects\\AltiumProjects\\ValentinesFlower\\ValentinesFlower.SchDoc",
+      "designator": "C1",
+      "comment": "10µF",
+      "pins": [
+        {
+          "num": "2",
+          "name": "2"
+        }
+        ,
+        {
+          "num": "1",
+          "name": "1"
+        }
+      ]
+    }
+    ,
+    {
+      "sheet": "C:\\Users\\maxim\\Documents\\Projects\\AltiumProjects\\ValentinesFlower\\ValentinesFlower.SchDoc",
+      "designator": "C2",
+      "comment": "10µF",
+      "pins": [
+        {
+          "num": "2",
+          "name": "2"
+        }
+        ,
+        {
+          "num": "1",
+          "name": "1"
+        }
+      ]
+    }
+    ,
+    {
+      "sheet": "C:\\Users\\maxim\\Documents\\Projects\\AltiumProjects\\ValentinesFlower\\ValentinesFlower.SchDoc",
+      "designator": "C3",
+      "comment": "100nF",
+      "pins": [
+        {
+          "num": "2",
+          "name": "2"
+        }
+        ,
+        {
+          "num": "1",
+          "name": "1"
+        }
+      ]
+    }
+    ,
+    {
+      "sheet": "C:\\Users\\maxim\\Documents\\Projects\\AltiumProjects\\ValentinesFlower\\ValentinesFlower.SchDoc",
+      "designator": "C4",
+      "comment": "100nF",
+      "pins": [
+        {
+          "num": "2",
+          "name": "2"
+        }
+        ,
+        {
+          "num": "1",
+          "name": "1"
+        }
+      ]
+    }
+    ,
+    {
+      "sheet": "C:\\Users\\maxim\\Documents\\Projects\\AltiumProjects\\ValentinesFlower\\ValentinesFlower.SchDoc",
+      "designator": "R1",
+      "comment": "10k",
+      "pins": [
+        {
+          "num": "2",
+          "name": "2"
+        }
+        ,
+        {
+          "num": "1",
+          "name": "1"
+        }
+      ]
+    }
+    ,
+    {
+      "sheet": "C:\\Users\\maxim\\Documents\\Projects\\AltiumProjects\\ValentinesFlower\\ValentinesFlower.SchDoc",
+      "designator": "R2",
+      "comment": "10k",
+      "pins": [
+        {
+          "num": "2",
+          "name": "2"
+        }
+        ,
+        {
+          "num": "1",
+          "name": "1"
+        }
+      ]
+    }
+    ,
+    {
+      "sheet": "C:\\Users\\maxim\\Documents\\Projects\\AltiumProjects\\ValentinesFlower\\ValentinesFlower.SchDoc",
+      "designator": "R3",
+      "comment": "5.1k",
+      "pins": [
+        {
+          "num": "2",
+          "name": "2"
+        }
+        ,
+        {
+          "num": "1",
+          "name": "1"
+        }
+      ]
+    }
+    ,
+    {
+      "sheet": "C:\\Users\\maxim\\Documents\\Projects\\AltiumProjects\\ValentinesFlower\\ValentinesFlower.SchDoc",
+      "designator": "S1",
+      "comment": "B3U-1000P",
+      "pins": [
+        {
+          "num": "1",
+          "name": "1"
+        }
+        ,
+        {
+          "num": "2",
+          "name": "2"
+        }
+      ]
+    }
+    ,
+    {
+      "sheet": "C:\\Users\\maxim\\Documents\\Projects\\AltiumProjects\\ValentinesFlower\\ValentinesFlower.SchDoc",
+      "designator": "U1",
+      "comment": "ESP32-C3-MINI-1-N4",
+      "pins": [
+        {
+          "num": "8",
+          "name": "EN"
+        }
+        ,
+        {
+          "num": "12",
+          "name": "IO0"
+        }
+        ,
+        {
+          "num": "13",
+          "name": "IO1"
+        }
+        ,
+        {
+          "num": "5",
+          "name": "IO2"
+        }
+        ,
+        {
+          "num": "6",
+          "name": "IO3"
+        }
+        ,
+        {
+          "num": "18",
+          "name": "IO4"
+        }
+        ,
+        {
+          "num": "19",
+          "name": "IO5"
+        }
+        ,
+        {
+          "num": "20",
+          "name": "IO6"
+        }
+        ,
+        {
+          "num": "30",
+          "name": "RXD0"
+        }
+        ,
+        {
+          "num": "31",
+          "name": "TXD0"
+        }
+        ,
+        {
+          "num": "3",
+          "name": "3V3"
+        }
+        ,
+        {
+          "num": "21",
+          "name": "IO7"
+        }
+        ,
+        {
+          "num": "22",
+          "name": "IO8"
+        }
+        ,
+        {
+          "num": "23",
+          "name": "IO9"
+        }
+        ,
+        {
+          "num": "16",
+          "name": "IO10"
+        }
+        ,
+        {
+          "num": "26",
+          "name": "IO18"
+        }
+        ,
+        {
+          "num": "27",
+          "name": "IO19"
+        }
+        ,
+        {
+          "num": "4",
+          "name": "NC"
+        }
+        ,
+        {
+          "num": "7",
+          "name": "NC"
+        }
+        ,
+        {
+          "num": "9",
+          "name": "NC"
+        }
+        ,
+        {
+          "num": "10",
+          "name": "NC"
+        }
+        ,
+        {
+          "num": "15",
+          "name": "NC"
+        }
+        ,
+        {
+          "num": "17",
+          "name": "NC"
+        }
+        ,
+        {
+          "num": "24",
+          "name": "NC"
+        }
+        ,
+        {
+          "num": "25",
+          "name": "NC"
+        }
+        ,
+        {
+          "num": "28",
+          "name": "NC"
+        }
+        ,
+        {
+          "num": "29",
+          "name": "NC"
+        }
+        ,
+        {
+          "num": "32",
+          "name": "NC"
+        }
+        ,
+        {
+          "num": "33",
+          "name": "NC"
+        }
+        ,
+        {
+          "num": "34",
+          "name": "NC"
+        }
+        ,
+        {
+          "num": "35",
+          "name": "NC"
+        }
+        ,
+        {
+          "num": "1",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "2",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "11",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "14",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "36",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "37",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "38",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "39",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "40",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "41",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "42",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "43",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "44",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "45",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "46",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "47",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "48",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "49_1",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "49_2",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "49_3",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "49_4",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "49_5",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "49_6",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "49_7",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "49_8",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "49_9",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "50",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "51",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "52",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "53",
+          "name": "GND"
+        }
+      ]
+    }
+    ,
+    {
+      "sheet": "C:\\Users\\maxim\\Documents\\Projects\\AltiumProjects\\ValentinesFlower\\ValentinesFlower.SchDoc",
+      "designator": "U2",
+      "comment": "AP2112K-3.3TRG1",
+      "pins": [
+        {
+          "num": "1",
+          "name": "VIN"
+        }
+        ,
+        {
+          "num": "3",
+          "name": "EN"
+        }
+        ,
+        {
+          "num": "5",
+          "name": "VOUT"
+        }
+        ,
+        {
+          "num": "2",
+          "name": "GND"
+        }
+      ]
+    }
+    ,
+    {
+      "sheet": "C:\\Users\\maxim\\Documents\\Projects\\AltiumProjects\\ValentinesFlower\\ValentinesFlower.SchDoc",
+      "designator": "J1",
+      "comment": "TYPE-C-31-M-12",
+      "pins": [
+        {
+          "num": "A5",
+          "name": "CC1"
+        }
+        ,
+        {
+          "num": "A6",
+          "name": "DP1"
+        }
+        ,
+        {
+          "num": "A7",
+          "name": "DN1"
+        }
+        ,
+        {
+          "num": "A8",
+          "name": "SBU1"
+        }
+        ,
+        {
+          "num": "A4_B9",
+          "name": "VBUS"
+        }
+        ,
+        {
+          "num": "B4_A9",
+          "name": "VBUS"
+        }
+        ,
+        {
+          "num": "B8",
+          "name": "SBU2"
+        }
+        ,
+        {
+          "num": "B7",
+          "name": "DN2"
+        }
+        ,
+        {
+          "num": "B6",
+          "name": "DP2"
+        }
+        ,
+        {
+          "num": "B5",
+          "name": "CC2"
+        }
+        ,
+        {
+          "num": "S1",
+          "name": "SHIELD"
+        }
+        ,
+        {
+          "num": "S2",
+          "name": "SHIELD"
+        }
+        ,
+        {
+          "num": "S3",
+          "name": "SHIELD"
+        }
+        ,
+        {
+          "num": "S4",
+          "name": "SHIELD"
+        }
+        ,
+        {
+          "num": "A1_B12",
+          "name": "GND"
+        }
+        ,
+        {
+          "num": "B1_A12",
+          "name": "GND"
+        }
+      ]
+    }
+    ,
+    {
+      "sheet": "C:\\Users\\maxim\\Documents\\Projects\\AltiumProjects\\ValentinesFlower\\ValentinesFlower.SchDoc",
+      "designator": "S2",
+      "comment": "B3U-1000P",
+      "pins": [
+        {
+          "num": "1",
+          "name": "1"
+        }
+        ,
+        {
+          "num": "2",
+          "name": "2"
+        }
+      ]
+    }
+    ,
+    {
+      "sheet": "C:\\Users\\maxim\\Documents\\Projects\\AltiumProjects\\ValentinesFlower\\ValentinesFlower.SchDoc",
+      "designator": "P1",
+      "comment": "GC9A01 SPI",
+      "pins": [
+        {
+          "num": "2",
+          "name": "2"
+        }
+        ,
+        {
+          "num": "1",
+          "name": "1"
+        }
+        ,
+        {
+          "num": "3",
+          "name": "3"
+        }
+        ,
+        {
+          "num": "4",
+          "name": "4"
+        }
+        ,
+        {
+          "num": "5",
+          "name": "5"
+        }
+        ,
+        {
+          "num": "6",
+          "name": "6"
+        }
+        ,
+        {
+          "num": "7",
+          "name": "7"
+        }
+      ]
+    }
+    ,
+    {
+      "sheet": "C:\\Users\\maxim\\Documents\\Projects\\AltiumProjects\\ValentinesFlower\\ValentinesFlower.SchDoc",
+      "designator": "R4",
+      "comment": "5.1k",
+      "pins": [
+        {
+          "num": "2",
+          "name": "2"
+        }
+        ,
+        {
+          "num": "1",
+          "name": "1"
+        }
+      ]
+    }
+  ]
+}
