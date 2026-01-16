@@ -1,0 +1,641 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD26\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">16/01/2026</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">20:08:15</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc" class="file"><acronym title="C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc">C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">99</td></tr>
+</table>
+</td>
+</table><a name="IDTZSVFUBLC05KMZTWG0S5D245BESALQHTE0BQYMNR4OO0D30X0XUP"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDMPX0N5ZT0AR0PKWJXXAEK01S5HRZZM5UOQPTUDGWQOASZO2WFG3D">Clearance Constraint (Gap=0.15mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWD44DW4ZXFGYHF445PFOHW3UAGT04F00LAWHVXNHMU2X5LVDGQOF">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDEULOTQBS0H4CNVMBUK5LWDXTUMTZHUE1QINAAVHAKKG3TSIBIX0I">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">73</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDO5PULG42GG5HLJF2VSJJG0ZS3BHW2NOO4TCX0SKP5GIMUBMTLUQI">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDS5EVZOUTJQBHBG1TG0KIVHDIMOBMGPAOB2NZWWFL3D3M11ROZIP">Width Constraint (Min=0.152mm) (Max=0.305mm) (Preferred=0.203mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQ2UON25VG0UAERZMWBZORHZJPGPEPTGT0UNNBJONNODMBQCEYAK">Routing Topology Rule(Topology=Shortest) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKGJC2QTCPL5ENMPWYDUJDA4CAKPVTR4MIHPZKPJYULTSS3SET2ED">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGQEA0LSMW45IWZQCK0HY23DBIPHQ1HAF2SPGUF005KLV432Y3OE">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDT2ZJTSVLQQOVHGFJPU3BW4ULMPUW2IFYYHBLPTDP0BCGZO5ZIQR">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWPYFM1SWWBPZYGYCC1FJ0JDSMGK3VN1ZHTXUCOUY30U5ZIOZKAB">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSLFFMV1YT2I0NMVISMKG0LSECJDYZ4CKZ5HF4RLY5VFLZ5AC0P4I">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">16</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPUUPTGWJQYPEKGPECVQJJSUF2YU22CJIDUQAPEXNMXM5HOOYUFC">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">6</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID30BSS1YJRJCQTYJRQ1OLOPJWLRXSEWUPTNQBSDLF0OUJ43CBJKK">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOT34HCHB1PRIIG5ITGDAC1VOOFTEQNRUZQEFWPOAGNTN2SIJK1FH">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">99</td>
+</tr>
+</table><br><a name="IDEULOTQBS0H4CNVMBUK5LWDXTUMTZHUE1QINAAVHAKKG3TSIBIX0I"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1207.417mil|Location2.X=1440.765mil|Location1.Y=1289.622mil|Location2.Y=1348.803mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1207.417mil|Location2.X=1440.765mil|Location1.Y=1289.622mil|Location2.Y=1348.803mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J1-S2(31.77mm,33.475mm) on Multi-Layer And Pad C1-1(36.044mm,33.508mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1394.393mil|Location2.X=1440.765mil|Location1.Y=1289.622mil|Location2.Y=1439.93mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1394.393mil|Location2.X=1440.765mil|Location1.Y=1289.622mil|Location2.Y=1439.93mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R3-1(35.994mm,35.793mm) on Top Layer And Pad C1-1(36.044mm,33.508mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1397.332mil|Location2.X=1511.283mil|Location1.Y=1217.339mil|Location2.Y=1348.803mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1397.332mil|Location2.X=1511.283mil|Location1.Y=1217.339mil|Location2.Y=1348.803mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C1-1(36.044mm,33.508mm) on Top Layer And Pad U1-50(37.935mm,31.372mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1365.962mil|Location1.Y=1289.622mil|Location2.Y=1407.48mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1365.962mil|Location1.Y=1289.622mil|Location2.Y=1407.48mil|Absolute=True">Un-Routed Net Constraint: Net 5V Between Pad J1-B4_A9(32.35mm,35.4mm) on Top Layer And Pad C1-2(34.144mm,33.508mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1183.008mil|Location2.X=1431.559mil|Location1.Y=1803.087mil|Location2.Y=1878.016mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1183.008mil|Location2.X=1431.559mil|Location1.Y=1803.087mil|Location2.Y=1878.016mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C2-1(30.8mm,47.15mm) on Top Layer And Pad U2-2(35.585mm,46.2mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1183.008mil|Location2.X=1338.252mil|Location1.Y=1759.78mil|Location2.Y=1803.213mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1183.008mil|Location2.X=1338.252mil|Location1.Y=1759.78mil|Location2.Y=1803.213mil|Absolute=True">Un-Routed Net Constraint: Net 3V3 Between Pad C2-2(30.8mm,45.25mm) on Top Layer And Pad U2-5(33.215mm,45.25mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1944.228mil|Location2.X=2084.709mil|Location1.Y=1216.473mil|Location2.Y=1259.906mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1944.228mil|Location2.X=2084.709mil|Location1.Y=1216.473mil|Location2.Y=1259.906mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-53(49.835mm,31.372mm) on Top Layer And Pad C3-1(52.2mm,31.45mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2025.528mil|Location2.X=2261.874mil|Location1.Y=1291.276mil|Location2.Y=1432.346mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2025.528mil|Location2.X=2261.874mil|Location1.Y=1291.276mil|Location2.Y=1432.346mil|Absolute=True">Un-Routed Net Constraint: Net 3V3 Between Pad C3-2(52.2mm,33.35mm) on Top Layer And Pad R1-1(56.875mm,35.6mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1940.291mil|Location2.X=2084.709mil|Location1.Y=1291.276mil|Location2.Y=1347.386mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1940.291mil|Location2.X=2084.709mil|Location1.Y=1291.276mil|Location2.Y=1347.386mil|Absolute=True">Un-Routed Net Constraint: Net 3V3 Between Pad U1-3(49.785mm,33.922mm) on Top Layer And Pad C3-2(52.2mm,33.35mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1393.638mil|Location2.X=1440.444mil|Location1.Y=1549.97mil|Location2.Y=1714.63mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1393.638mil|Location2.X=1440.444mil|Location1.Y=1549.97mil|Location2.Y=1714.63mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C4-1(35.95mm,42.8mm) on Top Layer And Pad R4-1(36.011mm,40.151mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1370.409mil|Location2.X=1437.071mil|Location1.Y=1655.449mil|Location2.Y=1834.709mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1370.409mil|Location2.X=1437.071mil|Location1.Y=1655.449mil|Location2.Y=1834.709mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U2-2(35.585mm,46.2mm) on Top Layer And Pad C4-1(35.95mm,42.8mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1277.102mil|Location2.X=1362.268mil|Location1.Y=1655.449mil|Location2.Y=1797.307mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1277.102mil|Location2.X=1362.268mil|Location1.Y=1655.449mil|Location2.Y=1797.307mil|Absolute=True">Un-Routed Net Constraint: Net 3V3 Between Pad U2-5(33.215mm,45.25mm) on Top Layer And Pad C4-2(34.05mm,42.8mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2220.41mil|Location2.X=2291.401mil|Location1.Y=1466.473mil|Location2.Y=1651.638mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2220.41mil|Location2.X=2291.401mil|Location1.Y=1466.473mil|Location2.Y=1651.638mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C5-1(56.95mm,38mm) on Top Layer And Pad S1-2(57.7mm,41mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2145.606mil|Location2.X=2192.976mil|Location1.Y=1370.803mil|Location2.Y=1525.653mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2145.606mil|Location2.X=2192.976mil|Location1.Y=1370.803mil|Location2.Y=1525.653mil|Absolute=True">Un-Routed Net Constraint: Net NetC5_2 Between Pad C5-2(55.05mm,38mm) on Top Layer And Pad R1-2(55.125mm,35.6mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2118.047mil|Location2.X=2189.039mil|Location1.Y=1466.473mil|Location2.Y=1651.638mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2118.047mil|Location2.X=2189.039mil|Location1.Y=1466.473mil|Location2.Y=1651.638mil|Absolute=True">Un-Routed Net Constraint: Net NetC5_2 Between Pad S1-1(54.3mm,41mm) on Top Layer And Pad C5-2(55.05mm,38mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1940.291mil|Location2.X=2189.039mil|Location1.Y=1466.473mil|Location2.Y=1525.653mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1940.291mil|Location2.X=2189.039mil|Location1.Y=1466.473mil|Location2.Y=1525.653mil|Absolute=True">Un-Routed Net Constraint: Net NetC5_2 Between Pad U1-8(49.785mm,37.922mm) on Top Layer And Pad C5-2(55.05mm,38mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1207.417mil|Location2.X=1298.032mil|Location1.Y=1600.394mil|Location2.Y=1680.181mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1207.417mil|Location2.X=1298.032mil|Location1.Y=1600.394mil|Location2.Y=1680.181mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J1-S1(31.77mm,42.125mm) on Multi-Layer And Pad J1-A1_B12(32.35mm,41mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1440.444mil|Location1.Y=1549.97mil|Location2.Y=1627.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1440.444mil|Location1.Y=1549.97mil|Location2.Y=1627.953mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J1-A1_B12(32.35mm,41mm) on Top Layer And Pad R4-1(36.011mm,40.151mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1298.032mil|Location1.Y=1379.921mil|Location2.Y=1596.457mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1298.032mil|Location1.Y=1379.921mil|Location2.Y=1596.457mil|Absolute=True">Un-Routed Net Constraint: Net 5V Between Pad J1-B4_A9(32.35mm,35.4mm) on Top Layer And Pad J1-A4_B9(32.35mm,40.2mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1431.559mil|Location1.Y=1568.898mil|Location2.Y=1797.307mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1431.559mil|Location1.Y=1568.898mil|Location2.Y=1797.307mil|Absolute=True">Un-Routed Net Constraint: Net 5V Between Pad J1-A4_B9(32.35mm,40.2mm) on Top Layer And Pad U2-1(35.585mm,45.25mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1371.547mil|Location1.Y=1529.528mil|Location2.Y=1611.514mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1371.547mil|Location1.Y=1529.528mil|Location2.Y=1611.514mil|Absolute=True">Un-Routed Net Constraint: Net NetJ1_A5 Between Pad J1-A5(32.35mm,39.05mm) on Top Layer And Pad R4-2(34.261mm,40.151mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1298.032mil|Location1.Y=1450.787mil|Location2.Y=1505.906mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1298.032mil|Location1.Y=1450.787mil|Location2.Y=1505.906mil|Absolute=True">Un-Routed Net Constraint: Net USB_P Between Pad J1-B6(32.35mm,37.05mm) on Top Layer And Pad J1-A6(32.35mm,38.05mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1515.22mil|Location1.Y=1490.158mil|Location2.Y=1536.362mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1515.22mil|Location1.Y=1490.158mil|Location2.Y=1536.362mil|Absolute=True">Un-Routed Net Constraint: Net USB_P Between Pad J1-A6(32.35mm,38.05mm) on Top Layer And Pad U1-27(37.985mm,38.722mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1298.032mil|Location1.Y=1470.473mil|Location2.Y=1525.591mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1298.032mil|Location1.Y=1470.473mil|Location2.Y=1525.591mil|Absolute=True">Un-Routed Net Constraint: Net USB_N Between Pad J1-A7(32.35mm,37.55mm) on Top Layer And Pad J1-B7(32.35mm,38.55mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1207.417mil|Location2.X=1298.032mil|Location1.Y=1296.197mil|Location2.Y=1375.984mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1207.417mil|Location2.X=1298.032mil|Location1.Y=1296.197mil|Location2.Y=1375.984mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J1-S2(31.77mm,33.475mm) on Multi-Layer And Pad J1-B1_A12(32.35mm,34.6mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1370.897mil|Location1.Y=1378.387mil|Location2.Y=1439.93mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1370.897mil|Location1.Y=1378.387mil|Location2.Y=1439.93mil|Absolute=True">Un-Routed Net Constraint: Net NetJ1_B5 Between Pad J1-B5(32.35mm,36.05mm) on Top Layer And Pad R3-2(34.244mm,35.793mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1515.22mil|Location1.Y=1509.843mil|Location2.Y=1567.858mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1249.213mil|Location2.X=1515.22mil|Location1.Y=1509.843mil|Location2.Y=1567.858mil|Absolute=True">Un-Routed Net Constraint: Net USB_N Between Pad J1-B7(32.35mm,38.55mm) on Top Layer And Pad U1-26(37.985mm,39.522mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1049.15mil|Location2.X=1294.158mil|Location1.Y=1636.748mil|Location2.Y=1680.181mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1049.15mil|Location2.X=1294.158mil|Location1.Y=1636.748mil|Location2.Y=1680.181mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J1-S3(27.6mm,42.125mm) on Multi-Layer And Pad J1-S1(31.77mm,42.125mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1049.15mil|Location2.X=1294.158mil|Location1.Y=1296.197mil|Location2.Y=1339.63mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1049.15mil|Location2.X=1294.158mil|Location1.Y=1296.197mil|Location2.Y=1339.63mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J1-S4(27.6mm,33.475mm) on Multi-Layer And Pad J1-S2(31.77mm,33.475mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2216.472mil|Location2.X=2547.307mil|Location1.Y=1370.803mil|Location2.Y=1818.173mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2216.472mil|Location2.X=2547.307mil|Location1.Y=1370.803mil|Location2.Y=1818.173mil|Absolute=True">Un-Routed Net Constraint: Net 3V3 Between Pad R1-1(56.875mm,35.6mm) on Top Layer And Pad P1-1(63.8mm,45.28mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2251.905mil|Location2.X=2547.307mil|Location1.Y=1576.709mil|Location2.Y=1718.173mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2251.905mil|Location2.X=2547.307mil|Location1.Y=1576.709mil|Location2.Y=1718.173mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad S1-2(57.7mm,41mm) on Top Layer And Pad P1-2(63.8mm,42.74mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1652.89mil|Location2.X=2547.307mil|Location1.Y=1547.181mil|Location2.Y=1642.661mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1652.89mil|Location2.X=2547.307mil|Location1.Y=1547.181mil|Location2.Y=1642.661mil|Absolute=True">Un-Routed Net Constraint: Net SCL Between Pad U1-20(42.285mm,41.222mm) on Top Layer And Pad P1-3(63.8mm,40.2mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1621.394mil|Location2.X=2547.307mil|Location1.Y=1447.181mil|Location2.Y=1642.661mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1621.394mil|Location2.X=2547.307mil|Location1.Y=1447.181mil|Location2.Y=1642.661mil|Absolute=True">Un-Routed Net Constraint: Net SDA Between Pad U1-21(41.485mm,41.222mm) on Top Layer And Pad P1-4(63.8mm,37.66mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1684.386mil|Location2.X=2547.307mil|Location1.Y=1347.181mil|Location2.Y=1642.661mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1684.386mil|Location2.X=2547.307mil|Location1.Y=1347.181mil|Location2.Y=1642.661mil|Absolute=True">Un-Routed Net Constraint: Net DC Between Pad U1-19(43.085mm,41.222mm) on Top Layer And Pad P1-5(63.8mm,35.12mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1778.874mil|Location2.X=2547.307mil|Location1.Y=1247.181mil|Location2.Y=1642.661mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1778.874mil|Location2.X=2547.307mil|Location1.Y=1247.181mil|Location2.Y=1642.661mil|Absolute=True">Un-Routed Net Constraint: Net CS Between Pad U1-16(45.485mm,41.222mm) on Top Layer And Pad P1-6(63.8mm,32.58mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1715.882mil|Location2.X=2547.307mil|Location1.Y=1147.181mil|Location2.Y=1642.661mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1715.882mil|Location2.X=2547.307mil|Location1.Y=1147.181mil|Location2.Y=1642.661mil|Absolute=True">Un-Routed Net Constraint: Net RST Between Pad U1-18(43.885mm,41.222mm) on Top Layer And Pad P1-7(63.8mm,30.04mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1536.158mil|Location2.X=1716.598mil|Location1.Y=1761.748mil|Location2.Y=1848.488mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1536.158mil|Location2.X=1716.598mil|Location1.Y=1761.748mil|Location2.Y=1848.488mil|Absolute=True">Un-Routed Net Constraint: Net NetR2_1 Between Pad R2-1(39.8mm,45.325mm) on Top Layer And Pad S2-1(43.1mm,46mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1536.158mil|Location2.X=1597.701mil|Location1.Y=1603.165mil|Location2.Y=1807.15mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1536.158mil|Location2.X=1597.701mil|Location1.Y=1603.165mil|Location2.Y=1807.15mil|Absolute=True">Un-Routed Net Constraint: Net NetR2_1 Between Pad R2-1(39.8mm,45.325mm) on Top Layer And Pad U1-23(39.885mm,41.222mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1536.158mil|Location2.X=1979.787mil|Location1.Y=1323.638mil|Location2.Y=1876.047mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1536.158mil|Location2.X=1979.787mil|Location1.Y=1323.638mil|Location2.Y=1876.047mil|Absolute=True">Un-Routed Net Constraint: Net 3V3 Between Pad R2-2(39.8mm,47.075mm) on Top Layer And Pad U1-3(49.785mm,33.922mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1277.102mil|Location2.X=1597.701mil|Location1.Y=1765.685mil|Location2.Y=1876.047mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1277.102mil|Location2.X=1597.701mil|Location1.Y=1765.685mil|Location2.Y=1876.047mil|Absolute=True">Un-Routed Net Constraint: Net 3V3 Between Pad U2-5(33.215mm,45.25mm) on Top Layer And Pad R2-2(39.8mm,47.075mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1394.393mil|Location2.X=1440.444mil|Location1.Y=1378.387mil|Location2.Y=1611.514mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1394.393mil|Location2.X=1440.444mil|Location1.Y=1378.387mil|Location2.Y=1611.514mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R3-1(35.994mm,35.793mm) on Top Layer And Pad R4-1(36.011mm,40.151mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1395.043mil|Location2.X=1511.283mil|Location1.Y=1549.97mil|Location2.Y=1642.661mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1395.043mil|Location2.X=1511.283mil|Location1.Y=1549.97mil|Location2.Y=1642.661mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R4-1(36.011mm,40.151mm) on Top Layer And Pad U1-51(37.935mm,41.272mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1944.228mil|Location2.X=2291.401mil|Location1.Y=1576.709mil|Location2.Y=1651.638mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1944.228mil|Location2.X=2291.401mil|Location1.Y=1576.709mil|Location2.Y=1651.638mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-52(49.835mm,41.272mm) on Top Layer And Pad S1-2(57.7mm,41mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1810.961mil|Location2.X=1865.614mil|Location1.Y=1603.165mil|Location2.Y=1848.488mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1810.961mil|Location2.X=1865.614mil|Location1.Y=1603.165mil|Location2.Y=1848.488mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad S2-2(46.5mm,46mm) on Top Layer And Pad U1-14(47.085mm,41.222mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1940.291mil|Location2.X=1979.787mil|Location1.Y=1260.646mil|Location2.Y=1315.89mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1940.291mil|Location2.X=1979.787mil|Location1.Y=1260.646mil|Location2.Y=1315.89mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-1(49.785mm,32.322mm) on Top Layer And Pad U1-2(49.785mm,33.122mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1940.291mil|Location2.X=1979.787mil|Location1.Y=1217.339mil|Location2.Y=1284.394mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1940.291mil|Location2.X=1979.787mil|Location1.Y=1217.339mil|Location2.Y=1284.394mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-1(49.785mm,32.322mm) on Top Layer And Pad U1-53(49.835mm,31.372mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1940.291mil|Location2.X=1979.787mil|Location1.Y=1575.606mil|Location2.Y=1642.661mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1940.291mil|Location2.X=1979.787mil|Location1.Y=1575.606mil|Location2.Y=1642.661mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-11(49.785mm,40.322mm) on Top Layer And Pad U1-52(49.835mm,41.272mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1772.968mil|Location2.X=1865.614mil|Location1.Y=1475.213mil|Location2.Y=1642.661mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1772.968mil|Location2.X=1865.614mil|Location1.Y=1475.213mil|Location2.Y=1642.661mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-49_7(45.86mm,38.297mm) on Top Layer And Pad U1-14(47.085mm,41.222mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1841.866mil|Location2.X=1979.787mil|Location1.Y=1603.165mil|Location2.Y=1642.661mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1841.866mil|Location2.X=1979.787mil|Location1.Y=1603.165mil|Location2.Y=1642.661mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-14(47.085mm,41.222mm) on Top Layer And Pad U1-52(49.835mm,41.272mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1526.906mil|Location2.X=1582.15mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1526.906mil|Location2.X=1582.15mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-36(39.085mm,31.422mm) on Top Layer And Pad U1-37(39.885mm,31.422mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1475.724mil|Location2.X=1550.653mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1475.724mil|Location2.X=1550.653mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-50(37.935mm,31.372mm) on Top Layer And Pad U1-36(39.085mm,31.422mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1558.402mil|Location2.X=1613.646mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1558.402mil|Location2.X=1613.646mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-37(39.885mm,31.422mm) on Top Layer And Pad U1-38(40.685mm,31.422mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.898mil|Location2.X=1645.142mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.898mil|Location2.X=1645.142mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-38(40.685mm,31.422mm) on Top Layer And Pad U1-39(41.485mm,31.422mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1621.394mil|Location2.X=1676.638mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1621.394mil|Location2.X=1676.638mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-39(41.485mm,31.422mm) on Top Layer And Pad U1-40(42.285mm,31.422mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1652.89mil|Location2.X=1708.134mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1652.89mil|Location2.X=1708.134mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-40(42.285mm,31.422mm) on Top Layer And Pad U1-41(43.085mm,31.422mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1684.386mil|Location2.X=1739.63mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1684.386mil|Location2.X=1739.63mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-41(43.085mm,31.422mm) on Top Layer And Pad U1-42(43.885mm,31.422mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1715.882mil|Location2.X=1771.126mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1715.882mil|Location2.X=1771.126mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-42(43.885mm,31.422mm) on Top Layer And Pad U1-43(44.685mm,31.422mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.213mil|Location2.X=1760.299mil|Location1.Y=1217.339mil|Location2.Y=1384.787mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.213mil|Location2.X=1760.299mil|Location1.Y=1217.339mil|Location2.Y=1384.787mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-42(43.885mm,31.422mm) on Top Layer And Pad U1-49_2(43.885mm,34.347mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1747.378mil|Location2.X=1802.622mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1747.378mil|Location2.X=1802.622mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-43(44.685mm,31.422mm) on Top Layer And Pad U1-44(45.485mm,31.422mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1778.874mil|Location2.X=1834.118mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1778.874mil|Location2.X=1834.118mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-44(45.485mm,31.422mm) on Top Layer And Pad U1-45(46.285mm,31.422mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1810.37mil|Location2.X=1865.614mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1810.37mil|Location2.X=1865.614mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-45(46.285mm,31.422mm) on Top Layer And Pad U1-46(47.085mm,31.422mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1841.866mil|Location2.X=1897.11mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1841.866mil|Location2.X=1897.11mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-46(47.085mm,31.422mm) on Top Layer And Pad U1-47(47.885mm,31.422mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1873.362mil|Location2.X=1928.606mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1873.362mil|Location2.X=1928.606mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-47(47.885mm,31.422mm) on Top Layer And Pad U1-48(48.685mm,31.422mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1904.858mil|Location2.X=1979.787mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1904.858mil|Location2.X=1979.787mil|Location1.Y=1217.339mil|Location2.Y=1256.835mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-48(48.685mm,31.422mm) on Top Layer And Pad U1-53(49.835mm,31.372mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1772.968mil|Location2.X=1838.055mil|Location1.Y=1340.433mil|Location2.Y=1462.543mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1772.968mil|Location2.X=1838.055mil|Location1.Y=1340.433mil|Location2.Y=1462.543mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-49_1(45.86mm,34.347mm) on Top Layer And Pad U1-49_8(45.86mm,36.322mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1617.457mil|Location2.X=1760.299mil|Location1.Y=1319.701mil|Location2.Y=1384.787mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1617.457mil|Location2.X=1760.299mil|Location1.Y=1319.701mil|Location2.Y=1384.787mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-49_3(41.91mm,34.347mm) on Top Layer And Pad U1-49_2(43.885mm,34.347mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.213mil|Location2.X=1760.299mil|Location1.Y=1319.701mil|Location2.Y=1462.543mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.213mil|Location2.X=1760.299mil|Location1.Y=1319.701mil|Location2.Y=1462.543mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-49_2(43.885mm,34.347mm) on Top Layer And Pad U1-49_9(43.885mm,36.322mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1617.457mil|Location2.X=1682.543mil|Location1.Y=1319.701mil|Location2.Y=1462.543mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1617.457mil|Location2.X=1682.543mil|Location1.Y=1319.701mil|Location2.Y=1462.543mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-49_3(41.91mm,34.347mm) on Top Layer And Pad U1-49_4(41.91mm,36.322mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1617.457mil|Location2.X=1760.299mil|Location1.Y=1475.213mil|Location2.Y=1540.299mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1617.457mil|Location2.X=1760.299mil|Location1.Y=1475.213mil|Location2.Y=1540.299mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-49_5(41.91mm,38.297mm) on Top Layer And Pad U1-49_6(43.885mm,38.297mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.213mil|Location2.X=1760.299mil|Location1.Y=1397.457mil|Location2.Y=1540.299mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.213mil|Location2.X=1760.299mil|Location1.Y=1397.457mil|Location2.Y=1540.299mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-49_9(43.885mm,36.322mm) on Top Layer And Pad U1-49_6(43.885mm,38.297mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1772.968mil|Location2.X=1838.055mil|Location1.Y=1397.457mil|Location2.Y=1540.299mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1772.968mil|Location2.X=1838.055mil|Location1.Y=1397.457mil|Location2.Y=1540.299mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-49_8(45.86mm,36.322mm) on Top Layer And Pad U1-49_7(45.86mm,38.297mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.213mil|Location2.X=1838.055mil|Location1.Y=1397.457mil|Location2.Y=1462.543mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.213mil|Location2.X=1838.055mil|Location1.Y=1397.457mil|Location2.Y=1462.543mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-49_9(43.885mm,36.322mm) on Top Layer And Pad U1-49_8(45.86mm,36.322mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1370.409mil|Location2.X=1431.559mil|Location1.Y=1765.685mil|Location2.Y=1872.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1370.409mil|Location2.X=1431.559mil|Location1.Y=1765.685mil|Location2.Y=1872.11mil|Absolute=True">Un-Routed Net Constraint: Net 5V Between Pad U2-1(35.585mm,45.25mm) on Top Layer And Pad U2-3(35.585mm,47.15mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDWPYFM1SWWBPZYGYCC1FJ0JDSMGK3VN1ZHTXUCOUY30U5ZIOZKAB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1245.666mil|Location2.X=1250.853mil|Location1.Y=1371.816mil|Location2.Y=1377.003mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1245.666mil|Location2.X=1250.853mil|Location1.Y=1371.816mil|Location2.Y=1377.003mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.048mm &lt; 0.1mm) Between Pad J1-(31.28mm,34.91mm) on Multi-Layer And Pad J1-B1_A12(32.35mm,34.6mm) on Top Layer [Top Solder] Mask Sliver [0.048mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1245.31mil|Location2.X=1250.496mil|Location1.Y=1376.92mil|Location2.Y=1382.107mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1245.31mil|Location2.X=1250.496mil|Location1.Y=1376.92mil|Location2.Y=1382.107mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.07mm &lt; 0.1mm) Between Pad J1-(31.28mm,34.91mm) on Multi-Layer And Pad J1-B4_A9(32.35mm,35.4mm) on Top Layer [Top Solder] Mask Sliver [0.07mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1245.666mil|Location2.X=1250.853mil|Location1.Y=1599.375mil|Location2.Y=1604.562mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1245.666mil|Location2.X=1250.853mil|Location1.Y=1599.375mil|Location2.Y=1604.562mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.048mm &lt; 0.1mm) Between Pad J1-(31.28mm,40.69mm) on Multi-Layer And Pad J1-A1_B12(32.35mm,41mm) on Top Layer [Top Solder] Mask Sliver [0.048mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1245.31mil|Location2.X=1250.496mil|Location1.Y=1594.271mil|Location2.Y=1599.458mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1245.31mil|Location2.X=1250.496mil|Location1.Y=1594.271mil|Location2.Y=1599.458mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.07mm &lt; 0.1mm) Between Pad J1-(31.28mm,40.69mm) on Multi-Layer And Pad J1-A4_B9(32.35mm,40.2mm) on Top Layer [Top Solder] Mask Sliver [0.07mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDSLFFMV1YT2I0NMVISMKG0LSECJDYZ4CKZ5HF4RLY5VFLZ5AC0P4I"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1323.775mil|Location2.X=1335.025mil|Location1.Y=1602.567mil|Location2.Y=1613.817mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1323.775mil|Location2.X=1335.025mil|Location1.Y=1602.567mil|Location2.Y=1613.817mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.051mm &lt; 0.254mm) Between Arc (33.6mm,41mm) on Top Overlay And Pad R4-2(34.261mm,40.151mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.051mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1417.138mil|Location2.X=1424.804mil|Location1.Y=1655.616mil|Location2.Y=1663.282mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1417.138mil|Location2.X=1424.804mil|Location1.Y=1655.616mil|Location2.Y=1663.282mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad C4-1(35.95mm,42.8mm) on Top Layer And Text "R4" (33.807mm,41.834mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1327.167mil|Location2.X=1334.833mil|Location1.Y=1655.616mil|Location2.Y=1663.282mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1327.167mil|Location2.X=1334.833mil|Location1.Y=1655.616mil|Location2.Y=1663.282mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad C4-2(34.05mm,42.8mm) on Top Layer And Text "R4" (33.807mm,41.834mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1394.56mil|Location2.X=1402.227mil|Location1.Y=1381.167mil|Location2.Y=1388.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1394.56mil|Location2.X=1402.227mil|Location1.Y=1381.167mil|Location2.Y=1388.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad R3-1(35.994mm,35.793mm) on Top Layer And Text "C1" (33.731mm,35.179mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1363.136mil|Location2.X=1370.802mil|Location1.Y=1432.168mil|Location2.Y=1439.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1363.136mil|Location2.X=1370.802mil|Location1.Y=1432.168mil|Location2.Y=1439.835mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad R3-2(34.244mm,35.793mm) on Top Layer And Text "C1" (33.731mm,35.179mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1410.138mil|Location2.X=1417.804mil|Location1.Y=1765.848mil|Location2.Y=1773.514mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1410.138mil|Location2.X=1417.804mil|Location1.Y=1765.848mil|Location2.Y=1773.514mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U2-1(35.585mm,45.25mm) on Top Layer And Text "C4" (33.63mm,44.45mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1370.556mil|Location2.X=1381.806mil|Location1.Y=1759.403mil|Location2.Y=1770.653mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1370.556mil|Location2.X=1381.806mil|Location1.Y=1759.403mil|Location2.Y=1770.653mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad U2-1(35.585mm,45.25mm) on Top Layer And Track (33.55mm,44.65mm)(35.25mm,44.65mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1382.17mil|Location2.X=1393.42mil|Location1.Y=1761.371mil|Location2.Y=1772.621mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1382.17mil|Location2.X=1393.42mil|Location1.Y=1761.371mil|Location2.Y=1772.621mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.136mm &lt; 0.254mm) Between Pad U2-1(35.585mm,45.25mm) on Top Layer And Track (35.25mm,44.65mm)(35.25mm,44.75mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.136mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1410.138mil|Location2.X=1417.804mil|Location1.Y=1803.249mil|Location2.Y=1810.916mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1410.138mil|Location2.X=1417.804mil|Location1.Y=1803.249mil|Location2.Y=1810.916mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U2-2(35.585mm,46.2mm) on Top Layer And Text "C4" (33.63mm,44.45mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1370.556mil|Location2.X=1381.806mil|Location1.Y=1867.143mil|Location2.Y=1878.393mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1370.556mil|Location2.X=1381.806mil|Location1.Y=1867.143mil|Location2.Y=1878.393mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad U2-3(35.585mm,47.15mm) on Top Layer And Track (33.55mm,47.75mm)(35.25mm,47.75mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1382.17mil|Location2.X=1393.42mil|Location1.Y=1865.174mil|Location2.Y=1876.424mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1382.17mil|Location2.X=1393.42mil|Location1.Y=1865.174mil|Location2.Y=1876.424mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.136mm &lt; 0.254mm) Between Pad U2-3(35.585mm,47.15mm) on Top Layer And Track (35.25mm,47.65mm)(35.25mm,47.75mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.136mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1315.241mil|Location2.X=1326.491mil|Location1.Y=1865.174mil|Location2.Y=1876.424mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1315.241mil|Location2.X=1326.491mil|Location1.Y=1865.174mil|Location2.Y=1876.424mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.136mm &lt; 0.254mm) Between Pad U2-4(33.215mm,47.15mm) on Top Layer And Track (33.55mm,47.65mm)(33.55mm,47.75mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.136mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1326.855mil|Location2.X=1338.105mil|Location1.Y=1867.143mil|Location2.Y=1878.393mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1326.855mil|Location2.X=1338.105mil|Location1.Y=1867.143mil|Location2.Y=1878.393mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad U2-4(33.215mm,47.15mm) on Top Layer And Track (33.55mm,47.75mm)(35.25mm,47.75mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1320.167mil|Location2.X=1327.833mil|Location1.Y=1765.848mil|Location2.Y=1773.514mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1320.167mil|Location2.X=1327.833mil|Location1.Y=1765.848mil|Location2.Y=1773.514mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U2-5(33.215mm,45.25mm) on Top Layer And Text "C4" (33.63mm,44.45mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1315.241mil|Location2.X=1326.491mil|Location1.Y=1761.371mil|Location2.Y=1772.621mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1315.241mil|Location2.X=1326.491mil|Location1.Y=1761.371mil|Location2.Y=1772.621mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.136mm &lt; 0.254mm) Between Pad U2-5(33.215mm,45.25mm) on Top Layer And Track (33.55mm,44.65mm)(33.55mm,44.75mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.136mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1326.855mil|Location2.X=1338.105mil|Location1.Y=1759.403mil|Location2.Y=1770.653mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1326.855mil|Location2.X=1338.105mil|Location1.Y=1759.403mil|Location2.Y=1770.653mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Pad U2-5(33.215mm,45.25mm) on Top Layer And Track (33.55mm,44.65mm)(35.25mm,44.65mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDPUUPTGWJQYPEKGPECVQJJSUF2YU22CJIDUQAPEXNMXM5HOOYUFC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2566.595mil|Location2.X=2577.845mil|Location1.Y=1781.777mil|Location2.Y=1793.027mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2566.595mil|Location2.X=2577.845mil|Location1.Y=1781.777mil|Location2.Y=1793.027mil|Absolute=True">Silk To Silk Clearance Constraint: (0.179mm &lt; 0.254mm) Between Text "1" (65.5mm,45.4mm) on Top Overlay And Track (65.145mm,28.62mm)(65.145mm,46.7mm) on Top Overlay Silk Text to Silk Clearance [0.179mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2566.595mil|Location2.X=2577.845mil|Location1.Y=1192.013mil|Location2.Y=1203.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2566.595mil|Location2.X=2577.845mil|Location1.Y=1192.013mil|Location2.Y=1203.263mil|Absolute=True">Silk To Silk Clearance Constraint: (0.179mm &lt; 0.254mm) Between Text "7" (65.5mm,30.42mm) on Top Overlay And Track (65.145mm,28.62mm)(65.145mm,46.7mm) on Top Overlay Silk Text to Silk Clearance [0.179mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1283.134mil|Location2.X=1290.801mil|Location1.Y=1909.167mil|Location2.Y=1916.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1283.134mil|Location2.X=1290.801mil|Location1.Y=1909.167mil|Location2.Y=1916.833mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "C2" (30.15mm,48.59mm) on Top Overlay And Text "U2" (32.512mm,48.793mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1320.167mil|Location2.X=1327.833mil|Location1.Y=1756.164mil|Location2.Y=1763.83mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1320.167mil|Location2.X=1327.833mil|Location1.Y=1756.164mil|Location2.Y=1763.83mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "C4" (33.63mm,44.45mm) on Top Overlay And Track (33.55mm,44.65mm)(33.55mm,44.75mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1320.167mil|Location2.X=1327.833mil|Location1.Y=1756.164mil|Location2.Y=1763.83mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1320.167mil|Location2.X=1327.833mil|Location1.Y=1756.164mil|Location2.Y=1763.83mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "C4" (33.63mm,44.45mm) on Top Overlay And Track (33.55mm,44.65mm)(35.25mm,44.65mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1644.859mil|Location2.X=1656.109mil|Location1.Y=1905.373mil|Location2.Y=1916.623mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\maxim\Documents\Projects\AltiumProjects\ValentinesFlower\ValentinesFlower.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1644.859mil|Location2.X=1656.109mil|Location1.Y=1905.373mil|Location2.Y=1916.623mil|Absolute=True">Silk To Silk Clearance Constraint: (0.229mm &lt; 0.254mm) Between Text "R2" (39.141mm,48.539mm) on Top Overlay And Text "S2" (42.164mm,48.285mm) on Top Overlay Silk Text to Silk Clearance [0.229mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
