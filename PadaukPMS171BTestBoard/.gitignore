@@ -1,0 +1,30 @@
+# Altium Designer - History (auto-generated backups)
+History/
+
+# Altium Designer - Project outputs (Gerbers, DRC reports, etc.)
+Project Outputs for PadaukPMS171BTestBoard/
+
+# Altium Designer - Project logs
+Project Logs for PadaukPMS171BTestBoard/
+
+# Altium Designer - Previews
+__Previews/
+
+# Altium Designer - Temporary/lock files
+*.~*
+*.Rpt
+*.REP
+*.DRR
+*.EXTREP
+*.APR_LIB
+*.apr
+*.LDP
+*.PRT
+
+# Altium Designer - Project structure file (auto-generated)
+*.PrjPcbStructure
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
