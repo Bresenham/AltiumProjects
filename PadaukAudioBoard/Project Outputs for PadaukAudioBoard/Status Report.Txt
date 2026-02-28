@@ -1,11 +1,10 @@
-Output: PADS ASCII Netlist
-Type  : PADSNetlist
+Output: Cadnetix Netlist
+Type  : CadnetixNetlist
 From  : Project [PadaukAudioBoard.PrjPcb]
    Generated File[PadaukAudioBoard.NET]
-   Generated File[PadaukAudioBoard.PRT]
 
 
-Files Generated   : 2
+Files Generated   : 1
 Documents Printed : 0
 
-Finished Output Generation At 18:45:48 On 07/01/2026
+Finished Output Generation At 11:51:17 On 28/02/2026

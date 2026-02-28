@@ -1,41 +1,43 @@
-*PADS-PCB*
-*PART*
-3V3 Regulator SOT95P285X150-3N
-Audio  PJ-320B Audio Jack
-C1     WCAP-CSGP_0805_H=0.8mm_Reflow
-C2     WCAP-CSGP_0805_H=0.8mm_Reflow
-C3     WCAP-CSGP_0805_H=0.8mm_Reflow
-C4     WCAP-CSGP_0805_H=0.8mm_Reflow
-C5     WCAP-CSGP_0805_H=0.8mm_Reflow
-C6     WCAP-CSGP_0805_H=0.8mm_Reflow
-C7     WCAP-CSGP_0805_H=0.8mm_Reflow
-C8     WCAP-CSGP_0805_H=0.8mm_Reflow
-C9     WCAP-CSGP_0805_H=0.8mm_Reflow
-C10    WCAP-ASLI_D6.3H7.7
-C11    WCAP-ASLI_D6.3H7.7
-C12    WCAP-CSGP_0805_H=0.8mm_Reflow
-C13    WCAP-CSGP_0805_H=0.8mm_Reflow
-Crossover Potentiometer PTV09A-4025F-B103
-NS8002 High NS8002
-NS8002 Low NS8002
-OUT-BASE-MIN Pad3x3mm
-OUT-BASE-PLUS Pad3x3mm
-OUT-TREBLE-MIN Pad3x3mm
-OUT-TREBLE-PLUS Pad3x3mm
-PMS171B PMS171B-S08
-R1     WRIS-PSMB_0805_H=0.22mm
-R2     WRIS-PSMB_0805_H=0.22mm
-R3     WRIS-PSMB_0805_H=0.22mm
-R4     WRIS-PSMB_0805_H=0.22mm
-R5     WRIS-PSMB_0805_H=0.22mm
-R6     WRIS-PSMB_0805_H=0.22mm
-R7     WRIS-PSMB_0805_H=0.22mm
-R8     WRIS-PSMB_0805_H=0.22mm
-R9     WRIS-PSMB_0805_H=0.22mm
-R10    WRIS-PSMB_0805_H=0.22mm
-R11    WRIS-PSMB_0805_H=0.22mm
-TM8211 TM8211
-USBC   GCT_USB4125-GF-A_REVA2
-Volume Potentiometer Base PTV09A-4025F-B103
-Volume Potentiometer Treble PTV09A-4025F-B103
-*END*
+1µF                 C12                 WCAP-CSGP_0805_H=0. 000     000     0
+1µF                 C13                 WCAP-CSGP_0805_H=0. 000     000     0
+1µF                 C3                  WCAP-CSGP_0805_H=0. 000     000     0
+1µF                 C6                  WCAP-CSGP_0805_H=0. 000     000     0
+1µF                 C7                  WCAP-CSGP_0805_H=0. 000     000     0
+10µF                C1                  WCAP-CSGP_0805_H=0. 000     000     0
+10µF                C2                  WCAP-CSGP_0805_H=0. 000     000     0
+100nF               C4                  WCAP-CSGP_0805_H=0. 000     000     0
+100nF               C5                  WCAP-CSGP_0805_H=0. 000     000     0
+10kO                R11                 WRIS-PSMB_0805_H=0. 000     000     0
+10kO                R3                  WRIS-PSMB_0805_H=0. 000     000     0
+10kO                R4                  WRIS-PSMB_0805_H=0. 000     000     0
+15kO                R7                  WRIS-PSMB_0805_H=0. 000     000     0
+15kO                R9                  WRIS-PSMB_0805_H=0. 000     000     0
+1kO                 R14                 WRIS-PSMB_0805_H=0. 000     000     0
+1kO                 R5                  WRIS-PSMB_0805_H=0. 000     000     0
+1kO                 R6                  WRIS-PSMB_0805_H=0. 000     000     0
+2.2kO               R12                 WRIS-PSMB_0805_H=0. 000     000     0
+2.2kO               R15                 WRIS-PSMB_0805_H=0. 000     000     0
+20kO                R10                 WRIS-PSMB_0805_H=0. 000     000     0
+20kO                R8                  WRIS-PSMB_0805_H=0. 000     000     0
+220µF               C10                 WCAP-ASLI_D6.3H7.7  000     000     0
+220µF               C11                 WCAP-ASLI_D6.3H7.7  000     000     0
+4.7µF               C8                  WCAP-CSGP_0805_H=0. 000     000     0
+4.7µF               C9                  WCAP-CSGP_0805_H=0. 000     000     0
+5.1kO               R1                  WRIS-PSMB_0805_H=0. 000     000     0
+5.1kO               R2                  WRIS-PSMB_0805_H=0. 000     000     0
+ME6209              3V3 Regulator       SOT95P285X150-3N    000     000     0
+NS8002              NS8002 Base         NS8002              000     000     0
+NS8002              NS8002 Treble       NS8002              000     000     0
+PJ-320B Audio Jack  PJ-320B Audio Jack  PJ-320B Audio Jack  000     000     0
+PMS171B-S08         PMS171B             PMS171B-S08         000     000     0
+Pot-B10K            Crossover Pot B10K  PTV09A-4025F-B103   000     000     0
+Pot-B10K            Volume Pot Base B10 PTV09A-4025F-B103   000     000     0
+Pot-B10K            Volume Pot Treble B PTV09A-4025F-B103   000     000     0
+SquarePad           OUT-BASE-MIN        Pad3x3mm            000     000     0
+SquarePad           OUT-BASE-PLUS       Pad3x3mm            000     000     0
+SquarePad           OUT-TREBLE-MIN      Pad3x3mm            000     000     0
+SquarePad           OUT-TREBLE-PLUS     Pad3x3mm            000     000     0
+TM8211              TM8211              TM8211              000     000     0
+USBC-6Pin-Female    USBC                GCT_USB4125-GF-A_RE 000     000     0
+Yellow, 2V          D1                  WL-SMCW_0603_H=0.25 000     000     0
+Yellow, 2V          D2                  WL-SMCW_0603_H=0.25 000     000     0

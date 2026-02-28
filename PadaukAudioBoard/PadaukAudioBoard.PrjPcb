@@ -438,11 +438,19 @@ OutputName1=Cadnetix Netlist
 OutputDocumentPath1=
 OutputVariantName1=
 OutputDefault1=0
+Configuration1_Name1=ForceUpdateSettings
+Configuration1_Item1=False
+Configuration1_Name2=OutputConfigurationParameter1
+Configuration1_Item2=tlistView|DocumentPath=[Project]
 OutputType2=CalayNetlist
 OutputName2=Calay Netlist
 OutputDocumentPath2=
 OutputVariantName2=
 OutputDefault2=0
+Configuration2_Name1=ForceUpdateSettings
+Configuration2_Item1=False
+Configuration2_Name2=OutputConfigurationParameter1
+Configuration2_Item2=ord=ProtelNetlistView|DocumentPath=[Project]
 OutputType3=EDIF
 OutputName3=EDIF for PCB
 OutputDocumentPath3=
