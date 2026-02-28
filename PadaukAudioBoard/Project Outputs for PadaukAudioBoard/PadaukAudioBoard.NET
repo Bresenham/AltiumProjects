@@ -1,6 +1,5 @@
 PARTS LIST
 
-ME6209            SOT95P285X150-3N3V3 Regulator
 10µF              WCAP-CSGP_0805_H=0.8mm_ReflowC1
 10µF              WCAP-CSGP_0805_H=0.8mm_ReflowC2
 1µF               WCAP-CSGP_0805_H=0.8mm_ReflowC3
@@ -17,9 +16,19 @@ ME6209            SOT95P285X150-3N3V3 Regulator
 4.7nF             WCAP-CSGP_0805_H=0.8mm_ReflowC14
 4.7nF             WCAP-CSGP_0805_H=0.8mm_ReflowC15
 4.7nF             WCAP-CSGP_0805_H=0.8mm_ReflowC16
+100nF             WCAP-CSGP_0805_H=0.8mm_ReflowC17
+100nF             WCAP-CSGP_0805_H=0.8mm_ReflowC18
+100nF             WCAP-CSGP_0805_H=0.8mm_ReflowC19
+100nF             WCAP-CSGP_0805_H=0.8mm_ReflowC20
+100nF             WCAP-CSGP_0805_H=0.8mm_ReflowC21
+100nF             WCAP-CSGP_0805_H=0.8mm_ReflowC22
+15pF              WCAP-CSGP_0805_H=0.8mm_ReflowC24
+15pF              WCAP-CSGP_0805_H=0.8mm_ReflowC25
+1µF               WCAP-CSGP_0805_H=0.8mm_ReflowC26
 Pot-B10K          PTV09A-4025F-B103Crossover Pot B10K
 Yellow, 2V        WL-SMCW_0603_H=0.25mmD1
 Yellow, 2V        WL-SMCW_0603_H=0.25mmD2
+TYPE-C-31-M-12    HRO_TYPE-C-31-M-12J1
 NS8002            NS8002          NS8002 Base
 NS8002            NS8002          NS8002 Treble
 SquarePad         Pad3x3mm        OUT-BASE-MIN
@@ -27,7 +36,6 @@ SquarePad         Pad3x3mm        OUT-BASE-PLUS
 SquarePad         Pad3x3mm        OUT-TREBLE-MIN
 SquarePad         Pad3x3mm        OUT-TREBLE-PLUS
 PJ-320B Audio JackPJ-320B Audio JackPJ-320B Audio Jack
-PMS171B-S08       PMS171B-S08     PMS171B
 5.1kO             WRIS-PSMB_0805_H=0.22mmR1
 5.1kO             WRIS-PSMB_0805_H=0.22mmR2
 10kO              WRIS-PSMB_0805_H=0.22mmR3
@@ -43,23 +51,29 @@ PMS171B-S08       PMS171B-S08     PMS171B
 2.2kO             WRIS-PSMB_0805_H=0.22mmR15
 1kO               WRIS-PSMB_0805_H=0.22mmR16
 1kO               WRIS-PSMB_0805_H=0.22mmR17
+10kO              WRIS-PSMB_0805_H=0.22mmR19
+10kO              WRIS-PSMB_0805_H=0.22mmR?
+430156043726      4301x60437x6    S1
+430156043726      4301x60437x6    S2
 TM8211            TM8211          TM8211
-USBC-6Pin-Female  GCT_USB4125-GF-A_REVA2USBC
+ESP32-C3FH4       ESP32-C3FH4     U1
+AP2112K-3.3TRG1   SOT95P285X140-5NU2
 Pot-B10K          PTV09A-4025F-B103Volume Pot Base B10K
 Pot-B10K          PTV09A-4025F-B103Volume Pot Treble B10K
+40MHz             WE-XTAL_CFPX-180Y1
 EOS
 NET LIST
 
 NODENAME WS               $
-    PMS171B    3  TM8211     2
+    TM8211     2  U1        10
+NODENAME USB_P            $
+    J1        A6  J1        B6  U1        26
+NODENAME USB_N            $
+    J1        A7  J1        B7  U1        25
 NODENAME NetR17-2         $
     R17        2  TM8211     6
 NODENAME NetR16-2         $
     R16        2  TM8211     8
-NODENAME NetR2-2          $
-    R2         2  USBC      B5
-NODENAME NetR1-1          $
-    R1         1  USBC      A5
 NODENAME NetPJ-320B Audio Jack-3$
     PJ-320B Audio Jack3  R6         1
 NODENAME NetPJ-320B Audio Jack-2$
@@ -76,12 +90,18 @@ NODENAME NetNS8002 Base-5 $
     NS8002 Base5  OUT-BASE-PLUS1  R8         2
 NODENAME NetNS8002 Base-4 $
     NS8002 Base4  R7         2  R8         1
+NODENAME NetJ1_B5         $
+    J1        B5  R2         2
+NODENAME NetJ1_A5         $
+    J1        A5  R1         1
 NODENAME NetD2-2          $
     D2         2  R14        2
 NODENAME NetD1-2          $
     D1         2  R12        2
-NODENAME NetCrossover Pot B10K-2$
-    Crossover Pot B10K2  PMS171B    6
+NODENAME NetC25-1         $
+    C25        1  U1        30  Y1         3
+NODENAME NetC24-1         $
+    C24        1  U1        29  Y1         1
 NODENAME NetC13-2         $
     C13        2  R9         1
 NODENAME NetC12-2         $
@@ -103,21 +123,27 @@ NODENAME NetC3-2          $
 NODENAME NetC3-1          $
     C3         1  R3         1  R4         2  R15        2
 NODENAME GND              $
-    3V3 Regulator1  C1         1  C2         1  C4         1  C5         1  C8         2  C9         2  C10        2  C11        2  C14        2  C15        2  C16        2  Crossover Pot B10K3  Crossover Pot B10KS1  Crossover Pot B10KS2  D1         1  D2         1  NS8002 Base7  NS8002 Treble7  PJ-320B Audio Jack1  PMS171B    8  R1         2  R2         1  R4         1  TM8211     4  USBC     A12  USBC     B12  USBC      S1  USBC      S2  USBC      S3  USBC      S4  Volume Pot Base B10K1  Volume Pot Treble B10K1
+    C1         1  C2         1  C4         1  C5         1  C8         2  C9         2  C10        2  C11        2  C14        2  C15        2  C16        2  C17        1  C18        1  C19        1  C20        1  C21        1  C22        1  C24        2  C25        2  C26        2  Crossover Pot B10K3  Crossover Pot B10KS1  Crossover Pot B10KS2  D1         1  D2         1  J1    A1_B12  J1    B1_A12  J1        S1  J1        S2  J1        S3  J1        S4  NS8002 Base7  NS8002 Treble7  PJ-320B Audio Jack1  R1         2  R2         1  R4         1  S1         3  S1         4  S2         3  S2         4  TM8211     4  U1        33  U2         2  Volume Pot Base B10K1  Volume Pot Treble B10K1  Y1         2  Y1         4
 NODENAME DIN              $
-    PMS171B    5  TM8211     3
+    TM8211     3  U1        12
+NODENAME CROSSOVER_POT    $
+    Crossover Pot B10K2  U1         5
+NODENAME BTN_CHIP_EN      $
+    C26        1  R?         1  S2         1  U1         7
+NODENAME BTN_BOOT         $
+    R19        1  S1         1  U1        15
 NODENAME BCK              $
-    PMS171B    2  TM8211     1
+    TM8211     1  U1         9
 NODENAME AUDIO_IN         $
-    C14        1  PMS171B    7  R15        1
+    C14        1  R15        1  U1         4
 NODENAME AMP_RCH          $
     C12        1  Volume Pot Base B10K2
 NODENAME AMP_LCH          $
     C13        1  Volume Pot Treble B10K2
 NODENAME \A\M\P\_\E\N\    $
-    NS8002 Base1  NS8002 Treble1  PMS171B    4
+    NS8002 Base1  NS8002 Treble1  U1         8
 NODENAME 5V               $
-    3V3 Regulator3  C1         2  C10        1  C11        1  NS8002 Base6  NS8002 Treble6  R12        1  USBC      A9  USBC      B9
+    C1         2  C10        1  C11        1  J1     A4_B9  J1     B4_A9  NS8002 Base6  NS8002 Treble6  R12        1  U2         1  U2         3
 NODENAME 3V3              $
-    3V3 Regulator2  C2         2  C4         2  C5         2  Crossover Pot B10K1  PMS171B    1  R3         2  R14        1  TM8211     5
+    C2         2  C4         2  C5         2  C17        2  C18        2  C19        2  C20        2  C21        2  C22        2  Crossover Pot B10K1  R3         2  R14        1  R19        2  R?         2  TM8211     5  U1         2  U1         3  U1        11  U1        17  U1        18  U1        31  U1        32  U2         5
 EOS
