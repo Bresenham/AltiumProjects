@@ -3,8 +3,6 @@ PARTS LIST
 10µF              WCAP-CSGP_0805_H=0.8mm_ReflowC1
 10µF              WCAP-CSGP_0805_H=0.8mm_ReflowC2
 1µF               WCAP-CSGP_0805_H=0.8mm_ReflowC3
-100nF             WCAP-CSGP_0805_H=0.8mm_ReflowC4
-100nF             WCAP-CSGP_0805_H=0.8mm_ReflowC5
 1µF               WCAP-CSGP_0805_H=0.8mm_ReflowC6
 1µF               WCAP-CSGP_0805_H=0.8mm_ReflowC7
 4.7µF             WCAP-CSGP_0805_H=0.8mm_ReflowC8
@@ -16,15 +14,9 @@ PARTS LIST
 4.7nF             WCAP-CSGP_0805_H=0.8mm_ReflowC14
 4.7nF             WCAP-CSGP_0805_H=0.8mm_ReflowC15
 4.7nF             WCAP-CSGP_0805_H=0.8mm_ReflowC16
-100nF             WCAP-CSGP_0805_H=0.8mm_ReflowC17
-100nF             WCAP-CSGP_0805_H=0.8mm_ReflowC18
-100nF             WCAP-CSGP_0805_H=0.8mm_ReflowC19
-100nF             WCAP-CSGP_0805_H=0.8mm_ReflowC20
-100nF             WCAP-CSGP_0805_H=0.8mm_ReflowC21
-100nF             WCAP-CSGP_0805_H=0.8mm_ReflowC22
-15pF              WCAP-CSGP_0805_H=0.8mm_ReflowC24
-15pF              WCAP-CSGP_0805_H=0.8mm_ReflowC25
-1µF               WCAP-CSGP_0805_H=0.8mm_ReflowC26
+1µF               WCAP-CSGP_0805_H=0.8mm_ReflowC17
+1µF               WCAP-CSGP_0805_H=0.8mm_ReflowC18
+1µF               WCAP-CSGP_0805_H=0.8mm_ReflowC19
 Pot-B10K          PTV09A-4025F-B103Crossover Pot B10K
 Yellow, 2V        WL-SMCW_0603_H=0.25mmD1
 Yellow, 2V        WL-SMCW_0603_H=0.25mmD2
@@ -51,25 +43,24 @@ PJ-320B Audio JackPJ-320B Audio JackPJ-320B Audio Jack
 2.2kO             WRIS-PSMB_0805_H=0.22mmR15
 1kO               WRIS-PSMB_0805_H=0.22mmR16
 1kO               WRIS-PSMB_0805_H=0.22mmR17
+10kO              WRIS-PSMB_0805_H=0.22mmR18
 10kO              WRIS-PSMB_0805_H=0.22mmR19
-10kO              WRIS-PSMB_0805_H=0.22mmR?
 430156043726      4301x60437x6    S1
 430156043726      4301x60437x6    S2
 TM8211            TM8211          TM8211
-ESP32-C3FH4       ESP32-C3FH4     U1
+ESP32-C3-MINI-1-N4XCVR_ESP32-C3-MINI-1-N4U1
 AP2112K-3.3TRG1   SOT95P285X140-5NU2
 Pot-B10K          PTV09A-4025F-B103Volume Pot Base B10K
 Pot-B10K          PTV09A-4025F-B103Volume Pot Treble B10K
-40MHz             WE-XTAL_CFPX-180Y1
 EOS
 NET LIST
 
 NODENAME WS               $
-    TM8211     2  U1        10
+    TM8211     2  U1        19
 NODENAME USB_P            $
-    J1        A6  J1        B6  U1        26
+    J1        A6  J1        B6  U1        27
 NODENAME USB_N            $
-    J1        A7  J1        B7  U1        25
+    J1        A7  J1        B7  U1        26
 NODENAME NetR17-2         $
     R17        2  TM8211     6
 NODENAME NetR16-2         $
@@ -98,10 +89,6 @@ NODENAME NetD2-2          $
     D2         2  R14        2
 NODENAME NetD1-2          $
     D1         2  R12        2
-NODENAME NetC25-1         $
-    C25        1  U1        30  Y1         3
-NODENAME NetC24-1         $
-    C24        1  U1        29  Y1         1
 NODENAME NetC13-2         $
     C13        2  R9         1
 NODENAME NetC12-2         $
@@ -123,27 +110,27 @@ NODENAME NetC3-2          $
 NODENAME NetC3-1          $
     C3         1  R3         1  R4         2  R15        2
 NODENAME GND              $
-    C1         1  C2         1  C4         1  C5         1  C8         2  C9         2  C10        2  C11        2  C14        2  C15        2  C16        2  C17        1  C18        1  C19        1  C20        1  C21        1  C22        1  C24        2  C25        2  C26        2  Crossover Pot B10K3  Crossover Pot B10KS1  Crossover Pot B10KS2  D1         1  D2         1  J1    A1_B12  J1    B1_A12  J1        S1  J1        S2  J1        S3  J1        S4  NS8002 Base7  NS8002 Treble7  PJ-320B Audio Jack1  R1         2  R2         1  R4         1  S1         3  S1         4  S2         3  S2         4  TM8211     4  U1        33  U2         2  Volume Pot Base B10K1  Volume Pot Treble B10K1  Y1         2  Y1         4
+    C1         1  C2         1  C8         2  C9         2  C10        2  C11        2  C14        2  C15        2  C16        2  C17        1  C18        1  C19        2  Crossover Pot B10K3  Crossover Pot B10KS1  Crossover Pot B10KS2  D1         1  D2         1  J1    A1_B12  J1    B1_A12  J1        S1  J1        S2  J1        S3  J1        S4  NS8002 Base7  NS8002 Treble7  PJ-320B Audio Jack1  R1         2  R2         1  R4         1  S1         3  S1         4  S2         3  S2         4  TM8211     4  U1         1  U1         2  U1        11  U1        14  U1        36  U1        37  U1        38  U1        39  U1        40  U1        41  U1        42  U1        43  U1        44  U1        45  U1        46  U1        47  U1        48  U1      49_1  U1      49_2  U1      49_3  U1      49_4  U1      49_5  U1      49_6  U1      49_7  U1      49_8  U1      49_9  U1        50  U1        51  U1        52  U1        53  U2         2  Volume Pot Base B10K1  Volume Pot Treble B10K1
 NODENAME DIN              $
-    TM8211     3  U1        12
+    TM8211     3  U1        20
 NODENAME CROSSOVER_POT    $
-    Crossover Pot B10K2  U1         5
+    Crossover Pot B10K2  U1        13
 NODENAME BTN_CHIP_EN      $
-    C26        1  R?         1  S2         1  U1         7
+    C19        1  R18        1  S2         1  U1         8
 NODENAME BTN_BOOT         $
-    R19        1  S1         1  U1        15
+    R19        1  S1         1  U1        23
 NODENAME BCK              $
-    TM8211     1  U1         9
+    TM8211     1  U1        18
 NODENAME AUDIO_IN         $
-    C14        1  R15        1  U1         4
+    C14        1  R15        1  U1        12
 NODENAME AMP_RCH          $
     C12        1  Volume Pot Base B10K2
 NODENAME AMP_LCH          $
     C13        1  Volume Pot Treble B10K2
 NODENAME \A\M\P\_\E\N\    $
-    NS8002 Base1  NS8002 Treble1  U1         8
+    NS8002 Base1  NS8002 Treble1  U1         6
 NODENAME 5V               $
     C1         2  C10        1  C11        1  J1     A4_B9  J1     B4_A9  NS8002 Base6  NS8002 Treble6  R12        1  U2         1  U2         3
 NODENAME 3V3              $
-    C2         2  C4         2  C5         2  C17        2  C18        2  C19        2  C20        2  C21        2  C22        2  Crossover Pot B10K1  R3         2  R14        1  R19        2  R?         2  TM8211     5  U1         2  U1         3  U1        11  U1        17  U1        18  U1        31  U1        32  U2         5
+    C2         2  C17        2  C18        2  Crossover Pot B10K1  R3         2  R14        1  R18        2  R19        2  TM8211     5  U1         3  U2         5
 EOS
